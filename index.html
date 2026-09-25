@@ -15,20 +15,12 @@
   --navy:#232b3d;
   --line:#d8d2c3;
   --card:#ffffff;
-  --muted:#6b6558;
+  --muted:#6b6f52;
   padding-top: env(safe-area-inset-top,0px);
   padding-bottom: env(safe-area-inset-bottom,0px);
 }
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --cream:#1a1914; --ink:#f1ede2; --card:#242219; --line:#3a362b; --muted:#a39c88;
-  }
-}
-:root[data-theme="dark"]{
-  --cream:#1a1914; --ink:#f1ede2; --card:#242219; --line:#3a362b; --muted:#a39c88;
-}
 *{box-sizing:border-box;}
-html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px);}
+html{scroll-behavior:smooth;}
 body{
   margin:0;background:var(--cream);color:var(--ink);
   font-family:'Work Sans',Arial,sans-serif;
@@ -40,7 +32,6 @@ a{color:inherit;}
 
 header{
   position:sticky;top:0;background:var(--cream);
-  padding:env(safe-area-inset-top,0px) 0 0;
   border-bottom:1px solid var(--line);z-index:10;
 }
 .nav{
@@ -50,18 +41,14 @@ header{
 .logo{font-family:'Fraunces',serif;font-size:22px;letter-spacing:0.5px;}
 .logo em{font-style:normal;color:var(--olive);}
 .navlinks{display:flex;gap:28px;font-size:14px;}
-.navlinks a{text-decoration:none;padding-bottom:2px;border-bottom:1px solid transparent;}
-.navlinks a:hover{border-color:var(--ink);}
-@media (max-width:640px){.navlinks{display:none;}}
+.navlinks a{text-decoration:none;border-bottom:1px solid transparent;}
 
 .hero{max-width:1100px;margin:0 auto;padding:64px 24px 40px;display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center;}
 @media (max-width:800px){.hero{grid-template-columns:1fr;padding-top:40px;}}
 .hero h1{font-size:clamp(34px,5vw,58px);line-height:1.05;}
 .hero p{max-width:46ch;color:var(--muted);font-size:16px;line-height:1.6;margin-top:16px;}
 .hero-cta{display:inline-block;margin-top:26px;background:var(--ink);color:var(--cream);
-  padding:13px 26px;text-decoration:none;font-size:14px;letter-spacing:0.3px;border-radius:2px;}
-.swatchgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
-.swatch{aspect-ratio:1;border-radius:3px;box-shadow:0 1px 0 rgba(0,0,0,.06) inset;}
+  padding:13px 26px;text-decoration:none;font-size:14px;border-radius:2px;}
 
 .payrow{max-width:1100px;margin:0 auto;padding:0 24px 40px;display:flex;flex-wrap:wrap;gap:10px;font-size:12.5px;color:var(--muted);}
 .paybadge{border:1px solid var(--line);padding:7px 12px;border-radius:20px;}
@@ -69,21 +56,19 @@ header{
 section.products{max-width:1100px;margin:0 auto;padding:20px 24px 70px;}
 .section-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:26px;border-bottom:1px solid var(--line);padding-bottom:14px;}
 .section-head h2{font-size:26px;}
-.section-head span{font-size:13px;color:var(--muted);}
 
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:22px;}
 .card{background:var(--card);border:1px solid var(--line);border-radius:4px;overflow:hidden;display:flex;flex-direction:column;}
 .thumb{aspect-ratio:4/5;position:relative;overflow:hidden;background:#eee;}
 .thumb img{width:100%; height:100%; object-fit:cover;}
-.thumb .tag{position:absolute;top:10px;left:10px;background:rgba(255,255,255,.85);color:var(--ink);font-size:10.5px;padding:3px 8px;border-radius:12px;letter-spacing:.3px;z-index:2;}
+.thumb .tag{position:absolute;top:10px;left:10px;background:rgba(255,255,255,.85);color:var(--ink);font-size:10.5px;padding:3px 8px;border-radius:12px;z-index:2;}
 .card-body{padding:14px 16px 16px;flex:1;display:flex;flex-direction:column;}
 .brand{font-size:11px;color:var(--muted);letter-spacing:.4px;text-transform:uppercase;}
 .name{font-family:'Fraunces',serif;font-size:16.5px;margin-top:3px;line-height:1.3;}
 .meta{font-size:12.5px;color:var(--muted);margin-top:6px;}
 .pricerow{margin-top:auto;padding-top:12px;display:flex;justify-content:space-between;align-items:center;}
 .price{font-size:16px;font-weight:600;}
-.buy{font-size:12.5px;border:1px solid var(--ink);background:var(--ink);color:var(--cream);padding:7px 12px;border-radius:20px;text-decoration:none;transition:opacity .2s;}
-.buy:hover{opacity:0.8;}
+.buy{font-size:12.5px;background:var(--ink);color:var(--cream);padding:7px 12px;border-radius:20px;text-decoration:none;}
 
 .about{background:var(--olive);color:#f5f3ea;padding:60px 24px;}
 .about-inner{max-width:700px;margin:0 auto;text-align:center;}
@@ -93,8 +78,7 @@ section.products{max-width:1100px;margin:0 auto;padding:20px 24px 70px;}
 footer{padding:44px 24px 60px;border-top:1px solid var(--line);}
 .foot-inner{max-width:1100px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;font-size:13px;color:var(--muted);}
 .foot-col a{display:block;text-decoration:none;margin-bottom:8px;}
-.foot-col a:hover{color:var(--ink);}
-.foot-col h4{font-size:12px;text-transform:uppercase;letter-spacing:.5px;color:var(--ink);margin-bottom:10px;}
+.foot-col h4{font-size:12px;text-transform:uppercase;color:var(--ink);margin-bottom:10px;}
 </style>
 </head>
 <body>
@@ -117,14 +101,6 @@ footer{padding:44px 24px 60px;border-top:1px solid var(--line);}
     <p>Handverlesene Secondhand-Hosen von Nike und Adidas — geprüft, ehrlich beschrieben und bereit für ein zweites Leben. Aus Uplengen, für ganz Deutschland.</p>
     <a class="hero-cta" href="#produkte">Zu den Produkten</a>
   </div>
-  <div class="swatchgrid">
-    <div class="swatch" style="background:#1c2740"></div>
-    <div class="swatch" style="background:#e9e2d0"></div>
-    <div class="swatch" style="background:#a9c6d6"></div>
-    <div class="swatch" style="background:#14705f"></div>
-    <div class="swatch" style="background:#6b6f52"></div>
-    <div class="swatch" style="background:#111111"></div>
-  </div>
 </div>
 
 <div class="payrow">
@@ -138,7 +114,7 @@ footer{padding:44px 24px 60px;border-top:1px solid var(--line);}
 <section class="products" id="produkte">
   <div class="section-head">
     <h2>Aktuelle Stücke</h2>
-    <span id="count">15 Artikel</span>
+    <span>15 Artikel</span>
   </div>
   <div class="grid" id="grid"></div>
 </section>
@@ -146,55 +122,46 @@ footer{padding:44px 24px 60px;border-top:1px solid var(--line);}
 <section class="about" id="ueber-uns">
   <div class="about-inner">
     <h2>Warum secondhand?</h2>
-    <p>Jedes Stück bei shopvintage.de hat schon eine Geschichte — wir geben ihm die nächste. Weniger Neuware, weniger Ressourcen, mehr Charakter. Alle Artikel werden vor dem Versand geprüft und ehrlich in ihrem Zustand beschrieben.</p>
+    <p>Jedes Stück bei shopvintage.de hat schon eine Geschichte — wir geben ihm die nächste. Weniger Neuware, weniger Ressourcen, mehr Charakter.</p>
   </div>
 </section>
 
-<footer id="versand">
+<footer>
   <div class="foot-inner">
     <div class="foot-col">
       <h4>Shop</h4>
       <a href="#produkte">Alle Produkte</a>
       <a href="#ueber-uns">Über uns</a>
-      <a href="#kontakt">Kontakt</a>
     </div>
     <div class="foot-col" id="kontakt">
       <h4>Kontakt</h4>
       <a href="mailto:info@shopvintage.de">info@shopvintage.de</a>
-      <a href="#">26670 Uplengen, Deutschland</a>
     </div>
     <div class="foot-col">
       <h4>Rechtliches</h4>
       <a href="#">Impressum</a>
-      <a href="#">AGB</a>
-      <a href="#">Widerruf</a>
       <a href="#">Datenschutz</a>
-    </div>
-    <div class="foot-col">
-      <h4>Versand & Zahlung</h4>
-      <a href="#">Versand innerhalb DE: 3–5 Werktage</a>
-      <a href="#">14 Tage Rückgaberecht</a>
     </div>
   </div>
 </footer>
 
 <script>
 const items = [
-  {b:"Adidas Originals", n:"Trainingshose Navy mit Trefoil-Tape", c:"Hosen", size:"D5 / M", img:"images/A1.jpeg", stripe:"#"},
-  {b:"Adidas", n:"Trainingshose Blau mit 3-Streifen", c:"Hosen", size:"M", img:"images/A2.jpeg", stripe:"#"},
-  {b:"Nike", n:"Fleece Jogginghose Navy", c:"Hosen", size:"S", img:"images/A3.jpeg", stripe:"#"},
-  {b:"Nike", n:"Shell Trainingshose Navy", c:"Hosen", size:"L", img:"images/A4.jpeg", stripe:"#"},
-  {b:"Nike", n:"Ripstop Jogginghose Schwarz", c:"Hosen", size:"2XL", img:"images/A5.jpeg", stripe:"#"},
-  {b:"Nike", n:"Fleece Jogginghose Petrol", c:"Hosen", size:"L", img:"images/A6.jpeg", stripe:"#"},
-  {b:"Nike", n:"Tech Fleece Jogginghose Creme", c:"Hosen", size:"L", img:"images/A7.jpeg", stripe:"#"},
-  {b:"Nike", n:"Jogginghose Hellblau", c:"Hosen", size:"M", img:"images/A8.jpeg", stripe:"#"},
-  {b:"Adidas", n:"Trainingshose Hellblau mit 3-Patch", c:"Hosen", size:"M", img:"images/A9.jpeg", stripe:"#"},
-  {b:"Nike", n:"Therma-Fit Jogginghose Schwarz", c:"Hosen", size:"L", img:"images/A10.jpeg", stripe:"#"},
-  {b:"Adidas Originals", n:"Trainingshose Navy Vintage", c:"Hosen", size:"M", img:"images/A11.jpeg", stripe:"#"},
-  {b:"Adidas", n:"Jogginghose Neongelb", c:"Hosen", size:"XS", img:"images/A12.jpeg", stripe:"#"},
-  {b:"Nike", n:"Trainingshose Oliv mit Logo-Tape", c:"Hosen", size:"S", img:"images/A13.jpeg", stripe:"#"},
-  {b:"Adidas", n:"Trainingshose Hellgrau", c:"Hosen", size:"M", img:"images/A14.jpeg", stripe:"#"},
-  {b:"Adidas", n:"Trainingshose Weiß mit Gold-Logo", c:"Hosen", size:"XL", img:"images/A15.jpeg", stripe:"#"}
+  {b:"Adidas Originals", n:"Trainingshose Navy mit Trefoil-Tape", size:"D5 / M", img:"images/A1.jpeg", stripe:"#"},
+  {b:"Adidas", n:"Trainingshose Blau mit 3-Streifen", size:"M", img:"images/A2.jpeg", stripe:"#"},
+  {b:"Nike", n:"Fleece Jogginghose Navy", size:"S", img:"images/A3.jpeg", stripe:"#"},
+  {b:"Nike", n:"Shell Trainingshose Navy", size:"L", img:"images/A4.jpeg", stripe:"#"},
+  {b:"Nike", n:"Ripstop Jogginghose Schwarz", size:"2XL", img:"images/A5.jpeg", stripe:"#"},
+  {b:"Nike", n:"Fleece Jogginghose Petrol", size:"L", img:"images/A6.jpeg", stripe:"#"},
+  {b:"Nike", n:"Tech Fleece Jogginghose Creme", size:"L", img:"images/A7.jpeg", stripe:"#"},
+  {b:"Nike", n:"Jogginghose Hellblau", size:"M", img:"images/A8.jpeg", stripe:"#"},
+  {b:"Adidas", n:"Trainingshose Hellblau mit 3-Patch", size:"M", img:"images/A9.jpeg", stripe:"#"},
+  {b:"Nike", n:"Therma-Fit Jogginghose Schwarz", size:"L", img:"images/A10.jpeg", stripe:"#"},
+  {b:"Adidas Originals", n:"Trainingshose Navy Vintage", size:"M", img:"images/A11.jpeg", stripe:"#"},
+  {b:"Adidas", n:"Jogginghose Neongelb", size:"XS", img:"images/A12.jpeg", stripe:"#"},
+  {b:"Nike", n:"Trainingshose Oliv mit Logo-Tape", size:"S", img:"images/A13.jpeg", stripe:"#"},
+  {b:"Adidas", n:"Trainingshose Hellgrau", size:"M", img:"images/A14.jpeg", stripe:"#"},
+  {b:"Adidas", n:"Trainingshose Weiß mit Gold-Logo", size:"XL", img:"images/A15.jpeg", stripe:"#"}
 ];
 
 const grid = document.getElementById('grid');
@@ -203,7 +170,7 @@ items.forEach(it=>{
   el.className='card';
   el.innerHTML = `
     <div class="thumb">
-      <span class="tag">${it.c}</span>
+      <span class="tag">Hosen</span>
       <img src="${it.img}" alt="${it.n}" loading="lazy">
     </div>
     <div class="card-body">

@@ -67,6 +67,7 @@ section.products{max-width:1100px;margin:0 auto;padding:20px 24px 70px;}
 .pricerow{margin-top:auto;padding-top:12px;display:flex;justify-content:space-between;align-items:center;}
 .price{font-size:16px;font-weight:600;}
 .buy{font-size:12.5px;background:var(--ink);color:var(--cream);padding:7px 12px;border-radius:20px;text-decoration:none;}
+.buy:hover{opacity:0.8;}
 
 .about{background:var(--olive);color:#f5f3ea;padding:60px 24px;}
 .about-inner{max-width:700px;margin:0 auto;text-align:center;}
@@ -145,21 +146,21 @@ footer{padding:44px 24px 60px;border-top:1px solid var(--line);}
 
 <script>
 const items = [
-  {b:"Adidas Originals", n:"Trainingshose Navy mit Trefoil-Tape", size:"D5 / M", img:"A1.jpeg", stripe:"#"},
-  {b:"Adidas", n:"Trainingshose Blau mit 3-Streifen", size:"M", img:"A2.jpeg", stripe:"#"},
-  {b:"Nike", n:"Fleece Jogginghose Navy", size:"S", img:"A3.jpeg", stripe:"#"},
-  {b:"Nike", n:"Shell Trainingshose Navy", size:"L", img:"A4.jpeg", stripe:"#"},
-  {b:"Nike", n:"Ripstop Jogginghose Schwarz", size:"2XL", img:"A5.jpeg", stripe:"#"},
-  {b:"Nike", n:"Fleece Jogginghose Petrol", size:"L", img:"A6.jpeg", stripe:"#"},
-  {b:"Nike", n:"Tech Fleece Jogginghose Creme", size:"L", img:"A7.jpeg", stripe:"#"},
-  {b:"Nike", n:"Jogginghose Hellblau", size:"M", img:"A8.jpeg", stripe:"#"},
-  {b:"Adidas", n:"Trainingshose Hellblau mit 3-Patch", size:"M", img:"A9.jpeg", stripe:"#"},
-  {b:"Nike", n:"Therma-Fit Jogginghose Schwarz", size:"L", img:"A10.jpeg", stripe:"#"},
-  {b:"Adidas Originals", n:"Trainingshose Navy Vintage", size:"M", img:"A11.jpeg", stripe:"#"},
-  {b:"Adidas", n:"Jogginghose Neongelb", size:"XS", img:"A12.jpeg", stripe:"#"},
-  {b:"Nike", n:"Trainingshose Oliv mit Logo-Tape", size:"S", img:"A13.jpeg", stripe:"#"},
-  {b:"Adidas", n:"Trainingshose Hellgrau", size:"M", img:"A14.jpeg", stripe:"#"},
-  {b:"Adidas", n:"Trainingshose Weiß mit Gold-Logo", size:"XL", img:"A15.jpeg", stripe:"#"}
+  {b:"Adidas Originals", n:"Trainingshose Navy mit Trefoil-Tape", size:"D5 / M", img:"A1.jpeg", stripe:"https://buy.stripe.com/5kQ9AN8Z27JJcpcdc02oE00"},
+  {b:"Adidas", n:"Trainingshose Blau mit 3-Streifen", size:"M", img:"A2.jpeg", stripe:"https://buy.stripe.com/aFaaERejmbZZ74Seg42oE02"},
+  {b:"Nike", n:"Fleece Jogginghose Navy", size:"S", img:"A3.jpeg", stripe:"https://buy.stripe.com/5kQ7sF0swe87ah4dc02oE03"},
+  {b:"Nike", n:"Shell Trainingshose Navy", size:"L", img:"A4.jpeg", stripe:"https://buy.stripe.com/8x26oBb7a0hh88Wgoc2oE04"},
+  {b:"Nike", n:"Ripstop Jogginghose Schwarz", size:"2XL", img:"A5.jpeg", stripe:"https://buy.stripe.com/00w9ANcbe3ttgFs1ti2oE05"},
+  {b:"Nike", n:"Fleece Jogginghose Petrol", size:"L", img:"A6.jpeg", stripe:"https://buy.stripe.com/28E00d4IM2pp2OC4Fu2oE06"},
+  {b:"Nike", n:"Tech Fleece Jogginghose Creme", size:"L", img:"A7.jpeg", stripe:"https://buy.stripe.com/fZueV73EI3tt2OCb3S2oE07"},
+  {b:"Nike", n:"Jogginghose Hellblau", size:"M", img:"A8.jpeg", stripe:"https://buy.stripe.com/28E14h7UYfcbcpc2xm2oE08"},
+  {b:"Adidas", n:"Trainingshose Hellblau mit 3-Patch", size:"M", img:"A9.jpeg", stripe:"https://buy.stripe.com/eVq4gtdfibZZexk5Jy2oE09"},
+  {b:"Nike", n:"Therma-Fit Jogginghose Schwarz", size:"L", img:"A10.jpeg", stripe:"https://buy.stripe.com/9B6fZb4IMggf88W5Jy2oE0a"},
+  {b:"Adidas Originals", n:"Trainingshose Navy Vintage", size:"M", img:"A11.jpeg", stripe:"https://buy.stripe.com/5kQ28lb7a7JJexk4Fu2oE0b"},
+  {b:"Adidas", n:"Jogginghose Neongelb", size:"XS", img:"A12.jpeg", stripe:"https://buy.stripe.com/3cIfZb5MQ2pp1Ky5Jy2oE0c"},
+  {b:"Nike", n:"Trainingshose Oliv mit Logo-Tape", size:"S", img:"A13.jpeg", stripe:"https://buy.stripe.com/3cI6oBejm2ppah44Fu2oE0d"},
+  {b:"Adidas", n:"Trainingshose Hellgrau", size:"M", img:"A14.jpeg", stripe:"https://buy.stripe.com/dRmcMZ3EIbZZdtg1ti2oE0e"},
+  {b:"Adidas", n:"Trainingshose Weiß mit Gold-Logo", size:"XL", img:"A15.jpeg", stripe:"https://buy.stripe.com/8x2bIV4IMe873SG1ti2oE0f"}
 ];
 
 const grid = document.getElementById('grid');

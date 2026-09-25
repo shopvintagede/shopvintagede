@@ -56,7 +56,8 @@ section.products{max-width:1100px;margin:0 auto;padding:20px 24px 70px;}
 .section-head h2{font-size:26px;}
 
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:22px;}
-.card{background:var(--card);border:1px solid var(--line);border-radius:4px;overflow:hidden;display:flex;flex-direction:column;}
+.card{background:var(--card);border:1px solid var(--line);border-radius:4px;overflow:hidden;display:flex;flex-direction:column;cursor:pointer;transition:transform .2s ease, box-shadow .2s ease;}
+.card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,0.06);}
 .thumb{aspect-ratio:4/5;position:relative;overflow:hidden;background:#eee;}
 .thumb img{width:100%; height:100%; object-fit:cover;}
 .thumb .tag{position:absolute;top:10px;left:10px;background:rgba(255,255,255,.85);color:var(--ink);font-size:10.5px;padding:3px 8px;border-radius:12px;z-index:2;}
@@ -66,8 +67,46 @@ section.products{max-width:1100px;margin:0 auto;padding:20px 24px 70px;}
 .meta{font-size:12.5px;color:var(--muted);margin-top:6px;}
 .pricerow{margin-top:auto;padding-top:12px;display:flex;justify-content:space-between;align-items:center;}
 .price{font-size:16px;font-weight:600;}
-.buy{font-size:12.5px;background:var(--ink);color:var(--cream);padding:7px 12px;border-radius:20px;text-decoration:none;}
-.buy:hover{opacity:0.8;}
+.view-btn{font-size:12.5px;background:transparent;border:1px solid var(--ink);color:var(--ink);padding:6px 12px;border-radius:20px;}
+
+/* Modal / Detailansicht */
+.modal-overlay{
+  position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(33,31,26,0.6);
+  display:flex;align-items:center;justify-content:center;z-index:100;
+  opacity:0;pointer-events:none;transition:opacity .3s ease;padding:20px;
+}
+.modal-overlay.open{opacity:1;pointer-events:auto;}
+.modal{
+  background:var(--card);width:100%;max-width:900px;border-radius:6px;
+  overflow:hidden;display:grid;grid-template-columns:1fr 1fr;position:relative;
+  max-height:90vh;box-shadow:0 20px 40px rgba(0,0,0,0.2);
+}
+@media(max-width:768px){.modal{grid-template-columns:1fr;overflow-y:auto;}}
+.modal-close{
+  position:absolute;top:16px;right:16px;background:var(--cream);border:1px solid var(--line);
+  width:36px;height:36px;border-radius:50%;cursor:pointer;display:flex;align-items:center;
+  justify-content:center;font-size:18px;z-index:10;
+}
+.modal-gallery{display:flex;flex-direction:column;background:#eee;padding:20px;gap:12px;}
+.modal-main-img{aspect-ratio:4/5;width:100%;overflow:hidden;border-radius:4px;background:#fff;}
+.modal-main-img img{width:100%;height:100%;object-fit:cover;}
+.modal-thumbs{display:flex;gap:8px;overflow-x:auto;}
+.modal-thumb-item{width:60px;height:75px;border-radius:3px;overflow:hidden;cursor:pointer;border:2px solid transparent;flex-shrink:0;}
+.modal-thumb-item.active{border-color:var(--olive);}
+.modal-thumb-item img{width:100%;height:100%;object-fit:cover;}
+
+.modal-content{padding:32px 28px;display:flex;flex-direction:column;overflow-y:auto;}
+.modal-brand{font-size:12px;text-transform:uppercase;color:var(--muted);letter-spacing:.5px;}
+.modal-title{font-family:'Fraunces',serif;font-size:24px;margin-top:6px;line-height:1.2;}
+.modal-price{font-size:20px;font-weight:600;margin-top:12px;color:var(--olive);}
+.modal-desc{margin-top:20px;font-size:14.5px;line-height:1.7;color:var(--muted);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:16px 0;}
+.modal-details-list{margin-top:16px;font-size:13.5px;color:var(--muted);display:flex;flex-direction:column;gap:6px;}
+.modal-buy{
+  margin-top:auto;padding-top:24px;display:block;background:var(--ink);color:var(--cream);
+  text-align:center;padding:14px;border-radius:4px;text-decoration:none;font-weight:500;
+  letter-spacing:.3px;
+}
+.modal-buy:hover{opacity:0.9;}
 
 .about{background:var(--olive);color:#f5f3ea;padding:60px 24px;}
 .about-inner{max-width:700px;margin:0 auto;text-align:center;}
@@ -118,6 +157,30 @@ footer{padding:44px 24px 60px;border-top:1px solid var(--line);}
   <div class="grid" id="grid"></div>
 </section>
 
+<!-- Modal / Detailansicht Overlay -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal" id="modalBox">
+    <button class="modal-close" id="modalClose">&times;</button>
+    <div class="modal-gallery">
+      <div class="modal-main-img">
+        <img id="modalMainImg" src="" alt="">
+      </div>
+      <div class="modal-thumbs" id="modalThumbs"></div>
+    </div>
+    <div class="modal-content">
+      <div class="modal-brand" id="modalBrand"></div>
+      <h2 class="modal-title" id="modalTitle"></h2>
+      <div class="modal-price">15,00 €</div>
+      <div class="modal-desc" id="modalDesc"></div>
+      <div class="modal-details-list">
+        <div><strong>Zustand:</strong> Secondhand, sehr guter getragener Zustand</div>
+        <div><strong>Versand:</strong> 3,99 € (DHL, mit Sendungsverfolgung)</div>
+      </div>
+      <a class="modal-buy" id="modalBuyBtn" href="#" target="_blank">Jetzt sicher kaufen</a>
+    </div>
+  </div>
+</div>
+
 <section class="about" id="ueber-uns">
   <div class="about-inner">
     <h2>Warum secondhand?</h2>
@@ -146,42 +209,86 @@ footer{padding:44px 24px 60px;border-top:1px solid var(--line);}
 
 <script>
 const items = [
-  {b:"Adidas Originals", n:"Trainingshose Navy mit Trefoil-Tape", size:"D5 / M", img:"A1.jpeg", stripe:"https://buy.stripe.com/5kQ9AN8Z27JJcpcdc02oE00"},
-  {b:"Adidas", n:"Trainingshose Blau mit 3-Streifen", size:"M", img:"A2.jpeg", stripe:"https://buy.stripe.com/aFaaERejmbZZ74Seg42oE02"},
-  {b:"Nike", n:"Fleece Jogginghose Navy", size:"S", img:"A3.jpeg", stripe:"https://buy.stripe.com/5kQ7sF0swe87ah4dc02oE03"},
-  {b:"Nike", n:"Shell Trainingshose Navy", size:"L", img:"A4.jpeg", stripe:"https://buy.stripe.com/8x26oBb7a0hh88Wgoc2oE04"},
-  {b:"Nike", n:"Ripstop Jogginghose Schwarz", size:"2XL", img:"A5.jpeg", stripe:"https://buy.stripe.com/00w9ANcbe3ttgFs1ti2oE05"},
-  {b:"Nike", n:"Fleece Jogginghose Petrol", size:"L", img:"A6.jpeg", stripe:"https://buy.stripe.com/28E00d4IM2pp2OC4Fu2oE06"},
-  {b:"Nike", n:"Tech Fleece Jogginghose Creme", size:"L", img:"A7.jpeg", stripe:"https://buy.stripe.com/fZueV73EI3tt2OCb3S2oE07"},
-  {b:"Nike", n:"Jogginghose Hellblau", size:"M", img:"A8.jpeg", stripe:"https://buy.stripe.com/28E14h7UYfcbcpc2xm2oE08"},
-  {b:"Adidas", n:"Trainingshose Hellblau mit 3-Patch", size:"M", img:"A9.jpeg", stripe:"https://buy.stripe.com/eVq4gtdfibZZexk5Jy2oE09"},
-  {b:"Nike", n:"Therma-Fit Jogginghose Schwarz", size:"L", img:"A10.jpeg", stripe:"https://buy.stripe.com/9B6fZb4IMggf88W5Jy2oE0a"},
-  {b:"Adidas Originals", n:"Trainingshose Navy Vintage", size:"M", img:"A11.jpeg", stripe:"https://buy.stripe.com/5kQ28lb7a7JJexk4Fu2oE0b"},
-  {b:"Adidas", n:"Jogginghose Neongelb", size:"XS", img:"A12.jpeg", stripe:"https://buy.stripe.com/3cIfZb5MQ2pp1Ky5Jy2oE0c"},
-  {b:"Nike", n:"Trainingshose Oliv mit Logo-Tape", size:"S", img:"A13.jpeg", stripe:"https://buy.stripe.com/3cI6oBejm2ppah44Fu2oE0d"},
-  {b:"Adidas", n:"Trainingshose Hellgrau", size:"M", img:"A14.jpeg", stripe:"https://buy.stripe.com/dRmcMZ3EIbZZdtg1ti2oE0e"},
-  {b:"Adidas", n:"Trainingshose Weiß mit Gold-Logo", size:"XL", img:"A15.jpeg", stripe:"https://buy.stripe.com/8x2bIV4IMe873SG1ti2oE0f"}
+  {b:"Adidas Originals", n:"Trainingshose Navy mit Trefoil-Tape", size:"D5 / M", imgs:["A1.jpeg"], desc:"Klassische Adidas Originals Trainingshose in Navy mit dem markanten Trefoil-Tape an den Seiten. Angenehmer Vintage-Stoff, perfekter Fit.", stripe:"https://buy.stripe.com/5kQ9AN8Z27JJcpcdc02oE00"},
+  {b:"Adidas", n:"Trainingshose Blau mit 3-Streifen", size:"M", imgs:["A2.jpeg"], desc:"Echtes Retro-Feeling in kräftigem Blau. Mit den klassischen 3-Streifen und elastischem Bund für optimalen Tragekomfort.", stripe:"https://buy.stripe.com/aFaaERejmbZZ74Seg42oE02"},
+  {b:"Nike", n:"Fleece Jogginghose Navy", size:"S", imgs:["A3.jpeg"], desc:"Gemütliche Nike Fleece-Jogginghose in dunklem Navy. Innen kuschelig angeraut, ideal für den Alltag oder entspannte Abende.", stripe:"https://buy.stripe.com/5kQ7sF0swe87ah4dc02oE03"},
+  {b:"Nike", n:"Shell Trainingshose Navy", size:"L", imgs:["A4.jpeg"], desc:"Leichte Nike Shell-Trainingshose im leichten Material-Mix. Perfekt für den angesagten Y2K-Look.", stripe:"https://buy.stripe.com/8x26oBb7a0hh88Wgoc2oE04"},
+  {b:"Nike", n:"Ripstop Jogginghose Schwarz", size:"2XL", imgs:["A5.jpeg"], desc:"Robuste Nike Ripstop-Hose in Schwarz. Strapazierfähiges Material mit lockerem Schnitt für maximale Bewegungsfreiheit.", stripe:"https://buy.stripe.com/00w9ANcbe3ttgFs1ti2oE05"},
+  {b:"Nike", n:"Fleece Jogginghose Petrol", size:"L", imgs:["A6.jpeg"], desc:"Außergewöhnliche Farbe: Schickes Petrol kombiniert mit dem bewährten Nike-Fleece-Tragekomfort. Ein echter Hingucker.", stripe:"https://buy.stripe.com/28E00d4IM2pp2OC4Fu2oE06"},
+  {b:"Nike", n:"Tech Fleece Jogginghose Creme", size:"L", imgs:["A7.jpeg"], desc:"High-End Look von Nike in cleaner Creme-Nuance. Moderner Schnitt, hochwertiges Tech-Fleece-Material.", stripe:"https://buy.stripe.com/fZueV73EI3tt2OCb3S2oE07"},
+  {b:"Nike", n:"Jogginghose Hellblau", size:"M", imgs:["A8.jpeg"], desc:"Lässige Nike Jogginghose in hellem Blau. Frischer Farbton, super kombinierbar mit Oversized Hoodies.", stripe:"https://buy.stripe.com/28E14h7UYfcbcpc2xm2oE08"},
+  {b:"Adidas", n:"Trainingshose Hellblau mit 3-Patch", size:"M", imgs:["A9.jpeg"], desc:"Einzigartiges Adidas-Modell in Hellblau mit speziellem 3-Patch-Detail am Bein. Absolutes Einzelstück.", stripe:"https://buy.stripe.com/eVq4gtdfibZZexk5Jy2oE09"},
+  {b:"Nike", n:"Therma-Fit Jogginghose Schwarz", size:"L", imgs:["A10.jpeg"], desc:"Hält warm und sieht gut aus: Nike Therma-Fit in klassischem Schwarz. Perfekt für kühlere Tage.", stripe:"https://buy.stripe.com/9B6fZb4IMggf88W5Jy2oE0a"},
+  {b:"Adidas Originals", n:"Trainingshose Navy Vintage", size:"M", imgs:["A11.jpeg"], desc:"Echter Vintage-Klassiker von Adidas Originals in Navy. Mit zeitlosem Logo-Stick auf der Hüfte.", stripe:"https://buy.stripe.com/5kQ28lb7a7JJexk4Fu2oE0b"},
+  {b:"Adidas", n:"Jogginghose Neongelb", size:"XS", imgs:["A12.jpeg"], desc:"Statement-Piece in leuchtendem Neongelb von Adidas. Für alle, die ein echtes Farbakzent setzen wollen.", stripe:"https://buy.stripe.com/3cIfZb5MQ2pp1Ky5Jy2oE0c"},
+  {b:"Nike", n:"Trainingshose Oliv mit Logo-Tape", size:"S", imgs:["A13.jpeg"], desc:"Erdiger Olivton kombiniert mit stylischem Nike-Logo-Tape an den Seiten. Sehr guter Zustand.", stripe:"https://buy.stripe.com/3cI6oBejm2ppah44Fu2oE0d"},
+  {b:"Adidas", n:"Trainingshose Hellgrau", size:"M", imgs:["A14.jpeg"], desc:"Der Allrounder: Hellgraue Adidas Trainingshose. Passt einfach zu allem und sitzt superbequem.", stripe:"https://buy.stripe.com/dRmcMZ3EIbZZdtg1ti2oE0e"},
+  {b:"Adidas", n:"Trainingshose Weiß mit Gold-Logo", size:"XL", imgs:["A15.jpeg"], desc:"Edler Look in Weiß mit goldenem Adidas-Logo-Detail. Ein sehr seltenes Fundstück in XL.", stripe:"https://buy.stripe.com/8x2bIV4IMe873SG1ti2oE0f"}
 ];
 
 const grid = document.getElementById('grid');
+const overlay = document.getElementById('modalOverlay');
+const closeBtn = document.getElementById('modalClose');
+const mainImg = document.getElementById('modalMainImg');
+const thumbsContainer = document.getElementById('modalThumbs');
+const modalBrand = document.getElementById('modalBrand');
+const modalTitle = document.getElementById('modalTitle');
+const modalDesc = document.getElementById('modalDesc');
+const modalBuyBtn = document.getElementById('modalBuyBtn');
+
 items.forEach(it=>{
   const el = document.createElement('div');
   el.className='card';
   el.innerHTML = `
     <div class="thumb">
-      <span class="tag">Hosen</span>
-      <img src="${it.img}" alt="${it.n}" loading="lazy">
+      <span class="tag">Gr. ${it.size}</span>
+      <img src="${it.imgs[0]}" alt="${it.n}" loading="lazy">
     </div>
     <div class="card-body">
       <div class="brand">${it.b}</div>
       <div class="name">${it.n}</div>
-      <div class="meta">Gr. ${it.size} · gebraucht, guter Zustand</div>
+      <div class="meta">1 Stück verfügbar</div>
       <div class="pricerow">
         <span class="price">15,00 €</span>
-        <a class="buy" href="${it.stripe}" target="_blank">Kaufen</a>
+        <button class="view-btn">Ansehen</button>
       </div>
     </div>`;
+  
+  // Bei Klick auf die Karte öffnet sich das Modal mit Details
+  el.addEventListener('click', () => {
+    modalBrand.textContent = it.b;
+    modalTitle.textContent = it.n;
+    modalDesc.textContent = it.desc;
+    modalBuyBtn.href = it.stripe;
+    
+    // Hauptbild setzen
+    mainImg.src = it.imgs[0];
+    
+    // Vorschaubilder aufbauen (falls mehrere vorhanden sind)
+    thumbsContainer.innerHTML = '';
+    it.imgs.forEach((imgSrc, idx) => {
+      const thumb = document.createElement('div');
+      thumb.className = `modal-thumb-item ${idx === 0 ? 'active' : ''}`;
+      thumb.innerHTML = `<img src="${imgSrc}" alt="">`;
+      thumb.addEventListener('click', (e) => {
+        e.stopPropagation();
+        mainImg.src = imgSrc;
+        document.querySelectorAll('.modal-thumb-item').forEach(t => t.classList.remove('active'));
+        thumb.classList.add('active');
+      });
+      thumbsContainer.appendChild(thumb);
+    });
+    
+    overlay.classList.add('open');
+  });
+
   grid.appendChild(el);
+});
+
+// Modal schließen
+closeBtn.addEventListener('click', () => overlay.classList.remove('open'));
+overlay.addEventListener('click', (e) => {
+  if(e.target === overlay) overlay.classList.remove('open');
 });
 </script>
 

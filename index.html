@@ -37,8 +37,9 @@ header{
 }
 .logo{font-family:'Fraunces',serif;font-size:22px;letter-spacing:0.5px;}
 .logo em{font-style:normal;color:var(--olive);}
-.navlinks{display:flex;gap:28px;font-size:14px;}
+.navlinks{display:flex;gap:24px;font-size:14px;align-items:center;}
 .navlinks a{text-decoration:none;border-bottom:1px solid transparent;}
+.nav-badge{background:#09b1ba;color:#fff;padding:6px 12px;border-radius:20px;font-weight:500;}
 @media (max-width:640px){.navlinks{display:none;}}
 
 .hero{max-width:1100px;margin:0 auto;padding:64px 24px 40px;display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center;}
@@ -47,24 +48,6 @@ header{
 .hero p{max-width:46ch;color:var(--muted);font-size:16px;line-height:1.6;margin-top:16px;}
 .hero-cta{display:inline-block;margin-top:26px;background:var(--ink);color:var(--cream);
   padding:13px 26px;text-decoration:none;font-size:14px;border-radius:2px;}
-
-/* Vinted Trust Banner */
-.vinted-banner{
-  max-width:1100px;margin:0 auto 40px;padding:0 24px;
-}
-.vinted-box{
-  background:#09b1ba;color:#fff;border-radius:6px;padding:20px 28px;
-  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;
-  box-shadow:0 4px 12px rgba(9,177,186,0.2);
-}
-.vinted-info h3{font-size:18px;margin-bottom:4px;}
-.vinted-info p{font-size:14px;opacity:0.95;margin:0;}
-.vinted-rating{font-size:18px;font-weight:600;display:flex;align-items:center;gap:6px;}
-.vinted-btn{
-  background:#fff;color:#09b1ba;padding:10px 20px;border-radius:20px;
-  text-decoration:none;font-weight:600;font-size:13.5px;transition:opacity .2s;
-}
-.vinted-btn:hover{opacity:0.9;}
 
 .payrow{max-width:1100px;margin:0 auto;padding:0 24px 40px;display:flex;flex-wrap:wrap;gap:10px;font-size:12.5px;color:var(--muted);}
 .paybadge{border:1px solid var(--line);padding:7px 12px;border-radius:20px;}
@@ -87,7 +70,19 @@ section.products{max-width:1100px;margin:0 auto;padding:20px 24px 70px;}
 .price{font-size:16px;font-weight:600;}
 .view-btn{font-size:12.5px;background:transparent;border:1px solid var(--ink);color:var(--ink);padding:6px 12px;border-radius:20px;}
 
-/* Instagram Feed / Story Sektion */
+/* Vinted Bewertungen Sektion */
+.reviews-section{max-width:1100px;margin:0 auto;padding:0 24px 70px;}
+.reviews-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;}
+.reviews-head h3{font-size:22px;}
+.reviews-head a{font-size:13.5px;color:#09b1ba;text-decoration:none;font-weight:600;}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+@media(max-width:768px){.reviews-grid{grid-template-columns:1fr;}}
+.review-card{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:22px;display:flex;flex-direction:column;gap:10px;}
+.review-stars{color:#f59e0b;font-size:15px;letter-spacing:2px;}
+.review-text{font-size:14px;line-height:1.6;color:var(--muted);font-style:italic;}
+.review-author{font-size:12px;font-weight:600;color:var(--ink);margin-top:auto;}
+
+/* Instagram Sektion */
 .insta-section{max-width:1100px;margin:0 auto;padding:0 24px 70px;}
 .insta-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;}
 .insta-head h3{font-size:20px;}
@@ -157,8 +152,8 @@ footer{padding:44px 24px 60px;border-top:1px solid var(--line);}
     <div class="navlinks">
       <a href="#produkte">Produkte</a>
       <a href="#ueber-uns">Über uns</a>
-      <a href="#insta">Instagram</a>
-      <a href="#kontakt">Kontakt</a>
+      <a href="#bewertungen">Vinted (4.9 ⭐)</a>
+      <a href="https://www.vinted.de/member/3125265489" target="_blank" class="nav-badge">Vinted Profil</a>
     </div>
   </div>
 </header>
@@ -168,20 +163,6 @@ footer{padding:44px 24px 60px;border-top:1px solid var(--line);}
     <h1>Zweite Chance für gute Stücke.</h1>
     <p>Handverlesene Secondhand-Hosen von Nike und Adidas — geprüft, ehrlich beschrieben und bereit für ein zweites Leben. Aus Uplengen, für ganz Deutschland.</p>
     <a class="hero-cta" href="#produkte">Zu den Produkten</a>
-  </div>
-</div>
-
-<!-- Vinted Trust Banner -->
-<div class="vinted-banner">
-  <div class="vinted-box">
-    <div class="vinted-info">
-      <h3>Bekannt von Vinted & Top-Bewertet</h3>
-      <p>Über 165 zufriedene Kundinnen und Kunden vertrauen auf unsere Qualität (Account: marvin8710).</p>
-    </div>
-    <div class="vinted-rating">
-      ★ 4,9 / 5,0 (165+ Bewertungen)
-    </div>
-    <a class="vinted-btn" href="https://www.vinted.de/member/3125265489" target="_blank">Vinted Profil ansehen</a>
   </div>
 </div>
 
@@ -201,7 +182,32 @@ footer{padding:44px 24px 60px;border-top:1px solid var(--line);}
   <div class="grid" id="grid"></div>
 </section>
 
-<!-- Instagram / Story Highlight Sektion -->
+<!-- Vinted Bewertungen Sektion -->
+<section class="reviews-section" id="bewertungen">
+  <div class="reviews-head">
+    <h3>Das sagen unsere Kunden (4,9 ⭐ bei 165+ Bewertungen)</h3>
+    <a href="https://www.vinted.de/member/3125265489" target="_blank">Alle Bewertungen auf Vinted ansehen &rarr;</a>
+  </div>
+  <div class="reviews-grid">
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <div class="review-text">"Super schneller Versand, Hose war exakt wie beschrieben und in einem top Zustand. Gerne wieder!"</div>
+      <div class="review-author">— Vinted Käuferin (marvin8710)</div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <div class="review-text">"Sehr netter Kontakt, blitzschneller Versand und absolut faire Preise. 10/10!"</div>
+      <div class="review-author">— Vinted Käufer (marvin8710)</div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <div class="review-text">"Alles bestens geklappt! Die Hose passt perfekt und sieht super aus. Danke dir!"</div>
+      <div class="review-author">— Vinted Käuferin (marvin8710)</div>
+    </div>
+  </div>
+</section>
+
+<!-- Instagram Sektion -->
 <section class="insta-section" id="insta">
   <div class="insta-head">
     <h3>Folge uns auf Instagram (@shopvintagede)</h3>
@@ -272,7 +278,7 @@ footer{padding:44px 24px 60px;border-top:1px solid var(--line);}
     <div class="foot-col">
       <h4>Social Media & Plattformen</h4>
       <a href="https://www.instagram.com/shopvintagede/" target="_blank">Instagram (@shopvintagede)</a>
-      <a href="https://www.vinted.de/member/3125265489" target="_blank">Vinted (marvin8710)</a>
+      <a href="https://www.vinted.de/member/3125265489" target="_blank">Vinted (marvin8710 · 4.9 ⭐)</a>
     </div>
   </div>
 </footer>

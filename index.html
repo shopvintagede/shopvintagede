@@ -69,6 +69,18 @@ section.products{max-width:1100px;margin:0 auto;padding:20px 24px 70px;}
 .price{font-size:16px;font-weight:600;}
 .view-btn{font-size:12.5px;background:transparent;border:1px solid var(--ink);color:var(--ink);padding:6px 12px;border-radius:20px;}
 
+/* Instagram Feed / Story Sektion */
+.insta-section{max-width:1100px;margin:0 auto;padding:0 24px 70px;}
+.insta-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;}
+.insta-head h3{font-size:20px;}
+.insta-head a{font-size:13px;text-decoration:none;color:var(--olive);font-weight:600;}
+.insta-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+@media(max-width:768px){.insta-grid{grid-template-columns:repeat(2,1fr);}}
+.insta-item{aspect-ratio:1/1;border-radius:4px;overflow:hidden;position:relative;border:1px solid var(--line);background:#fff;}
+.insta-item img{width:100%;height:100%;object-fit:cover;transition:transform .3s ease;}
+.insta-item:hover img{transform:scale(1.05);}
+.insta-badge{position:absolute;bottom:8px;left:8px;background:rgba(0,0,0,0.6);color:#fff;font-size:10px;padding:3px 8px;border-radius:10px;}
+
 /* Modal / Detailansicht */
 .modal-overlay{
   position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(33,31,26,0.6);
@@ -127,7 +139,7 @@ footer{padding:44px 24px 60px;border-top:1px solid var(--line);}
     <div class="navlinks">
       <a href="#produkte">Produkte</a>
       <a href="#ueber-uns">Über uns</a>
-      <a href="#versand">Versand & Zahlung</a>
+      <a href="#insta">Instagram</a>
       <a href="#kontakt">Kontakt</a>
     </div>
   </div>
@@ -155,6 +167,32 @@ footer{padding:44px 24px 60px;border-top:1px solid var(--line);}
     <span>15 Artikel</span>
   </div>
   <div class="grid" id="grid"></div>
+</section>
+
+<!-- Instagram / Story Highlight Sektion -->
+<section class="insta-section" id="insta">
+  <div class="insta-head">
+    <h3>Folge uns auf Instagram (@shopvintage.de)</h3>
+    <a href="https://instagram.com" target="_blank">Profil öffnen &rarr;</a>
+  </div>
+  <div class="insta-grid">
+    <a href="https://instagram.com" target="_blank" class="insta-item">
+      <img src="A1.jpeg" alt="Instagram Story Drop">
+      <span class="insta-badge">✨ Story Drop</span>
+    </a>
+    <a href="https://instagram.com" target="_blank" class="insta-item">
+      <img src="A5.jpeg" alt="Instagram Look">
+      <span class="insta-badge">📸 Styling</span>
+    </a>
+    <a href="https://instagram.com" target="_blank" class="insta-item">
+      <img src="A10.jpeg" alt="Behind the scenes">
+      <span class="insta-badge">📦 Neue Ware</span>
+    </a>
+    <a href="https://instagram.com" target="_blank" class="insta-item">
+      <img src="A15.jpeg" alt="Community Favorite">
+      <span class="insta-badge">🔥 Favorite</span>
+    </a>
+  </div>
 </section>
 
 <!-- Modal / Detailansicht Overlay -->
@@ -200,9 +238,8 @@ footer{padding:44px 24px 60px;border-top:1px solid var(--line);}
       <a href="mailto:info@shopvintage.de">info@shopvintage.de</a>
     </div>
     <div class="foot-col">
-      <h4>Rechtliches</h4>
-      <a href="#">Impressum</a>
-      <a href="#">Datenschutz</a>
+      <h4>Social Media</h4>
+      <a href="https://instagram.com" target="_blank">Instagram (@shopvintage.de)</a>
     </div>
   </div>
 </footer>
@@ -254,27 +291,27 @@ items.forEach(it=>{
       </div>
     </div>`;
   
-  // Bei Klick auf die Karte öffnet sich das Modal mit Details
   el.addEventListener('click', () => {
     modalBrand.textContent = it.b;
     modalTitle.textContent = it.n;
     modalDesc.textContent = it.desc;
     modalBuyBtn.href = it.stripe;
     
-    // Hauptbild setzen
     mainImg.src = it.imgs[0];
     
-    // Vorschaubilder aufbauen (falls mehrere vorhanden sind)
     thumbsContainer.innerHTML = '';
     it.imgs.forEach((imgSrc, idx) => {
       const thumb = document.createElement('div');
       thumb.className = `modal-thumb-item ${idx === 0 ? 'active' : ''}`;
       thumb.innerHTML = `<img src="${imgSrc}" alt="">`;
-      thumb.addEventListener('click', (e) => {
-        e.stopPropagation();
+      thumb.thumbClick = () => {
         mainImg.src = imgSrc;
         document.querySelectorAll('.modal-thumb-item').forEach(t => t.classList.remove('active'));
         thumb.classList.add('active');
+      };
+      thumb.addEventListener('click', (e) => {
+        e.stopPropagation();
+        thumb.thumbClick();
       });
       thumbsContainer.appendChild(thumb);
     });
@@ -285,7 +322,6 @@ items.forEach(it=>{
   grid.appendChild(el);
 });
 
-// Modal schließen
 closeBtn.addEventListener('click', () => overlay.classList.remove('open'));
 overlay.addEventListener('click', (e) => {
   if(e.target === overlay) overlay.classList.remove('open');

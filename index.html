@@ -23,6 +23,7 @@
   --olive-light:#eaf0e6;
   --accent-gold:#d4a373;
   --vinted:#09b1ba;
+  --instagram:#e1306c;
   --line:#e4dec9;
   --muted:#635d51;
 }
@@ -109,7 +110,7 @@ section.products{max-width:1100px;margin:0 auto;padding:20px 24px 70px;}
 .view-btn{font-size:12.5px;background:transparent;border:1px solid var(--ink);color:var(--ink);padding:7px 14px;border-radius:20px;font-weight:500;transition:all .2s;}
 .card:hover .view-btn{background:var(--ink);color:#fff;}
 
-/* Sich bewegende Vinted Bewertungen (Marquee-Slider) */
+/* Bewegte Vinted Bewertungen Sektion */
 .reviews-section{max-width:100%;margin:0 auto;padding:0 0 70px;overflow:hidden;}
 .reviews-container-inner{max-width:1100px;margin:0 auto;padding:0 24px 24px;}
 .reviews-head{display:flex;justify-content:space-between;align-items:center;}
@@ -157,16 +158,30 @@ section.products{max-width:1100px;margin:0 auto;padding:20px 24px 70px;}
 }
 .vinted-footer-badge img{height:40px;width:auto;}
 
-/* Instagram Sektion */
+/* Instagram Sektion mit modernem Grid & Hover-Effekt */
 .insta-section{max-width:1100px;margin:0 auto;padding:0 24px 70px;}
 .insta-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;}
-.insta-head h3{font-size:20px;}
-.insta-head a{font-size:13px;text-decoration:none;color:var(--olive);font-weight:600;}
-.insta-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.insta-head h3{font-size:22px;}
+.insta-head a{font-size:13.5px;color:var(--instagram);text-decoration:none;font-weight:600;}
+.insta-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
 @media(max-width:768px){.insta-grid{grid-template-columns:repeat(2,1fr);}}
-.insta-item{aspect-ratio:1/1;border-radius:6px;overflow:hidden;position:relative;border:1px solid var(--line);background:#fff;}
-.insta-item img{width:100%;height:100%;object-fit:cover;transition:transform .3s ease;}
-.insta-item:hover img{transform:scale(1.05);}
+.insta-item{
+  aspect-ratio:1/1;border-radius:8px;overflow:hidden;position:relative;
+  border:1px solid var(--line);background:#fff;text-decoration:none;display:block;
+  box-shadow:0 4px 12px rgba(26,25,22,0.02);transition:transform .25s ease, box-shadow .25s ease;
+}
+.insta-item:hover{transform:translateY(-4px);box-shadow:0 12px 25px rgba(225,48,108,0.15);}
+.insta-item img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease;}
+.insta-item:hover img{transform:scale(1.06);}
+.insta-overlay{
+  position:absolute;inset:0;background:rgba(26,25,22,0.4);display:flex;align-items:center;
+  justify-content:center;opacity:0;transition:opacity .3s ease;
+}
+.insta-item:hover .insta-overlay{opacity:1;}
+.insta-icon-box{
+  background:#fff;color:var(--instagram);width:44px;height:44px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;font-size:20px;box-shadow:0 4px 10px rgba(0,0,0,0.2);
+}
 .insta-badge{position:absolute;bottom:10px;left:10px;background:rgba(26,25,22,0.8);backdrop-filter:blur(4px);color:#fff;font-size:10.5px;padding:4px 10px;border-radius:12px;font-weight:500;}
 
 /* FAQ & Versand Sektion */
@@ -297,7 +312,7 @@ footer{padding:44px 24px 60px;border-top:1px solid var(--line);background:var(--
   <div class="grid" id="grid"></div>
 </section>
 
-<!-- Bewegte Vinted Bewertungen Sektion (Marquee-Slider) -->
+<!-- Bewegte Vinted Bewertungen Sektion -->
 <section class="reviews-section" id="bewertungen">
   <div class="reviews-container-inner">
     <div class="reviews-head">
@@ -308,7 +323,6 @@ footer{padding:44px 24px 60px;border-top:1px solid var(--line);background:var(--
 
   <div class="marquee-wrapper">
     <div class="marquee-track">
-      <!-- Erster Durchlauf der Bewertungen -->
       <div class="review-card">
         <div class="review-stars">★★★★★</div>
         <div class="review-text">"Super schneller Versand, Hose war exakt wie beschrieben und in einem top Zustand. Gerne wieder!"</div>
@@ -334,8 +348,7 @@ footer{padding:44px 24px 60px;border-top:1px solid var(--line);background:var(--
         <div class="review-text">"Top Ware, reibungsloser Ablauf und sehr freundlich. Immer wieder gerne!"</div>
         <div class="review-author">— Vinted Käuferin (marvin8710)</div>
       </div>
-
-      <!-- Nahtlose Duplikate für den Endlos-Loop -->
+      <!-- Duplikate für endlosen Loop -->
       <div class="review-card">
         <div class="review-stars">★★★★★</div>
         <div class="review-text">"Super schneller Versand, Hose war exakt wie beschrieben und in einem top Zustand. Gerne wieder!"</div>
@@ -378,7 +391,7 @@ footer{padding:44px 24px 60px;border-top:1px solid var(--line);background:var(--
   </div>
 </section>
 
-<!-- Instagram Sektion -->
+<!-- Instagram Sektion mit interaktiven Post-Kacheln -->
 <section class="insta-section" id="insta">
   <div class="insta-head">
     <h3>Folge uns auf Instagram (@shopvintagede)</h3>
@@ -387,18 +400,30 @@ footer{padding:44px 24px 60px;border-top:1px solid var(--line);background:var(--
   <div class="insta-grid">
     <a href="https://www.instagram.com/shopvintagede/" target="_blank" class="insta-item">
       <img src="A1.jpeg" alt="Instagram Story Drop">
+      <div class="insta-overlay">
+        <div class="insta-icon-box">▶</div>
+      </div>
       <span class="insta-badge">✨ Story Drop</span>
     </a>
     <a href="https://www.instagram.com/shopvintagede/" target="_blank" class="insta-item">
       <img src="A5.jpeg" alt="Instagram Look">
+      <div class="insta-overlay">
+        <div class="insta-icon-box">♥</div>
+      </div>
       <span class="insta-badge">📸 Styling</span>
     </a>
     <a href="https://www.instagram.com/shopvintagede/" target="_blank" class="insta-item">
       <img src="A10.jpeg" alt="Behind the scenes">
+      <div class="insta-overlay">
+        <div class="insta-icon-box">▶</div>
+      </div>
       <span class="insta-badge">📦 Neue Ware</span>
     </a>
     <a href="https://www.instagram.com/shopvintagede/" target="_blank" class="insta-item">
       <img src="A15.jpeg" alt="Community Favorite">
+      <div class="insta-overlay">
+        <div class="insta-icon-box">♥</div>
+      </div>
       <span class="insta-badge">🔥 Favorite</span>
     </a>
   </div>

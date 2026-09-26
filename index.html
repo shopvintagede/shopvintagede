@@ -52,12 +52,24 @@ header{
 .hero-cta{display:inline-block;margin-top:26px;background:var(--ink);color:var(--cream);
   padding:13px 26px;text-decoration:none;font-size:14px;border-radius:2px;}
 
+/* 360 Grad Dreh-Animation für das Logo */
+@keyframes spin360 {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
 .hero-logo-box{display:flex;justify-content:center;align-items:center;}
 .hero-logo-box img{
-  max-width:220px;
+  max-width:200px;
   width:100%;
   height:auto;
   filter:drop-shadow(0 10px 20px rgba(0,0,0,0.08));
+  animation: spin360 12s linear infinite; /* 12s = Geschwindigkeit (je kleiner die Zahl, desto schneller dreht es sich) */
+}
+
+/* Optional: Pausiert die Drehung sanft, wenn man mit der Maus darüber fährt */
+.hero-logo-box img:hover {
+  animation-play-state: paused;
 }
 
 .payrow{max-width:1100px;margin:0 auto;padding:0 24px 40px;display:flex;flex-wrap:wrap;gap:10px;font-size:12.5px;color:var(--muted);}
@@ -111,7 +123,7 @@ section.products{max-width:1100px;margin:0 auto;padding:20px 24px 70px;}
 .insta-item:hover img{transform:scale(1.05);}
 .insta-badge{position:absolute;bottom:8px;left:8px;background:rgba(0,0,0,0.6);color:#fff;font-size:10px;padding:3px 8px;border-radius:10px;}
 
-/* FAQ / Versand & Rückgabe Sektion */
+/* FAQ & Versand Sektion */
 .faq-section{max-width:1100px;margin:0 auto;padding:0 24px 70px;}
 .faq-head{margin-bottom:24px;}
 .faq-head h3{font-size:24px;}
@@ -262,7 +274,7 @@ footer{padding:44px 24px 60px;border-top:1px solid var(--line);}
 
   <div class="vinted-footer-badge">
     <div style="display:flex;align-items:center;gap:16px;">
-      <img src="Logo.png" alt="Logo">
+      <img src="Logo.png" alt="Logo" style="width:40px;height:40px;object-fit:contain;">
       <div>
         <strong>shopvintage.de auf Vinted</strong>
         <div style="font-size:13px;color:var(--muted);margin-top:2px;">Account: marvin8710 · 165+ erfolgreiche Transaktionen</div>

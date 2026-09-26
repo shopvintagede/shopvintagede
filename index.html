@@ -33,10 +33,15 @@ header{
 }
 .nav{
   max-width:1100px;margin:0 auto;display:flex;align-items:center;
-  justify-content:space-between;padding:18px 24px;
+  justify-content:space-between;padding:14px 24px;
 }
-.logo{font-family:'Fraunces',serif;font-size:22px;letter-spacing:0.5px;}
-.logo em{font-style:normal;color:var(--olive);}
+/* Logo-Bild Styling */
+.logo img{
+  height:36px;
+  width:auto;
+  display:block;
+}
+
 .navlinks{display:flex;gap:24px;font-size:14px;align-items:center;}
 .navlinks a{text-decoration:none;border-bottom:1px solid transparent;}
 .nav-badge{background:#09b1ba;color:#fff;padding:6px 12px;border-radius:20px;font-weight:500;}
@@ -148,7 +153,9 @@ footer{padding:44px 24px 60px;border-top:1px solid var(--line);}
 
 <header>
   <div class="nav">
-    <div class="logo">shop<em>vintage</em>.de</div>
+    <a href="#" class="logo">
+      <img src="Logo.png" alt="shopvintage.de Logo">
+    </a>
     <div class="navlinks">
       <a href="#produkte">Produkte</a>
       <a href="#ueber-uns">Über uns</a>

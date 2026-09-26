@@ -111,6 +111,16 @@ section.products{max-width:1100px;margin:0 auto;padding:20px 24px 70px;}
 .insta-item:hover img{transform:scale(1.05);}
 .insta-badge{position:absolute;bottom:8px;left:8px;background:rgba(0,0,0,0.6);color:#fff;font-size:10px;padding:3px 8px;border-radius:10px;}
 
+/* FAQ / Versand & Rückgabe Sektion */
+.faq-section{max-width:1100px;margin:0 auto;padding:0 24px 70px;}
+.faq-head{margin-bottom:24px;}
+.faq-head h3{font-size:24px;}
+.faq-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+@media(max-width:768px){.faq-grid{grid-template-columns:1fr;}}
+.faq-card{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:24px;}
+.faq-card h4{font-family:'Fraunces',serif;font-size:17px;margin-bottom:8px;color:var(--ink);}
+.faq-card p{font-size:14px;line-height:1.6;color:var(--muted);margin:0;}
+
 /* Modernes Support-Kontaktformular Sektion */
 .contact-section{max-width:800px;margin:0 auto;padding:0 24px 80px;}
 .contact-box{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:40px 36px;}
@@ -190,6 +200,7 @@ footer{padding:44px 24px 60px;border-top:1px solid var(--line);}
     <a href="#" class="logo-text">shop<em>vintage</em>.de</a>
     <div class="navlinks">
       <a href="#produkte">Produkte</a>
+      <a href="#versand">Versand & FAQ</a>
       <a href="#ueber-uns">Über uns</a>
       <a href="#bewertungen">Vinted (4.9 ⭐)</a>
       <a href="#kontakt">Support</a>
@@ -287,6 +298,31 @@ footer{padding:44px 24px 60px;border-top:1px solid var(--line);}
   </div>
 </section>
 
+<!-- FAQ & Versand Sektion -->
+<section class="faq-section" id="versand">
+  <div class="faq-head">
+    <h3>Versand & Häufige Fragen (FAQ)</h3>
+  </div>
+  <div class="faq-grid">
+    <div class="faq-card">
+      <h4>📦 Wie hoch sind die Versandkosten?</h4>
+      <p>Wir versenden sicher und schnell mit DHL inklusive Sendungsverfolgung für pauschal <strong>7,69 €</strong> innerhalb von Deutschland.</p>
+    </div>
+    <div class="faq-card">
+      <h4>🔄 Wie funktioniert eine Rücksendung?</h4>
+      <p>Die Kosten für den Rückversand trägt der Käufer. Ausgenommen sind falsch gelieferte oder beschädigte Artikel — in diesem Fall übernehmen wir selbstverständlich die Kosten.</p>
+    </div>
+    <div class="faq-card">
+      <h4>💳 Welche Zahlungsmethoden gibt es?</h4>
+      <p>Du kannst sicher und unkompliziert per Apple Pay, Google Pay, Klarna, Kreditkarte oder SEPA-Lastschrift über unseren Partner Stripe bezahlen.</p>
+    </div>
+    <div class="faq-card">
+      <h4>⏱️ Wann wird meine Bestellung verschickt?</h4>
+      <p>Dein Paket wird in der Regel innerhalb von 1–2 Werktagen nach Zahlungseingang klimafreundlich mit DHL auf den Weg gebracht.</p>
+    </div>
+  </div>
+</section>
+
 <!-- Kundensupport Kontaktformular -->
 <section class="contact-section" id="kontakt">
   <div class="contact-box">
@@ -294,7 +330,6 @@ footer{padding:44px 24px 60px;border-top:1px solid var(--line);}
     <p>Hast du Fragen zu deiner Bestellung, dem Versand oder einem Artikel? Schreib uns direkt — wir antworten schnellstmöglich.</p>
     
     <form action="https://formsubmit.co/shopvintagede@web.de" method="POST">
-      <!-- Spam-Schutz & Weiterleitungseinstellungen für FormSubmit -->
       <input type="hidden" name="_subject" value="Neue Support-Anfrage von shopvintage.de">
       <input type="hidden" name="_captcha" value="false">
       
@@ -347,7 +382,7 @@ footer{padding:44px 24px 60px;border-top:1px solid var(--line);}
       <div class="modal-desc" id="modalDesc"></div>
       <div class="modal-details-list">
         <div><strong>Zustand:</strong> Secondhand, sehr guter getragener Zustand</div>
-        <div><strong>Versand:</strong> 3,99 € (DHL, mit Sendungsverfolgung)</div>
+        <div><strong>Versand:</strong> 7,69 € (DHL, mit Sendungsverfolgung)</div>
       </div>
       <a class="modal-buy" id="modalBuyBtn" href="#" target="_blank">Jetzt sicher kaufen</a>
     </div>
@@ -366,17 +401,24 @@ footer{padding:44px 24px 60px;border-top:1px solid var(--line);}
     <div class="foot-col">
       <h4>Shop</h4>
       <a href="#produkte">Alle Produkte</a>
+      <a href="#versand">Versand & FAQ</a>
       <a href="#ueber-uns">Über uns</a>
     </div>
     <div class="foot-col">
-      <h4>Support & Kontakt</h4>
+      <h4>Support</h4>
       <a href="#kontakt">Support-Formular</a>
       <a href="mailto:shopvintagede@web.de">shopvintagede@web.de</a>
     </div>
     <div class="foot-col">
-      <h4>Social Media & Plattformen</h4>
+      <h4>Rechtliches</h4>
+      <a href="#">Impressum</a>
+      <a href="#">Datenschutz</a>
+      <a href="#">Widerrufsbelehrung</a>
+    </div>
+    <div class="foot-col">
+      <h4>Social Media</h4>
       <a href="https://www.instagram.com/shopvintagede/" target="_blank">Instagram (@shopvintagede)</a>
-      <a href="https://www.vinted.de/member/3125265489" target="_blank">Vinted (marvin8710 · 4.9 ⭐)</a>
+      <a href="https://www.vinted.de/member/3125265489" target="_blank">Vinted (marvin8710)</a>
     </div>
   </div>
 </footer>

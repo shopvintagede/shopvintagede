@@ -265,4 +265,839 @@ section.products{max-width:1100px;margin:0 auto;padding:20px 24px 70px;}
 .modal-details-list{margin-top:16px;font-size:13.5px;color:var(--muted);display:flex;flex-direction:column;gap:6px;}
 .modal-good{margin-top:14px;font-size:13px;line-height:1.5;color:var(--olive);background:var(--olive-light);border-radius:4px;padding:10px 12px;}
 .modal-buy{
-  margin-top
+  margin-top:auto;padding-top:24px;display:block;background:var(--olive);color:#fff;
+  text-align:center;padding:14px;border-radius:4px;font-weight:500;
+  letter-spacing:.3px;text-decoration:none;transition:background .2s;
+}
+.modal-buy:hover{background:var(--ink);}
+
+.about{background:var(--olive);color:#f5f3ea;padding:64px 24px;}
+.about-inner{max-width:760px;margin:0 auto;text-align:center;}
+.about h2{font-size:28px;}
+.about p{margin-top:14px;line-height:1.7;font-size:15px;opacity:.92;}
+.about-facts{margin-top:32px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px;text-align:center;}
+@media(max-width:640px){.about-facts{grid-template-columns:1fr;}}
+.about-fact{border:1px solid rgba(245,243,234,0.28);border-radius:6px;padding:16px 12px;}
+.about-fact strong{display:block;font-family:'Fraunces',serif;font-weight:500;font-size:18px;}
+.about-fact span{display:block;margin-top:4px;font-size:13px;opacity:.85;}
+
+footer{padding:44px 24px 60px;border-top:1px solid var(--line);background:var(--cream-card);}
+.foot-inner{max-width:1100px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;font-size:13px;color:var(--muted);}
+.foot-col a{display:block;text-decoration:none;margin-bottom:8px;transition:color .2s;}
+.foot-col a:hover{color:var(--olive);}
+.foot-col h4{font-size:12px;text-transform:uppercase;color:var(--ink);margin-bottom:10px;font-weight:600;letter-spacing:.5px;}
+.foot-bottom{max-width:1100px;margin:28px auto 0;padding-top:20px;border-top:1px solid var(--line);font-size:12.5px;color:var(--muted);}
+
+.promo-bar{background:var(--olive);color:#fff;text-align:center;padding:10px 16px;font-size:14px;line-height:1.5;}
+.promo-bar[hidden]{display:none;}
+.promo-bar strong{font-weight:600;}
+.promo-code{background:rgba(255,255,255,.16);border-radius:4px;padding:2px 8px;font-weight:600;letter-spacing:.5px;}
+.stay-section{max-width:1100px;margin:0 auto;padding:0 24px 70px;display:grid;grid-template-columns:1fr 1fr;gap:22px;}
+@media(max-width:768px){.stay-section{grid-template-columns:1fr;}}
+.stay-box{background:var(--cream-card);border:1px solid var(--line);border-radius:6px;padding:28px;}
+.stay-box h3{font-size:22px;margin-bottom:8px;}
+.stay-box p{font-size:14.5px;line-height:1.7;color:var(--muted);margin:0 0 16px;}
+.stay-box input[type=email]{width:100%;border:1px solid var(--line);border-radius:4px;padding:12px 14px;font:inherit;font-size:14.5px;margin-bottom:10px;}
+.stay-box .check{display:flex;gap:8px;align-items:flex-start;font-size:12.5px;color:var(--muted);line-height:1.5;margin-bottom:12px;}
+.stay-box .check input{margin-top:3px;}
+.stay-box button{background:var(--olive);color:#fff;border:none;border-radius:4px;padding:12px 22px;font-size:14.5px;cursor:pointer;}
+.stay-box button:hover{background:var(--ink);}
+.stamps{display:flex;gap:8px;margin:0 0 14px;}
+.stamps span{width:34px;height:34px;border-radius:50%;border:1.5px solid var(--olive);display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--olive);font-weight:600;}
+.stamps span:last-child{background:var(--olive);color:#fff;}
+</style>
+</head>
+<body>
+
+<!-- ================================================================= -->
+<!-- HIGH-END COMING SOON OVERLAY                                      -->
+<!-- Zum Deaktivieren: MAINTENANCE_MODE auf false stellen!             -->
+<!-- ================================================================= -->
+<script>
+  const MAINTENANCE_MODE = true; // auf false stellen, um den echten Shop zu zeigen!
+</script>
+
+<style>
+  #coming-soon-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #08090b radial-gradient(circle at 50% 25%, #151b1e 0%, #08090b 75%);
+    color: #ffffff;
+    z-index: 999999;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 28px 20px;
+    font-family: 'Work Sans', Arial, sans-serif;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .cs-header {
+    width: 100%;
+    max-width: 1100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .cs-brand-logo {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 22px;
+    letter-spacing: 0.5px;
+    color: #fff;
+    text-decoration: none;
+  }
+  .cs-brand-logo em {
+    font-style: normal;
+    color: var(--accent-gold);
+  }
+
+  .cs-badge {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #d4a373;
+    font-weight: 600;
+  }
+
+  .cs-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 720px;
+    margin: 16px auto;
+    width: 100%;
+  }
+
+  /* Glow 3D Erde */
+  .cs-earth-wrapper {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    margin-bottom: 22px;
+  }
+  .cs-earth-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    border-radius: 50%;
+    box-shadow: inset -25px -15px 40px #08090b, 0 0 30px rgba(9, 177, 186, 0.25);
+    pointer-events: none;
+  }
+  .cs-earth {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/2/2c/Rotating_earth_%28large%29.gif');
+    background-size: cover;
+    background-position: center;
+  }
+
+  .cs-title {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: clamp(32px, 6vw, 52px);
+    line-height: 1.1;
+    font-weight: 500;
+    letter-spacing: -0.5px;
+    margin-bottom: 10px;
+    background: linear-gradient(180deg, #ffffff 0%, rgba(255,255,255,0.75) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .cs-subtitle {
+    font-size: clamp(14px, 2.5vw, 16px);
+    color: #9aa0a6;
+    max-width: 500px;
+    line-height: 1.6;
+    margin-bottom: 24px;
+  }
+
+  /* Formular Glassmorphism */
+  .cs-form {
+    width: 100%;
+    max-width: 440px;
+    display: flex;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 6px;
+    border-radius: 30px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.4);
+    margin-bottom: 24px;
+  }
+  .cs-form input[type=email] {
+    flex: 1;
+    background: transparent;
+    border: none;
+    padding: 10px 18px;
+    color: #fff;
+    font-size: 14px;
+    outline: none;
+    font-family: inherit;
+  }
+  .cs-form input[type=email]::placeholder { color: #6e767d; }
+  .cs-form button {
+    background: var(--accent-gold);
+    color: #08090b;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 24px;
+    font-weight: 600;
+    font-size: 13.5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .cs-form button:hover { background: #e0b080; transform: translateY(-1px); }
+
+  /* Social Profiles Buttons */
+  .cs-social-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+  .cs-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 16px;
+    border-radius: 20px;
+    font-size: 12.5px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.04);
+    color: #e1e3e6;
+  }
+  .cs-btn:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.09);
+    border-color: rgba(255, 255, 255, 0.3);
+    color: #fff;
+  }
+  .cs-btn-insta:hover { border-color: var(--instagram); color: var(--instagram); }
+  .cs-btn-vinted:hover { border-color: var(--vinted); color: var(--vinted); }
+
+  /* Vinted Ticker auf dem Bildschirmschoner */
+  .cs-reviews-section {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    overflow: hidden;
+    padding: 14px 0;
+    background: rgba(255, 255, 255, 0.02);
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    margin-bottom: 12px;
+  }
+  .cs-review-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 14px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 290px;
+    flex-shrink: 0;
+    text-align: left;
+    backdrop-filter: blur(8px);
+  }
+  .cs-review-stars { color: var(--accent-gold); font-size: 13px; letter-spacing: 2px; }
+  .cs-review-text { font-size: 12.5px; line-height: 1.5; color: #d1d5db; font-style: italic; }
+  .cs-review-author { font-size: 11px; font-weight: 600; color: var(--vinted); margin-top: auto; }
+
+  .cs-footer {
+    font-size: 12px;
+    color: #555d66;
+    letter-spacing: 0.5px;
+    margin-top: 8px;
+  }
+</style>
+
+<div id="coming-soon-overlay">
+  <div class="cs-header">
+    <a href="#" class="cs-brand-logo">shop<em>vintage</em>.de</a>
+    <span class="cs-badge">Opening 2027</span>
+  </div>
+
+  <div class="cs-hero">
+    <div class="cs-earth-wrapper">
+      <div class="cs-earth"></div>
+    </div>
+    <h1 class="cs-title">staytuned 2027</h1>
+    <p class="cs-subtitle">Wir bereiten den offiziellen Launch unseres Onlineshops vor. Handverlesene Secondhand & Vintage Mode aus Uplengen.</p>
+
+    <!-- Waitlist E-Mail Formular -->
+    <form class="cs-form" action="https://formsubmit.co/shopvintagede@web.de" method="POST">
+      <input type="hidden" name="_subject" value="Neuer VIP Waitlist Eintrag (Coming Soon)">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="email" name="E-Mail" required placeholder="Deine E-Mail eintragen..." aria-label="E-Mail für Waitlist">
+      <button type="submit">Notify Me</button>
+    </form>
+
+    <!-- Social Links: Instagram & Vinted -->
+    <div class="cs-social-row">
+      <a href="https://www.instagram.com/shopvintagede/" target="_blank" class="cs-btn cs-btn-insta">
+        <span>📸</span> Instagram @shopvintagede
+      </a>
+      <a href="https://www.vinted.de/member/3125265489" target="_blank" class="cs-btn cs-btn-vinted">
+        <span>🛍️</span> Vinted: marvin8710
+      </a>
+      <a href="https://www.vinted.de/member/202685040" target="_blank" class="cs-btn cs-btn-vinted">
+        <span>🛍️</span> Vinted: max87109
+      </a>
+    </div>
+
+    <!-- Vinted Ticker auf dem Bildschirmschoner -->
+    <div class="cs-reviews-section">
+      <div class="marquee-wrapper">
+        <div class="marquee-track">
+          <div class="cs-review-card">
+            <div class="cs-review-stars">★★★★★</div>
+            <div class="cs-review-text">"Super schneller Versand, Hose war exakt wie beschrieben und in einem top Zustand. Gerne wieder!"</div>
+            <div class="cs-review-author">— Vinted Käuferin (4.9 ⭐)</div>
+          </div>
+          <div class="cs-review-card">
+            <div class="cs-review-stars">★★★★★</div>
+            <div class="cs-review-text">"Sehr netter Kontakt, blitzschneller Versand und absolut faire Preise. 10/10!"</div>
+            <div class="cs-review-author">— Vinted Käufer (4.9 ⭐)</div>
+          </div>
+          <div class="cs-review-card">
+            <div class="cs-review-stars">★★★★★</div>
+            <div class="cs-review-text">"Alles bestens geklappt! Die Hose passt perfekt und sieht super aus. Danke dir!"</div>
+            <div class="cs-review-author">— Vinted Käuferin (4.9 ⭐)</div>
+          </div>
+          <div class="cs-review-card">
+            <div class="cs-review-stars">★★★★★</div>
+            <div class="cs-review-text">"Blitzschneller Versand & super netter Kontakt. Artikel wie neu! Absolute Empfehlung."</div>
+            <div class="cs-review-author">— Vinted Käufer (4.9 ⭐)</div>
+          </div>
+          <div class="cs-review-card">
+            <div class="cs-review-stars">★★★★★</div>
+            <div class="cs-review-text">"Top Ware, reibungsloser Ablauf und sehr freundlich. Immer wieder gerne!"</div>
+            <div class="cs-review-author">— Vinted Käuferin (4.9 ⭐)</div>
+          </div>
+          <!-- Loop Duplikate -->
+          <div class="cs-review-card">
+            <div class="cs-review-stars">★★★★★</div>
+            <div class="cs-review-text">"Super schneller Versand, Hose war exakt wie beschrieben und in einem top Zustand. Gerne wieder!"</div>
+            <div class="cs-review-author">— Vinted Käuferin (4.9 ⭐)</div>
+          </div>
+          <div class="cs-review-card">
+            <div class="cs-review-stars">★★★★★</div>
+            <div class="cs-review-text">"Sehr netter Kontakt, blitzschneller Versand und absolut faire Preise. 10/10!"</div>
+            <div class="cs-review-author">— Vinted Käufer (4.9 ⭐)</div>
+          </div>
+          <div class="cs-review-card">
+            <div class="cs-review-stars">★★★★★</div>
+            <div class="cs-review-text">"Alles bestens geklappt! Die Hose passt perfekt und sieht super aus. Danke dir!"</div>
+            <div class="cs-review-author">— Vinted Käuferin (4.9 ⭐)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cs-footer">
+    © 2027 shopvintage.de · Secondhand & Vintage Mode aus Uplengen
+  </div>
+</div>
+
+<script>
+  if (!MAINTENANCE_MODE) {
+    const overlay = document.getElementById('coming-soon-overlay');
+    if (overlay) overlay.style.display = 'none';
+  }
+</script>
+<!-- ================================================================= -->
+
+<div class="promo-bar" id="promoBar" hidden></div>
+
+<header>
+  <div class="nav">
+    <a href="#" class="logo-text">shop<em>vintage</em>.de</a>
+    <div class="navlinks">
+      <a href="#produkte">Produkte</a>
+      <a href="#blog">Blog</a>
+      <a href="#versand">Versand & FAQ</a>
+      <a href="#ueber-uns">Über uns</a>
+      <a href="#bewertungen">Vinted (4.9 ⭐)</a>
+      <a href="#kontakt">Support</a>
+      <a href="https://www.vinted.de/member/3125265489" target="_blank" class="nav-badge">Vinted Profil</a>
+    </div>
+  </div>
+</header>
+
+<div class="hero">
+  <div>
+    <h1>Zweite Chance für gute Stücke.</h1>
+    <p>Secondhand- und Vintage-Mode, handverlesen, geprüft und ehrlich beschrieben. Wir sind shopvintage.de aus Uplengen und verschicken in ganz Deutschland. Bei uns findest du Trackpants, Jeans, Winterjacken, Trainingsanzüge, Poloshirts, Pullover und T-Shirts, alles Markenartikel. Wer hier kauft, gibt einem guten Stück ein zweites Leben.</p>
+    <a class="hero-cta" href="#produkte">Zu den Produkten</a>
+    <a class="hero-cta-second" href="#blog">Warum Secondhand?</a>
+  </div>
+  <div class="hero-logo-box">
+    <img src="Logo.png" alt="shopvintage.de Logo">
+  </div>
+</div>
+
+<div class="payrow">
+  <span class="paybadge">Apple Pay</span>
+  <span class="paybadge">Google Pay</span>
+  <span class="paybadge">Klarna</span>
+  <span class="paybadge">Kreditkarte</span>
+  <span class="paybadge">SEPA-Lastschrift</span>
+</div>
+
+<section class="products" id="produkte">
+  <div class="section-head">
+    <h2>Aktuelle Stücke</h2>
+    <span>15 Artikel</span>
+  </div>
+  <div class="grid" id="grid"></div>
+</section>
+
+<!-- Blog / Journal -->
+<section class="blog-section" id="blog">
+  <div class="section-head">
+    <h2>Unser Blog: Gut fürs Gefühl, gut für die Umwelt</h2>
+    <span>Oktober 2026</span>
+  </div>
+  <p class="blog-intro">Warum lohnt sich Secondhand gerade jetzt? Hier sammeln wir kurze Gedanken zu Mode, Nachhaltigkeit und dem guten Gefühl, ein Teil nicht neu kaufen zu müssen. Schön, dass du da bist.</p>
+
+  <div class="blog-grid">
+    <article class="blog-card">
+      <div class="blog-meta">Nachhaltigkeit · 2 Min. Lesezeit</div>
+      <h3>Das beste Teil ist das, das schon existiert</h3>
+      <p class="blog-teaser">Für ein einziges Baumwoll-Shirt werden laut EU-Parlament rund 2.700 Liter Wasser gebraucht. Bei Secondhand-Mode fällt genau diese Produktion für dich weg.</p>
+      <details>
+        <summary><span class="more">Weiterlesen</span><span class="less">Weniger anzeigen</span></summary>
+        <p>Jedes neue Kleidungsstück braucht Rohstoffe, Wasser, Energie und lange Transportwege. Ein bereits gefertigtes Teil hat das alles schon hinter sich. Wenn du es kaufst, musst du nichts davon noch einmal verbrauchen.</p>
+        <p>Das heißt: Mit jedem Secondhand-Teil im Warenkorb sparst du Ressourcen ein. Du musst dafür nicht auf Stil verzichten, im Gegenteil. Unsere Stücke sind sorgfältig ausgesucht, geprüft und ehrlich beschrieben.</p>
+        <p>Das ist ein richtig gutes Gefühl: Du tust etwas für die Umwelt und hast am Ende ein Lieblingsteil im Schrank.</p>
+      </details>
+    </article>
+
+    <article class="blog-card">
+      <div class="blog-meta">Aktuelles Thema · 3 Min. Lesezeit</div>
+      <h3>Fast Fashion? Jetzt ist die Zeit für Secondhand</h3>
+      <p class="blog-teaser">Seit dem 1. Januar 2025 müssen Alttextilien in der EU getrennt gesammelt werden. Das Thema Textilmüll ist im Alltag angekommen, und du kannst direkt etwas daran ändern.</p>
+      <details>
+        <summary><span class="more">Weiterlesen</span><span class="less">Weniger anzeigen</span></summary>
+        <p>Billige Mode wird oft nur wenige Male getragen und dann aussortiert. Die neue EU-Regelung zur getrennten Sammlung von Textilien zeigt, wie groß die Menge an Altkleidern geworden ist.</p>
+        <p>Secondhand setzt an einer anderen Stelle an: Ein Kleidungsstück wird länger getragen, ohne dass etwas Neues produziert werden muss. Je länger ein Teil in Gebrauch bleibt, desto besser ist seine Bilanz.</p>
+        <p>Und es ist gut fürs Portemonnaie. Markenstücke, die neu deutlich mehr kosten, bekommst du bei uns zu fairen Preisen.</p>
+      </details>
+    </article>
+
+    <article class="blog-card">
+      <div class="blog-meta">Style · 2 Min. Lesezeit</div>
+      <h3>Vintage und Y2K: Einzelstücke mit Geschichte</h3>
+      <p class="blog-teaser">Sportswear aus den 90ern und 2000ern ist zurück. Das Schöne: Wer Vintage trägt, ist nicht eines von tausend gleichen Outfits unterwegs.</p>
+      <details>
+        <summary><span class="more">Weiterlesen</span><span class="less">Weniger anzeigen</span></summary>
+        <p>Retro-Trainingshosen, Tape-Details und kräftige Farben sind wieder voll im Trend. Bei uns findest du viele dieser Looks als echte Originale statt als Nachbau.</p>
+        <p>Die meisten unserer Teile gibt es nur einmal. Dein Stück gehört dann wirklich dir und sieht anders aus als das, was alle gerade tragen.</p>
+        <p>Dazu kommt: Vieles aus früheren Jahren ist robust verarbeitet und hält noch lange. Du kaufst also nicht nur ein Teil mit Charakter, sondern eins mit Zukunft.</p>
+      </details>
+    </article>
+  </div>
+
+  <div class="blog-note">
+    <div>
+      <h4>Du tust etwas Gutes</h4>
+      <p>Jedes Teil, das du bei uns kaufst, muss nicht neu hergestellt werden. Das spart Ressourcen und schont die Umwelt.</p>
+    </div>
+    <div>
+      <h4>Ein zweites Leben</h4>
+      <p>Statt im Schrank zu verstauben oder im Müll zu landen, wird ein gutes Stück weitergetragen. Darüber freuen wir uns jedes Mal.</p>
+    </div>
+    <div>
+      <h4>Regional gestartet</h4>
+      <p>Wir sind ein junges Label aus Uplengen. Mit deinem Einkauf unterstützt du ein kleines Team statt eines Konzerns.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Newsletter & Treuepunkte -->
+<section class="stay-section" id="newsletter">
+  <div class="stay-box">
+    <h3>Neue Artikel nicht verpassen</h3>
+    <p>Trag dich ein und wir schreiben dir, sobald neue Stücke online sind.</p>
+    <form action="https://formsubmit.co/shopvintagede@web.de" method="POST">
+      <input type="hidden" name="_subject" value="Neue Anmeldung: Benachrichtigung bei neuen Artikeln">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="Anfrage" value="Newsletter / neue Artikel">
+      <input type="email" name="E-Mail" required placeholder="deine.email@web.de" aria-label="E-Mail-Adresse">
+      <label class="check"><input type="checkbox" name="Einwilligung" value="ja" required> Ich möchte per E-Mail über neue Artikel informiert werden. Abmeldung ist jederzeit möglich.</label>
+      <button type="submit">Benachrichtigt mich</button>
+    </form>
+  </div>
+  <div class="stay-box">
+    <h3>Treuepunkte: 5 Käufe, 5 € Rabatt</h3>
+    <p>Mit jedem Kauf sammelst du automatisch einen Punkt. Nach deinem 5. Kauf schicken wir dir einen aktivierten 5-€-Rabattcode per E-Mail. Wir zählen über die E-Mail-Adresse, die du beim Bezahlen angibst.</p>
+    <div class="stamps"><span>1</span><span>2</span><span>3</span><span>4</span><span>5€</span></div>
+  </div>
+</section>
+
+<!-- Bewegte Vinted Bewertungen Sektion -->
+<section class="reviews-section" id="bewertungen">
+  <div class="reviews-container-inner">
+    <div class="reviews-head">
+      <h3>Das sagen unsere Kunden (4,9 ⭐ bei 165+ Bewertungen)</h3>
+      <a href="https://www.vinted.de/member/3125265489" target="_blank">Alle auf Vinted ansehen &rarr;</a>
+    </div>
+  </div>
+
+  <div class="marquee-wrapper">
+    <div class="marquee-track">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"Super schneller Versand, Hose war exakt wie beschrieben und in einem top Zustand. Gerne wieder!"</div>
+        <div class="review-author">— Vinted Käuferin (marvin8710)</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"Sehr netter Kontakt, blitzschneller Versand und absolut faire Preise. 10/10!"</div>
+        <div class="review-author">— Vinted Käufer (marvin8710)</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"Alles bestens geklappt! Die Hose passt perfekt und sieht super aus. Danke dir!"</div>
+        <div class="review-author">— Vinted Käuferin (marvin8710)</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"Blitzschneller Versand & super netter Kontakt. Artikel wie neu! Absolute Empfehlung."</div>
+        <div class="review-author">— Vinted Käufer (marvin8710)</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"Top Ware, reibungsloser Ablauf und sehr freundlich. Immer wieder gerne!"</div>
+        <div class="review-author">— Vinted Käuferin (marvin8710)</div>
+      </div>
+      <!-- Duplikate für endlosen Loop -->
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"Super schneller Versand, Hose war exakt wie beschrieben und in einem top Zustand. Gerne wieder!"</div>
+        <div class="review-author">— Vinted Käuferin (marvin8710)</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"Sehr netter Kontakt, blitzschneller Versand und absolut faire Preise. 10/10!"</div>
+        <div class="review-author">— Vinted Käufer (marvin8710)</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"Alles bestens geklappt! Die Hose passt perfekt und sieht super aus. Danke dir!"</div>
+        <div class="review-author">— Vinted Käuferin (marvin8710)</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"Blitzschneller Versand & super netter Kontakt. Artikel wie neu! Absolute Empfehlung."</div>
+        <div class="review-author">— Vinted Käufer (marvin8710)</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-text">"Top Ware, reibungsloser Ablauf und sehr freundlich. Immer wieder gerne!"</div>
+        <div class="review-author">— Vinted Käuferin (marvin8710)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="vinted-footer-badge-wrapper" style="margin-top: 24px;">
+    <div class="vinted-footer-badge">
+      <div style="display:flex;align-items:center;gap:16px;">
+        <img src="Logo.png" alt="Logo" style="width:40px;height:40px;object-fit:contain;">
+        <div>
+          <strong>shopvintage.de auf Vinted</strong>
+          <div style="font-size:13px;color:var(--muted);margin-top:2px;">Account: marvin8710 & max87109 · 165+ erfolgreiche Transaktionen</div>
+        </div>
+      </div>
+      <a href="https://www.vinted.de/member/3125265489" target="_blank" class="nav-badge" style="text-decoration:none;">Direkt zu Vinted</a>
+    </div>
+  </div>
+</section>
+
+<!-- Instagram Reels -->
+<section class="insta-section" id="insta">
+  <div class="insta-head">
+    <h3>Neueste Reels auf Instagram (@shopvintagede)</h3>
+    <a href="https://www.instagram.com/shopvintagede/" target="_blank">Zum Profil &rarr;</a>
+  </div>
+
+  <div class="insta-grid-row">
+    <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/Ddr2wuyqY_l/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin:0; max-width:540px; min-width:200px; padding:0; width:100%;"><div style="padding:16px;"><a href="https://www.instagram.com/reel/Ddr2wuyqY_l/?utm_source=ig_embed&amp;utm_campaign=loading" style="background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"><div style="color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-weight:550; line-height:18px; padding:60px 0;">Sieh dir diesen Beitrag auf Instagram an</div></a><p style="color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin:0; padding:8px 0 7px; text-align:center;">Ein Beitrag geteilt von ShopVintageDE (@shopvintagede)</p></div></blockquote>
+    <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DdrOs2ENFaz/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin:0; max-width:540px; min-width:200px; padding:0; width:100%;"><div style="padding:16px;"><a href="https://www.instagram.com/reel/DdrOs2ENFaz/?utm_source=ig_embed&amp;utm_campaign=loading" style="background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"><div style="color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-weight:550; line-height:18px; padding:60px 0;">Sieh dir diesen Beitrag auf Instagram an</div></a><p style="color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin:0; padding:8px 0 7px; text-align:center;">Ein Beitrag geteilt von ShopVintageDE (@shopvintagede)</p></div></blockquote>
+    <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DdotXtkKRoQ/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin:0; max-width:540px; min-width:200px; padding:0; width:100%;"><div style="padding:16px;"><a href="https://www.instagram.com/reel/DdotXtkKRoQ/?utm_source=ig_embed&amp;utm_campaign=loading" style="background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"><div style="color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-weight:550; line-height:18px; padding:60px 0;">Sieh dir diesen Beitrag auf Instagram an</div></a><p style="color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin:0; padding:8px 0 7px; text-align:center;">Ein Beitrag geteilt von ShopVintageDE (@shopvintagede)</p></div></blockquote>
+    <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DdjL1mHth3j/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin:0; max-width:540px; min-width:200px; padding:0; width:100%;"><div style="padding:16px;"><a href="https://www.instagram.com/reel/DdjL1mHth3j/?utm_source=ig_embed&amp;utm_campaign=loading" style="background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"><div style="color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-weight:550; line-height:18px; padding:60px 0;">Sieh dir diesen Beitrag auf Instagram an</div></a><p style="color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin:0; padding:8px 0 7px; text-align:center;">Ein Beitrag geteilt von ShopVintageDE (@shopvintagede)</p></div></blockquote>
+  </div>
+</section>
+
+<!-- FAQ & Versand Sektion -->
+<section class="faq-section" id="versand">
+  <div class="faq-head">
+    <h3>Versand & Häufige Fragen (FAQ)</h3>
+  </div>
+  <div class="faq-grid">
+    <div class="faq-card">
+      <h4>📦 Wie hoch sind die Versandkosten?</h4>
+      <p>Wir versenden sicher und schnell mit DHL inklusive Sendungsverfolgung für pauschal <strong>7,69 €</strong> innerhalb von Deutschland.</p>
+    </div>
+    <div class="faq-card">
+      <h4>🔄 Wie funktioniert eine Rücksendung?</h4>
+      <p>Die Kosten für den Rückversand trägt der Käufer. Ausgenommen sind falsch gelieferte oder beschädigte Artikel — in diesem Fall übernehmen wir selbstverständlich die Kosten.</p>
+    </div>
+    <div class="faq-card">
+      <h4>💳 Welche Zahlungsmethoden gibt es?</h4>
+      <p>Du kannst sicher und unkompliziert per Apple Pay, Google Pay, Klarna, Kreditkarte oder SEPA-Lastschrift über unseren Partner Stripe bezahlen.</p>
+    </div>
+    <div class="faq-card">
+      <h4>⏱️ Wann wird meine Bestellung verschickt?</h4>
+      <p>Dein Paket wird in der Regel innerhalb von 1–2 Werktagen nach Zahlungseingang klimafreundlich mit DHL auf den Weg gebracht.</p>
+    </div>
+    <div class="faq-card">
+      <h4>👖 Sind die Teile wirklich secondhand?</h4>
+      <p>Ja. Alle Stücke bei uns (Markenartikel wie Nike und Adidas) sind getragen, handverlesen und vor dem Verkauf geprüft. Den Zustand beschreiben wir ehrlich bei jedem Artikel.</p>
+    </div>
+    <div class="faq-card">
+      <h4>📍 Wo sitzt ihr?</h4>
+      <p>Wir sind shopvintage.de aus Uplengen in Niedersachsen und seit 2026 am Start. Von hier aus verschicken wir in ganz Deutschland.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Kundensupport Kontaktformular -->
+<section class="contact-section" id="kontakt">
+  <div class="contact-box">
+    <h3>Brauchst du Hilfe?</h3>
+    <p>Hast du Fragen zu deiner Bestellung, dem Versand oder einem Artikel? Schreib uns direkt — wir antworten schnellstmöglich.</p>
+    
+    <form action="https://formsubmit.co/shopvintagede@web.de" method="POST">
+      <input type="hidden" name="_subject" value="Neue Support-Anfrage von shopvintage.de">
+      <input type="hidden" name="_captcha" value="false">
+      
+      <div class="form-row">
+        <div class="form-group">
+          <label for="vorname">Vorname *</label>
+          <input type="text" id="vorname" name="Vorname" required placeholder="Dein Vorname">
+        </div>
+        <div class="form-group">
+          <label for="nachname">Nachname *</label>
+          <input type="text" id="nachname" name="Nachname" required placeholder="Dein Nachname">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="bestellnummer">Bestellnummer (optional)</label>
+          <input type="text" id="bestellnummer" name="Bestellnummer" placeholder="z. B. #1042 oder Stripe-ID">
+        </div>
+        <div class="form-group">
+          <label for="email">E-Mail-Adresse *</label>
+          <input type="email" id="email" name="E-Mail" required placeholder="deine.email@web.de">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="nachricht">Deine Nachricht *</label>
+        <textarea id="nachricht" name="Nachricht" required placeholder="Wie können wir dir weiterhelfen?"></textarea>
+      </div>
+
+      <button type="submit" class="form-submit">Support-Anfrage absenden</button>
+    </form>
+  </div>
+</section>
+
+<!-- Modal / Detailansicht Overlay -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal" id="modalBox">
+    <button class="modal-close" id="modalClose" aria-label="Schließen">&times;</button>
+    <div class="modal-gallery">
+      <div class="modal-main-img">
+        <img id="modalMainImg" src="" alt="">
+      </div>
+      <div class="modal-thumbs" id="modalThumbs"></div>
+    </div>
+    <div class="modal-content">
+      <div class="modal-brand" id="modalBrand"></div>
+      <h2 class="modal-title" id="modalTitle"></h2>
+      <div class="modal-price">15,00 €</div>
+      <div class="modal-desc" id="modalDesc"></div>
+      <div class="modal-details-list">
+        <div><strong>Zustand:</strong> Secondhand, sehr guter getragener Zustand</div>
+        <div><strong>Versand:</strong> 7,69 € (DHL, mit Sendungsverfolgung)</div>
+      </div>
+      <div class="modal-good" id="modalPromo" hidden></div>
+      <div class="modal-good">🌱 Secondhand gekauft: Für dieses Teil muss nichts Neues produziert werden.</div>
+      <a class="modal-buy" id="modalBuyBtn" href="#" target="_blank">Jetzt sicher kaufen</a>
+    </div>
+  </div>
+</div>
+
+<section class="about" id="ueber-uns">
+  <div class="about-inner">
+    <h2>Über uns</h2>
+    <p>Wir sind shopvintage.de, ein junger Online-Shop aus Uplengen in Niedersachsen. Gegründet haben wir ihn 2026 mit einer einfachen Idee: Gute Mode verdient eine zweite Chance.</p>
+    <p>Bei uns findest du Secondhand-Mode und Vintage-Mode: Trackpants, Jeans, Winterjacken, Trainingsanzüge, Poloshirts, Pullover und T-Shirts. Alles sind Markenartikel, handverlesen und ehrlich beschrieben. Jedes Stück hat schon eine Geschichte, und wir geben ihm die nächste. Weniger Neuware, weniger Ressourcen, mehr Charakter. Wer bei uns kauft, tut etwas Gutes.</p>
+    <div class="about-facts">
+      <div class="about-fact"><strong>Uplengen</strong><span>Hier sitzen wir</span></div>
+      <div class="about-fact"><strong>Seit 2026</strong><span>Unser Gründungsjahr</span></div>
+      <div class="about-fact"><strong>Secondhand & Vintage</strong><span>Unser Sortiment</span></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-inner">
+    <div class="foot-col">
+      <h4>Shop</h4>
+      <a href="#produkte">Alle Produkte</a>
+      <a href="#blog">Blog</a>
+      <a href="#versand">Versand & FAQ</a>
+      <a href="#ueber-uns">Über uns</a>
+    </div>
+    <div class="foot-col">
+      <h4>Support</h4>
+      <a href="#kontakt">Support-Formular</a>
+      <a href="mailto:shopvintagede@web.de">shopvintagede@web.de</a>
+    </div>
+    <div class="foot-col">
+      <h4>Rechtliches & Pflichten</h4>
+      <a href="#impressum">Impressum</a>
+      <a href="#datenschutz">Datenschutz</a>
+      <a href="#widerruf">Widerrufsbelehrung</a>
+    </div>
+    <div class="foot-col">
+      <h4>Social Media</h4>
+      <a href="https://www.instagram.com/shopvintagede/" target="_blank">Instagram (@shopvintagede)</a>
+      <a href="https://www.vinted.de/member/3125265489" target="_blank">Vinted (marvin8710)</a>
+      <a href="https://www.vinted.de/member/202685040" target="_blank">Vinted (max87109)</a>
+    </div>
+  </div>
+  <div class="foot-bottom">© 2027 shopvintage.de · Secondhand & Vintage Mode aus Uplengen</div>
+</footer>
+
+<script>
+const items = [
+  {b:"Adidas Originals", n:"Trainingshose Navy mit Trefoil-Tape", size:"D5 / M", imgs:["A1.jpeg"], desc:"Klassische Adidas Originals Trainingshose in Navy mit dem markanten Trefoil-Tape an den Seiten. Angenehmer Vintage-Stoff, perfekter Fit.", stripe:"https://buy.stripe.com/5kQ9AN8Z27JJcpcdc02oE00"},
+  {b:"Adidas", n:"Trainingshose Blau mit 3-Streifen", size:"M", imgs:["A2.jpeg"], desc:"Echtes Retro-Feeling in kräftigem Blau. Mit den klassischen 3-Streifen und elastischem Bund für optimalen Tragekomfort.", stripe:"https://buy.stripe.com/aFaaERejmbZZ74Seg42oE02"},
+  {b:"Nike", n:"Fleece Jogginghose Navy", size:"S", imgs:["A3.jpeg"], desc:"Gemütliche Nike Fleece-Jogginghose in dunklem Navy. Innen kuschelig angeraut, ideal für den Alltag oder entspannte Abende.", stripe:"https://buy.stripe.com/5kQ7sF0swe87ah4dc02oE03"},
+  {b:"Nike", n:"Shell Trainingshose Navy", size:"L", imgs:["A4.jpeg"], desc:"Leichte Nike Shell-Trainingshose im leichten Material-Mix. Perfekt für den angesagten Y2K-Look.", stripe:"https://buy.stripe.com/8x26oBb7a0hh88Wgoc2oE04"},
+  {b:"Nike", n:"Ripstop Jogginghose Schwarz", size:"2XL", imgs:["A5.jpeg"], desc:"Robuste Nike Ripstop-Hose in Schwarz. Strapazierfähiges Material mit lockerem Schnitt für maximale Bewegungsfreiheit.", stripe:"https://buy.stripe.com/00w9ANcbe3ttgFs1ti2oE05"},
+  {b:"Nike", n:"Fleece Jogginghose Petrol", size:"L", imgs:["A6.jpeg"], desc:"Außergewöhnliche Farbe: Schickes Petrol kombiniert mit dem bewährten Nike-Fleece-Tragekomfort. Ein echter Hingucker.", stripe:"https://buy.stripe.com/28E00d4IM2pp2OC4Fu2oE06"},
+  {b:"Nike", n:"Tech Fleece Jogginghose Creme", size:"L", imgs:["A7.jpeg"], desc:"High-End Look von Nike in cleaner Creme-Nuance. Moderner Schnitt, hochwertiges Tech-Fleece-Material.", stripe:"https://buy.stripe.com/fZueV73EI3tt2OCb3S2oE07"},
+  {b:"Nike", n:"Jogginghose Hellblau", size:"M", imgs:["A8.jpeg"], desc:"Lässige Nike Jogginghose in hellem Blau. Frischer Farbton, super kombinierbar mit Oversized Hoodies.", stripe:"https://buy.stripe.com/28E14h7UYfcbcpc2xm2oE08"},
+  {b:"Adidas", n:"Trainingshose Hellblau mit 3-Patch", size:"M", imgs:["A9.jpeg"], desc:"Einzigartiges Adidas-Modell in Hellblau mit speziellem 3-Patch-Detail am Bein. Absolutes Einzelstück.", stripe:"https://buy.stripe.com/eVq4gtdfibZZexk5Jy2oE09"},
+  {b:"Nike", n:"Therma-Fit Jogginghose Schwarz", size:"L", imgs:["A10.jpeg"], desc:"Hält warm und sieht gut aus: Nike Therma-Fit in klassischem Schwarz. Perfekt für kühlere Tage.", stripe:"https://buy.stripe.com/9B6fZb4IMggf88W5Jy2oE0a"},
+  {b:"Adidas Originals", n:"Trainingshose Navy Vintage", size:"M", imgs:["A11.jpeg"], desc:"Echter Vintage-Klassiker von Adidas Originals in Navy. Mit zeitlosem Logo-Stick auf der Hüfte.", stripe:"https://buy.stripe.com/5kQ28lb7a7JJexk4Fu2oE0b"},
+  {b:"Adidas", n:"Jogginghose Neongelb", size:"XS", imgs:["A12.jpeg"], desc:"Statement-Piece in leuchtendem Neongelb von Adidas. Für alle, die ein echtes Farbakzent setzen wollen.", stripe:"https://buy.stripe.com/3cIfZb5MQ2pp1Ky5Jy2oE0c"},
+  {b:"Nike", n:"Trainingshose Oliv mit Logo-Tape", size:"S", imgs:["A13.jpeg"], desc:"Erdiger Olivton kombiniert mit stylischem Nike-Logo-Tape an den Seiten. Sehr guter Zustand.", stripe:"https://buy.stripe.com/3cI6oBejm2ppah44Fu2oE0d"},
+  {b:"Adidas", n:"Trainingshose Hellgrau", size:"M", imgs:["A14.jpeg"], desc:"Der Allrounder: Hellgraue Adidas Trainingshose. Passt einfach zu allem und sitzt superbequem.", stripe:"https://buy.stripe.com/dRmcMZ3EIbZZdtg1ti2oE0e"},
+  {b:"Adidas", n:"Trainingshose Weiß mit Gold-Logo", size:"XL", imgs:["A15.jpeg"], desc:"Edler Look in Weiß mit goldenem Adidas-Logo-Detail. Ein sehr seltenes Fundstück in XL.", stripe:"https://buy.stripe.com/8x2bIV4IMe873SG1ti2oE0f"}
+];
+
+const grid = document.getElementById('grid');
+const overlay = document.getElementById('modalOverlay');
+const closeBtn = document.getElementById('modalClose');
+const mainImg = document.getElementById('modalMainImg');
+const thumbsContainer = document.getElementById('modalThumbs');
+const modalBrand = document.getElementById('modalBrand');
+const modalTitle = document.getElementById('modalTitle');
+const modalDesc = document.getElementById('modalDesc');
+const modalBuyBtn = document.getElementById('modalBuyBtn');
+const modalPromo = document.getElementById('modalPromo');
+
+let activeOffer = null;
+function withCode(url){ return activeOffer ? url + '?prefilled_promo_code=' + encodeURIComponent(activeOffer.code) : url; }
+fetch('/.netlify/functions/offer').then(r => r.ok ? r.json() : null).then(o => {
+  if(!o || !o.endsAt || Date.now() >= o.endsAt) return;
+  activeOffer = o;
+  const bar = document.getElementById('promoBar');
+  const who = o.firstOnly ? 'für alle Neukunden-Bestellungen' : 'auf alle Bestellungen';
+  const draw = () => {
+    const ms = o.endsAt - Date.now();
+    if(ms <= 0){ bar.hidden = true; activeOffer = null; return false; }
+    const h = Math.floor(ms/3600000), m = Math.floor(ms%3600000/60000), sec = Math.floor(ms%60000/1000);
+    bar.innerHTML = '<strong>' + o.title + ': ' + o.percent + '% Rabatt</strong> ' + who + ' · Code <span class="promo-code">' + o.code + '</span> · noch ' + h + ' Std. ' + String(m).padStart(2,'0') + ' Min. ' + String(sec).padStart(2,'0') + ' Sek.';
+    return true;
+  };
+  bar.hidden = false;
+  if(draw()){ const t = setInterval(() => { if(!draw()) clearInterval(t); }, 1000); }
+}).catch(() => {});
+
+items.forEach(it=>{
+  const el = document.createElement('div');
+  el.className='card';
+  el.innerHTML = `
+    <div class="thumb">
+      <span class="tag">Gr. ${it.size}</span>
+      <img src="${it.imgs[0]}" alt="${it.n}" loading="lazy">
+    </div>
+    <div class="card-body">
+      <div class="brand">${it.b}</div>
+      <div class="name">${it.n}</div>
+      <div class="meta">Secondhand · 1 Stück verfügbar</div>
+      <div class="pricerow">
+        <span class="price">15,00 €</span>
+        <button class="view-btn">Ansehen</button>
+      </div>
+    </div>`;
+  
+  el.addEventListener('click', () => {
+    modalBrand.textContent = it.b;
+    modalTitle.textContent = it.n;
+    modalDesc.textContent = it.desc;
+    modalBuyBtn.href = withCode(it.stripe);
+    modalPromo.hidden = !activeOffer;
+    if(activeOffer) modalPromo.textContent = '🎉 Dein Code ' + activeOffer.code + ' wird beim Bezahlen automatisch eingetragen.';
+    
+    mainImg.src = it.imgs[0];
+    
+    thumbsContainer.innerHTML = '';
+    it.imgs.forEach((imgSrc, idx) => {
+      const thumb = document.createElement('div');
+      thumb.className = `modal-thumb-item ${idx === 0 ? 'active' : ''}`;
+      thumb.innerHTML = `<img src="${imgSrc}" alt="">`;
+      thumb.addEventListener('click', (e) => {
+        e.stopPropagation();
+        mainImg.src = imgSrc;
+        document.querySelectorAll('.modal-thumb-item').forEach(t => t.classList.remove('active'));
+        thumb.classList.add('active');
+      });
+      thumbsContainer.appendChild(thumb);
+    });
+    
+    overlay.classList.add('open');
+  });
+
+  grid.appendChild(el);
+});
+
+closeBtn.addEventListener('click', () => overlay.classList.remove('open'));
+overlay.addEventListener('click', (e) => {
+  if(e.target === overlay) overlay.classList.remove('open');
+});
+document.addEventListener('keydown', (e) => {
+  if(e.key === 'Escape') overlay.classList.remove('open');
+});
+</script>
+
+<script async src="//www.instagram.com/embed.js"></script>
+
+</body>
+</html>

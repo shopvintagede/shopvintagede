@@ -1,8 +1,3 @@
-Hier ist deine **komplette, fehlerfreie `index.html**` am Stück zum Kopieren. Der kleine Tippfehler ist behoben, der Bildschirmschoner ist draußen, und der Shop greift sauber auf deine neue Bilder-Ordnerstruktur zu.
-
-Kopiere einfach den gesamten folgenden Code und füge ihn in GitHub in deine `index.html` ein:
-
-```html
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -509,7 +504,7 @@ footer{padding:44px 24px 60px;border-top:1px solid var(--line);background:var(--
       <div class="review-card">
         <div class="review-stars">★★★★★</div>
         <div class="review-text">"Top Ware, reibungsloser Ablauf und sehr freundlich. Immer wieder gerne!"</div>
-        <div class="review-author">— Vinted Käufer (marvin8710)</div>
+        <div class="review-author">— Vinted Käuferin (marvin8710)</div>
       </div>
     </div>
   </div>
@@ -688,22 +683,23 @@ footer{padding:44px 24px 60px;border-top:1px solid var(--line);background:var(--
 </footer>
 
 <script>
+// Exakte Pfade zu den Unterordnern "Art 1" bis "Art 15" im "images"-Ordner:
 const items = [
-  {b:"Adidas Originals", n:"Trainingshose Navy mit Trefoil-Tape", size:"D5 / M", imgs:["images/artikel-1/A1.jpeg"], desc:"Klassische Adidas Originals Trainingshose in Navy mit dem markanten Trefoil-Tape an den Seiten. Angenehmer Vintage-Stoff, perfekter Fit.", stripe:"https://buy.stripe.com/5kQ9AN8Z27JJcpcdc02oE00"},
-  {b:"Adidas", n:"Trainingshose Blau mit 3-Streifen", size:"M", imgs:["images/artikel-2/A1.jpeg"], desc:"Echtes Retro-Feeling in kräftigem Blau. Mit den klassischen 3-Streifen und elastischem Bund für optimalen Tragekomfort.", stripe:"https://buy.stripe.com/aFaaERejmbZZ74Seg42oE02"},
-  {b:"Nike", n:"Fleece Jogginghose Navy", size:"S", imgs:["images/artikel-3/A1.jpeg"], desc:"Gemütliche Nike Fleece-Jogginghose in dunklem Navy. Innen kuschelig angeraut, ideal für den Alltag oder entspannte Abende.", stripe:"https://buy.stripe.com/5kQ7sF0swe87ah4dc02oE03"},
-  {b:"Nike", n:"Shell Trainingshose Navy", size:"L", imgs:["images/artikel-4/A1.jpeg"], desc:"Leichte Nike Shell-Trainingshose im leichten Material-Mix. Perfekt für den angesagten Y2K-Look.", stripe:"https://buy.stripe.com/8x26oBb7a0hh88Wgoc2oE04"},
-  {b:"Nike", n:"Ripstop Jogginghose Schwarz", size:"2XL", imgs:["images/artikel-5/A1.jpeg"], desc:"Robuste Nike Ripstop-Hose in Schwarz. Strapazierfähiges Material mit lockerem Schnitt für maximale Bewegungsfreiheit.", stripe:"https://buy.stripe.com/00w9ANcbe3ttgFs1ti2oE05"},
-  {b:"Nike", n:"Fleece Jogginghose Petrol", size:"L", imgs:["images/artikel-6/A1.jpeg"], desc:"Außergewöhnliche Farbe: Schickes Petrol kombiniert mit dem bewährten Nike-Fleece-Tragekomfort. Ein echter Hingucker.", stripe:"https://buy.stripe.com/28E00d4IM2pp2OC4Fu2oE06"},
-  {b:"Nike", n:"Tech Fleece Jogginghose Creme", size:"L", imgs:["images/artikel-7/A1.jpeg"], desc:"High-End Look von Nike in cleaner Creme-Nuance. Moderner Schnitt, hochwertiges Tech-Fleece-Material.", stripe:"https://buy.stripe.com/fZueV73EI3tt2OCb3S2oE07"},
-  {b:"Nike", n:"Jogginghose Hellblau", size:"M", imgs:["images/artikel-8/A1.jpeg"], desc:"Lässige Nike Jogginghose in hellem Blau. Frischer Farbton, super kombinierbar mit Oversized Hoodies.", stripe:"https://buy.stripe.com/28E14h7UYfcbcpc2xm2oE08"},
-  {b:"Adidas", n:"Trainingshose Hellblau mit 3-Patch", size:"M", imgs:["images/artikel-9/A1.jpeg"], desc:"Einzigartiges Adidas-Modell in Hellblau mit speziellem 3-Patch-Detail am Bein. Absolutes Einzelstück.", stripe:"https://buy.stripe.com/eVq4gtdfibZZexk5Jy2oE09"},
-  {b:"Nike", n:"Therma-Fit Jogginghose Schwarz", size:"L", imgs:["images/artikel-10/A1.jpeg"], desc:"Hält warm und sieht gut aus: Nike Therma-Fit in klassischem Schwarz. Perfekt für kühlere Tage.", stripe:"https://buy.stripe.com/9B6fZb4IMggf88W5Jy2oE0a"},
-  {b:"Adidas Originals", n:"Trainingshose Navy Vintage", size:"M", imgs:["images/artikel-11/A1.jpeg"], desc:"Echter Vintage-Klassiker von Adidas Originals in Navy. Mit zeitlosem Logo-Stick auf der Hüfte.", stripe:"https://buy.stripe.com/5kQ28lb7a7JJexk4Fu2oE0b"},
-  {b:"Adidas", n:"Jogginghose Neongelb", size:"XS", imgs:["images/artikel-12/A1.jpeg"], desc:"Statement-Piece in leuchtendem Neongelb von Adidas. Für alle, die ein echtes Farbakzent setzen wollen.", stripe:"https://buy.stripe.com/3cIfZb5MQ2pp1Ky5Jy2oE0c"},
-  {b:"Nike", n:"Trainingshose Oliv mit Logo-Tape", size:"S", imgs:["images/artikel-13/A1.jpeg"], desc:"Erdiger Olivton kombiniert mit stylischem Nike-Logo-Tape an den Seiten. Sehr guter Zustand.", stripe:"https://buy.stripe.com/3cI6oBejm2ppah44Fu2oE0d"},
-  {b:"Adidas", n:"Trainingshose Hellgrau", size:"M", imgs:["images/artikel-14/A1.jpeg"], desc:"Der Allrounder: Hellgraue Adidas Trainingshose. Passt einfach zu allem und sitzt superbequem.", stripe:"https://buy.stripe.com/dRmcMZ3EIbZZdtg1ti2oE0e"},
-  {b:"Adidas", n:"Trainingshose Weiß mit Gold-Logo", size:"XL", imgs:["images/artikel-15/A1.jpeg"], desc:"Edler Look in Weiß mit goldenem Adidas-Logo-Detail. Ein sehr seltenes Fundstück in XL.", stripe:"https://buy.stripe.com/8x2bIV4IMe873SG1ti2oE0f"}
+  {b:"Adidas Originals", n:"Trainingshose Navy mit Trefoil-Tape", size:"D5 / M", imgs:["images/Art 1/A1.jpeg"], desc:"Klassische Adidas Originals Trainingshose in Navy mit dem markanten Trefoil-Tape an den Seiten. Angenehmer Vintage-Stoff, perfekter Fit.", stripe:"https://buy.stripe.com/5kQ9AN8Z27JJcpcdc02oE00"},
+  {b:"Adidas", n:"Trainingshose Blau mit 3-Streifen", size:"M", imgs:["images/Art 2/A1.jpeg"], desc:"Echtes Retro-Feeling in kräftigem Blau. Mit den klassischen 3-Streifen und elastischem Bund für optimalen Tragekomfort.", stripe:"https://buy.stripe.com/aFaaERejmbZZ74Seg42oE02"},
+  {b:"Nike", n:"Fleece Jogginghose Navy", size:"S", imgs:["images/Art 3/A1.jpeg"], desc:"Gemütliche Nike Fleece-Jogginghose in dunklem Navy. Innen kuschelig angeraut, ideal für den Alltag oder entspannte Abende.", stripe:"https://buy.stripe.com/5kQ7sF0swe87ah4dc02oE03"},
+  {b:"Nike", n:"Shell Trainingshose Navy", size:"L", imgs:["images/Art 4/A1.jpeg"], desc:"Leichte Nike Shell-Trainingshose im leichten Material-Mix. Perfekt für den angesagten Y2K-Look.", stripe:"https://buy.stripe.com/8x26oBb7a0hh88Wgoc2oE04"},
+  {b:"Nike", n:"Ripstop Jogginghose Schwarz", size:"2XL", imgs:["images/Art 5/A1.jpeg"], desc:"Robuste Nike Ripstop-Hose in Schwarz. Strapazierfähiges Material mit lockerem Schnitt für maximale Bewegungsfreiheit.", stripe:"https://buy.stripe.com/00w9ANcbe3ttgFs1ti2oE05"},
+  {b:"Nike", n:"Fleece Jogginghose Petrol", size:"L", imgs:["images/Art 6/A1.jpeg"], desc:"Außergewöhnliche Farbe: Schickes Petrol kombiniert mit dem bewährten Nike-Fleece-Tragekomfort. Ein echter Hingucker.", stripe:"https://buy.stripe.com/28E00d4IM2pp2OC4Fu2oE06"},
+  {b:"Nike", n:"Tech Fleece Jogginghose Creme", size:"L", imgs:["images/Art 7/A1.jpeg"], desc:"High-End Look von Nike in cleaner Creme-Nuance. Moderner Schnitt, hochwertiges Tech-Fleece-Material.", stripe:"https://buy.stripe.com/fZueV73EI3tt2OCb3S2oE07"},
+  {b:"Nike", n:"Jogginghose Hellblau", size:"M", imgs:["images/Art 8/A1.jpeg"], desc:"Lässige Nike Jogginghose in hellem Blau. Frischer Farbton, super kombinierbar mit Oversized Hoodies.", stripe:"https://buy.stripe.com/28E14h7UYfcbcpc2xm2oE08"},
+  {b:"Adidas", n:"Trainingshose Hellblau mit 3-Patch", size:"M", imgs:["images/Art 9/A1.jpeg"], desc:"Einzigartiges Adidas-Modell in Hellblau mit speziellem 3-Patch-Detail am Bein. Absolutes Einzelstück.", stripe:"https://buy.stripe.com/eVq4gtdfibZZexk5Jy2oE09"},
+  {b:"Nike", n:"Therma-Fit Jogginghose Schwarz", size:"L", imgs:["images/Art 10/A1.jpeg"], desc:"Hält warm und sieht gut aus: Nike Therma-Fit in klassischem Schwarz. Perfekt für kühlere Tage.", stripe:"https://buy.stripe.com/9B6fZb4IMggf88W5Jy2oE0a"},
+  {b:"Adidas Originals", n:"Trainingshose Navy Vintage", size:"M", imgs:["images/Art 11/A1.jpeg"], desc:"Echter Vintage-Klassiker von Adidas Originals in Navy. Mit zeitlosem Logo-Stick auf der Hüfte.", stripe:"https://buy.stripe.com/5kQ28lb7a7JJexk4Fu2oE0b"},
+  {b:"Adidas", n:"Jogginghose Neongelb", size:"XS", imgs:["images/Art 12/A1.jpeg"], desc:"Statement-Piece in leuchtendem Neongelb von Adidas. Für alle, die ein echtes Farbakzent setzen wollen.", stripe:"https://buy.stripe.com/3cIfZb5MQ2pp1Ky5Jy2oE0c"},
+  {b:"Nike", n:"Trainingshose Oliv mit Logo-Tape", size:"S", imgs:["images/Art 13/A1.jpeg"], desc:"Erdiger Olivton kombiniert mit stylischem Nike-Logo-Tape an den Seiten. Sehr guter Zustand.", stripe:"https://buy.stripe.com/3cI6oBejm2ppah44Fu2oE0d"},
+  {b:"Adidas", n:"Trainingshose Hellgrau", size:"M", imgs:["images/Art 14/A1.jpeg"], desc:"Der Allrounder: Hellgraue Adidas Trainingshose. Passt einfach zu allem und sitzt superbequem.", stripe:"https://buy.stripe.com/dRmcMZ3EIbZZdtg1ti2oE0e"},
+  {b:"Adidas", n:"Trainingshose Weiß mit Gold-Logo", size:"XL", imgs:["images/Art 15/A1.jpeg"], desc:"Edler Look in Weiß mit goldenem Adidas-Logo-Detail. Ein sehr seltenes Fundstück in XL.", stripe:"https://buy.stripe.com/8x2bIV4IMe873SG1ti2oE0f"}
 ];
 
 const grid = document.getElementById('grid');
@@ -796,5 +792,3 @@ document.addEventListener('keydown', (e) => {
 
 </body>
 </html>
-
-```

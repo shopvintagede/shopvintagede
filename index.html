@@ -289,11 +289,11 @@ footer{padding:44px 24px 60px;border-top:1px solid var(--line);background:var(--
 <!-- Kategorien Filter Buttons -->
 <div class="category-filter">
   <button class="cat-btn active" onclick="filterCategory('all', this)">Alle anzeigen</button>
-  <button class="cat-btn" onclick="filterCategory('Pullover', this)">Pullover (ab 15 €)</button>
-  <button class="cat-btn" onclick="filterCategory('Shirts', this)">Shirts (ab 15 €)</button>
-  <button class="cat-btn" onclick="filterCategory('Trackpants', this)">Trackpants (ab 15 €)</button>
-  <button class="cat-btn" onclick="filterCategory('Jeans', this)">Jeans Hosen (ab 20 €)</button>
-  <button class="cat-btn" onclick="filterCategory('Winterjacken', this)">Winterjacken (ab 35 €)</button>
+  <button class="cat-btn" onclick="filterCategory('Pullover', this)">Pullover (15 €)</button>
+  <button class="cat-btn" onclick="filterCategory('Shirts', this)">Shirts (15 €)</button>
+  <button class="cat-btn" onclick="filterCategory('Trackpants', this)">Trackpants (15 €)</button>
+  <button class="cat-btn" onclick="filterCategory('Jeans', this)">Jeans Hosen (20 €)</button>
+  <button class="cat-btn" onclick="filterCategory('Winterjacken', this)">Winterjacken (35 €)</button>
 </div>
 
 <section class="products" id="produkte">
@@ -492,47 +492,48 @@ footer{padding:44px 24px 60px;border-top:1px solid var(--line);background:var(--
 </footer>
 
 <script>
-// NUR NOCH DEINE NEUEN STRIPE-LINKS:
+// Exakt deine 3 neuen Stripe-Links:
 const link15 = "https://buy.stripe.com/6oU3cp2AEfcb4WK8VK2oE0i"; // 15 € (Pullover, Shirts, Trackpants)
 const link20 = "https://buy.stripe.com/fZu14hb7abZZ88Wgoc2oE0h"; // 20 € (Jeans)
 const link35 = "https://buy.stripe.com/00w4gtfnq3ttdtg3Bq2oE0g"; // 35 € (Winterjacken)
 
+// Die exakt 35 Artikel (Art1 bis Art35) - keine alten Einträge mehr enthalten:
 const items = [
-  {id: 1, folder: "Art1", cat: "Trackpants", price: "15,00 €", b: "Adidas Originals", n: "Trackpants Navy mit Trefoil-Tape", size: "M", desc: "Klassische Adidas Originals Trainingshose in Navy. Perfekter Fit.", stripe: link15},
-  {id: 2, folder: "Art2", cat: "Trackpants", price: "15,00 €", b: "Adidas", n: "Trackpants Blau mit 3-Streifen", size: "M", desc: "Echtes Retro-Feeling in kräftigem Blau.", stripe: link15},
-  {id: 3, folder: "Art3", cat: "Trackpants", price: "15,00 €", b: "Nike", n: "Fleece Jogginghose Navy", size: "S", desc: "Gemütliche Nike Fleece-Jogginghose in dunklem Navy.", stripe: link15},
-  {id: 4, folder: "Art4", cat: "Trackpants", price: "15,00 €", b: "Nike", n: "Shell Trackpants Navy", size: "L", desc: "Leichte Nike Shell-Trainingshose im Y2K-Look.", stripe: link15},
-  {id: 5, folder: "Art5", cat: "Trackpants", price: "15,00 €", b: "Nike", n: "Ripstop Jogginghose Schwarz", size: "2XL", desc: "Robuste Nike Ripstop-Hose in Schwarz.", stripe: link15},
-  {id: 6, folder: "Art6", cat: "Trackpants", price: "15,00 €", b: "Nike", n: "Fleece Jogginghose Petrol", size: "L", desc: "Außergewöhnliche Farbe in schickem Petrol.", stripe: link15},
-  {id: 7, folder: "Art7", cat: "Trackpants", price: "15,00 €", b: "Nike", n: "Tech Fleece Jogginghose Creme", size: "L", desc: "High-End Look von Nike in cleaner Creme-Nuance.", stripe: link15},
-  {id: 8, folder: "Art8", cat: "Trackpants", price: "15,00 €", b: "Nike", n: "Jogginghose Hellblau", size: "M", desc: "Lässige Nike Jogginghose in hellem Blau.", stripe: link15},
-  {id: 9, folder: "Art9", cat: "Trackpants", price: "15,00 €", b: "Adidas", n: "Trackpants Hellblau mit 3-Patch", size: "M", desc: "Einzigartiges Adidas-Modell in Hellblau.", stripe: link15},
-  {id: 10, folder: "Art10", cat: "Trackpants", price: "15,00 €", b: "Nike", n: "Therma-Fit Jogginghose Schwarz", size: "L", desc: "Hält warm und sieht gut aus.", stripe: link15},
-  {id: 11, folder: "Art11", cat: "Trackpants", price: "15,00 €", b: "Adidas Originals", n: "Trackpants Navy Vintage", size: "M", desc: "Echter Vintage-Klassiker von Adidas.", stripe: link15},
-  {id: 12, folder: "Art12", cat: "Trackpants", price: "15,00 €", b: "Adidas", n: "Jogginghose Neongelb", size: "XS", desc: "Statement-Piece in leuchtendem Neongelb.", stripe: link15},
-  {id: 13, folder: "Art13", cat: "Pullover", price: "15,00 €", b: "Vintage", n: "Retro Logo Pullover", size: "L", desc: "Klassischer Vintage Pullover in Top-Zustand.", stripe: link15},
-  {id: 14, folder: "Art14", cat: "Pullover", price: "15,00 €", b: "Adidas", n: "Vintage Sweatshirt Grau", size: "M", desc: "Bequemer Allrounder mit Logo-Stick.", stripe: link15},
-  {id: 15, folder: "Art15", cat: "Shirts", price: "15,00 €", b: "Nike", n: "Vintage T-Shirt Weiß", size: "L", desc: "Schlichtes Vintage T-Shirt für den Alltag.", stripe: link15},
-  {id: 16, folder: "Art16", cat: "Shirts", price: "15,00 €", b: "Adidas", n: "Logo T-Shirt Schwarz", size: "M", desc: "Klassisches Shirt mit Brustlogo.", stripe: link15},
-  {id: 17, folder: "Art17", cat: "Jeans", price: "20,00 €", b: "Vintage", n: "Retro Baggy Jeans Blau", size: "32/32", desc: "Echte Y2K Baggy Jeans im perfekten Waschung.", stripe: link20},
-  {id: 18, folder: "Art18", cat: "Jeans", price: "20,00 €", b: "Levi's", n: "Straight Fit Jeans Schwarz", size: "33/32", desc: "Robuste Denim-Qualität im zeitlosen Schnitt.", stripe: link20},
-  {id: 19, folder: "Art19", cat: "Winterjacken", price: "35,00 €", b: "Nike", n: "Puffer Winterjacke Schwarz", size: "L", desc: "Kuschelig warm gefütterte Winterjacke für kalte Tage.", stripe: link35},
-  {id: 20, folder: "Art20", cat: "Winterjacken", price: "35,00 €", b: "Adidas", n: "Vintage Winterparka Oliv", size: "XL", desc: "Stilvoller Parka mit Kapuze und Top-Fütterung.", stripe: link35},
+  {id: 1, folder: "Art1", cat: "Trackpants", price: "15,00 €", b: "Adidas", n: "Trackpants Navy", size: "M", desc: "Klassische Trainingshose in Navy.", stripe: link15},
+  {id: 2, folder: "Art2", cat: "Trackpants", price: "15,00 €", b: "Adidas", n: "Trackpants Blau", size: "M", desc: "Retro-Feeling in Blau.", stripe: link15},
+  {id: 3, folder: "Art3", cat: "Trackpants", price: "15,00 €", b: "Nike", n: "Fleece Jogginghose Navy", size: "S", desc: "Gemütliche Nike Fleece-Hose.", stripe: link15},
+  {id: 4, folder: "Art4", cat: "Trackpants", price: "15,00 €", b: "Nike", n: "Shell Trackpants", size: "L", desc: "Leichte Shell-Trainingshose.", stripe: link15},
+  {id: 5, folder: "Art5", cat: "Trackpants", price: "15,00 €", b: "Nike", n: "Ripstop Jogginghose Schwarz", size: "2XL", desc: "Robuste Ripstop-Hose.", stripe: link15},
+  {id: 6, folder: "Art6", cat: "Trackpants", price: "15,00 €", b: "Nike", n: "Fleece Jogginghose Petrol", size: "L", desc: "Schicke Farbe in Petrol.", stripe: link15},
+  {id: 7, folder: "Art7", cat: "Trackpants", price: "15,00 €", b: "Nike", n: "Tech Fleece Creme", size: "L", desc: "High-End Look in Creme.", stripe: link15},
+  {id: 8, folder: "Art8", cat: "Trackpants", price: "15,00 €", b: "Nike", n: "Jogginghose Hellblau", size: "M", desc: "Lässige Jogginghose.", stripe: link15},
+  {id: 9, folder: "Art9", cat: "Trackpants", price: "15,00 €", b: "Adidas", n: "Trackpants Hellblau", size: "M", desc: "Einzigartiges Modell.", stripe: link15},
+  {id: 10, folder: "Art10", cat: "Trackpants", price: "15,00 €", b: "Nike", n: "Therma-Fit Schwarz", size: "L", desc: "Hält warm und sitzt top.", stripe: link15},
+  {id: 11, folder: "Art11", cat: "Trackpants", price: "15,00 €", b: "Adidas", n: "Trackpants Vintage Navy", size: "M", desc: "Echter Vintage-Klassiker.", stripe: link15},
+  {id: 12, folder: "Art12", cat: "Trackpants", price: "15,00 €", b: "Adidas", n: "Jogginghose Neongelb", size: "XS", desc: "Statement-Piece.", stripe: link15},
+  {id: 13, folder: "Art13", cat: "Pullover", price: "15,00 €", b: "Vintage", n: "Retro Logo Pullover", size: "L", desc: "Klassischer Vintage Pullover.", stripe: link15},
+  {id: 14, folder: "Art14", cat: "Pullover", price: "15,00 €", b: "Adidas", n: "Vintage Sweatshirt Grau", size: "M", desc: "Bequemer Allrounder.", stripe: link15},
+  {id: 15, folder: "Art15", cat: "Shirts", price: "15,00 €", b: "Nike", n: "Vintage T-Shirt Weiß", size: "L", desc: "Schlichtes Alltags-Shirt.", stripe: link15},
+  {id: 16, folder: "Art16", cat: "Shirts", price: "15,00 €", b: "Adidas", n: "Logo T-Shirt Schwarz", size: "M", desc: "Klassisches Shirt mit Logo.", stripe: link15},
+  {id: 17, folder: "Art17", cat: "Jeans", price: "20,00 €", b: "Vintage", n: "Retro Baggy Jeans Blau", size: "32/32", desc: "Echte Y2K Baggy Jeans.", stripe: link20},
+  {id: 18, folder: "Art18", cat: "Jeans", price: "20,00 €", b: "Levi's", n: "Straight Fit Schwarz", size: "33/32", desc: "Robuste Denim-Qualität.", stripe: link20},
+  {id: 19, folder: "Art19", cat: "Winterjacken", price: "35,00 €", b: "Nike", n: "Puffer Winterjacke Schwarz", size: "L", desc: "Wichtig für kalte Tage.", stripe: link35},
+  {id: 20, folder: "Art20", cat: "Winterjacken", price: "35,00 €", b: "Adidas", n: "Vintage Winterparka Oliv", size: "XL", desc: "Stilvoller Parka mit Kapuze.", stripe: link35},
   {id: 21, folder: "Art21", cat: "Pullover", price: "15,00 €", b: "Nike", n: "Crewneck Pullover Grau", size: "M", desc: "Klassischer Nike Crewneck.", stripe: link15},
-  {id: 22, folder: "Art22", cat: "Pullover", price: "15,00 €", b: "Adidas", n: "Hoodie Navy", size: "L", desc: "Gemütlicher Kapuzenpullover.", stripe: link15},
-  {id: 23, folder: "Art23", cat: "Shirts", price: "15,00 €", b: "Nike", n: "Sport T-Shirt Blau", size: "M", desc: "Atmungsaktives Vintage Shirt.", stripe: link15},
-  {id: 24, folder: "Art24", cat: "Shirts", price: "15,00 €", b: "Adidas", n: "Vintage T-Shirt Rot", size: "S", desc: "Klassischer Retro-Look.", stripe: link15},
+  {id: 22, folder: "Art22", cat: "Pullover", price: "15,00 €", b: "Adidas", n: "Hoodie Navy", size: "L", desc: "Gemütlicher Hoodie.", stripe: link15},
+  {id: 23, folder: "Art23", cat: "Shirts", price: "15,00 €", b: "Nike", n: "Sport T-Shirt Blau", size: "M", desc: "Atmungsaktives Shirt.", stripe: link15},
+  {id: 24, folder: "Art24", cat: "Shirts", price: "15,00 €", b: "Adidas", n: "Vintage T-Shirt Rot", size: "S", desc: "Retro-Look Shirt.", stripe: link15},
   {id: 25, folder: "Art25", cat: "Trackpants", price: "15,00 €", b: "Nike", n: "Jogginghose Dunkelgrau", size: "M", desc: "Angenehmer Fleece-Stoff.", stripe: link15},
   {id: 26, folder: "Art26", cat: "Trackpants", price: "15,00 €", b: "Adidas", n: "Trainingshose Schwarz", size: "L", desc: "Klassiker mit Streifen.", stripe: link15},
   {id: 27, folder: "Art27", cat: "Jeans", price: "20,00 €", b: "Vintage", n: "Denim Jeans Washed Blue", size: "31/32", desc: "Lässige Passform.", stripe: link20},
-  {id: 28, folder: "Art28", cat: "Jeans", price: "20,00 €", b: "Levi's", n: "Vintage Jeans Relaxed", size: "34/32", desc: "Echter Vintage Denim.", stripe: link20},
-  {id: 29, folder: "Art29", cat: "Winterjacken", price: "35,00 €", b: "Vintage", n: "Retro Fleecejacke Beige", size: "M", desc: "Kuschelige Teddy-Fleecejacke.", stripe: link35},
-  {id: 30, folder: "Art30", cat: "Winterjacken", price: "35,00 €", b: "Nike", n: "Windbreaker Navy", size: "L", desc: "Leichte Winterjacke / Übergangsjacke.", stripe: link35},
-  {id: 31, folder: "Art31", cat: "Pullover", price: "15,00 €", b: "Vintage", n: "Knit Pullover Muster", size: "M", desc: "Großstrick Pullover im Retro-Design.", stripe: link15},
-  {id: 32, folder: "Art32", cat: "Shirts", price: "15,00 €", b: "Vintage", n: "Graphic Tee Schwarz", size: "L", desc: "Cooles Vintage Print-Shirt.", stripe: link15},
-  {id: 33, folder: "Art33", cat: "Trackpants", price: "15,00 €", b: "Nike", n: "Sport Pants Schwarz", size: "S", desc: "Leistungsstarke Trainingshose.", stripe: link15},
-  {id: 34, folder: "Art34", cat: "Jeans", price: "20,00 €", b: "Vintage", n: "Dark Denim Jeans", size: "32/34", desc: "Dunkle Jeans mit tollem Schnitt.", stripe: link20},
-  {id: 35, folder: "Art35", cat: "Winterjacken", price: "35,00 €", b: "Vintage", n: "Winterjacke Vintage Braun", size: "L", desc: "Robuste Jacke für kalte Tage.", stripe: link35}
+  {id: 28, folder: "Art28", cat: "Jeans", price: "20,00 €", b: "Levi's", n: "Vintage Jeans Relaxed", size: "34/32", desc: "Echtes Vintage Denim.", stripe: link20},
+  {id: 29, folder: "Art29", cat: "Winterjacken", price: "35,00 €", b: "Vintage", n: "Retro Fleecejacke Beige", size: "M", desc: "Kuschelige Teddyjacke.", stripe: link35},
+  {id: 30, folder: "Art30", cat: "Winterjacken", price: "35,00 €", b: "Nike", n: "Windbreaker Navy", size: "L", desc: "Leichte Übergangsjacke.", stripe: link35},
+  {id: 31, folder: "Art31", cat: "Pullover", price: "15,00 €", b: "Vintage", n: "Knit Pullover Muster", size: "M", desc: "Großstrick Pullover.", stripe: link15},
+  {id: 32, folder: "Art32", cat: "Shirts", price: "15,00 €", b: "Vintage", n: "Graphic Tee Schwarz", size: "L", desc: "Cooles Print-Shirt.", stripe: link15},
+  {id: 33, folder: "Art33", cat: "Trackpants", price: "15,00 €", b: "Nike", n: "Sport Pants Schwarz", size: "S", desc: "Leistungsstarke Pants.", stripe: link15},
+  {id: 34, folder: "Art34", cat: "Jeans", price: "20,00 €", b: "Vintage", n: "Dark Denim Jeans", size: "32/34", desc: "Dunkle Jeans.", stripe: link20},
+  {id: 35, folder: "Art35", cat: "Winterjacken", price: "35,00 €", b: "Vintage", n: "Winterjacke Vintage Braun", size: "L", desc: "Robuste Jacke.", stripe: link35}
 ];
 
 const grid = document.getElementById('grid');

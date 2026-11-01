@@ -412,7 +412,7 @@ footer{padding:44px 24px 60px;border-top:1px solid var(--line);background:var(--
   <div class="faq-grid">
     <div class="faq-card">
       <h4>📦 Wie hoch sind die Versandkosten?</h4>
-      <p>Wir versenden sicher mit DHL inklusive Sendungsverfolgung für pauschal <strong>7,69 €</strong> innerhalb von Deutschland.</p>
+      <p>Wir versenden sicher mit DHL inklusive Sendungsverfolgung für pauschal <strong>7,69 €</strong> innerhalb von Deutschland. <strong>Ab einem Bestellwert von 75 € versenden wir kostenlos.</strong></p>
     </div>
     <div class="faq-card">
       <h4>💳 Welche Zahlungsmethoden gibt es?</h4>
@@ -455,10 +455,10 @@ footer{padding:44px 24px 60px;border-top:1px solid var(--line);background:var(--
       <div class="modal-desc" id="modalDesc"></div>
       <div class="modal-details-list">
         <div><strong>Zustand:</strong> Secondhand, sehr guter Zustand</div>
-        <div><strong>Versand:</strong> 7,69 € (DHL, mit Sendungsverfolgung)</div>
+        <div><strong>Versand:</strong> 7,69 € (DHL, mit Sendungsverfolgung) – kostenlos ab 75 € Bestellwert</div>
       </div>
       <div class="modal-good">🌱 Secondhand gekauft: Für dieses Teil muss nichts Neues produziert werden.</div>
-      <a class="modal-buy" id="modalBuyBtn" href="#" target="_blank">Jetzt sicher kaufen</a>
+      <a class="modal-buy" id="modalBuyBtn" href="#" target="_blank">In den Warenkorb</a>
     </div>
   </div>
 </div>
@@ -566,7 +566,6 @@ function renderProducts(filterCat = 'all') {
       <div class="card-body">
         <div class="brand">${it.b} · ${it.cat}</div>
         <div class="name">${it.n}</div>
-        <div class="meta">Ordner: ${it.folder}</div>
         <div class="pricerow">
           <span class="price">${it.price}</span>
           <button class="view-btn">Ansehen</button>
@@ -578,7 +577,7 @@ function renderProducts(filterCat = 'all') {
       modalTitle.textContent = it.n;
       modalPrice.textContent = it.price;
       modalDesc.textContent = it.desc;
-      modalBuyBtn.href = it.stripe;
+      modalBuyBtn.href = it.stripe || '#';
       
       mainImg.src = imgSrc;
       
@@ -617,6 +616,9 @@ document.addEventListener('keydown', (e) => { if(e.key === 'Escape') overlay.cla
 renderProducts('all');
 </script>
 <script async src="//www.instagram.com/embed.js"></script>
+
+<!-- Warenkorb + Produkte aus products.json -->
+<script src="cart.js"></script>
 
 </body>
 </html>

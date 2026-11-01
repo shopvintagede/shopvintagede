@@ -5,15 +5,18 @@
 \paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
-\f0\fs24 \cf0 <!doctype html>\
-<html>\
-<head>\
-  <meta charset="utf-8" />\
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />\
-  <title>Content Manager</title>\
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>\
-</head>\
-<body>\
-  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>\
-</body>\
-</html>}
+\f0\fs24 \cf0 backend:\
+  name: github\
+  repo: shopvintagede/shopvintagede\
+  branch: main\
+\
+media_folder: "images"\
+public_folder: "/images"\
+\
+collections:\
+  - name: "shop"\
+    label: "Shop Verwaltung"\
+    files:\
+      - file: "index.html"\
+        label: "Startseite / Artikel"\
+        name: "index"}

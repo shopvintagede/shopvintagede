@@ -11,7 +11,7 @@
 
   const css = document.createElement('style');
   css.textContent = `
-  .cart-fab{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:90;background:var(--olive);color:#fff;border:0;border-radius:30px;padding:14px 20px;font:500 14px 'Work Sans',sans-serif;cursor:pointer;box-shadow:0 8px 24px rgba(0,0,0,.2)}
+  .cart-fab{position:fixed;right:18px;bottom:calc(80px + env(safe-area-inset-bottom,0px));z-index:90;background:var(--olive);color:#fff;border:0;border-radius:30px;padding:14px 20px;font:500 14px 'Work Sans',sans-serif;cursor:pointer;box-shadow:0 8px 24px rgba(0,0,0,.2)}
   .cart-fab b{background:#fff;color:var(--olive);border-radius:10px;padding:1px 8px;margin-left:6px}
   .cart-ov{position:fixed;inset:0;background:rgba(26,25,22,.55);z-index:120;opacity:0;pointer-events:none;transition:opacity .25s}
   .cart-ov.open{opacity:1;pointer-events:auto}

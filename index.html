@@ -492,15 +492,11 @@ footer{padding:44px 24px 60px;border-top:1px solid var(--line);background:var(--
 </footer>
 
 <script>
-// Stripe Zahlungslinks nach Preisen / Kategorien zugeordnet:
-// 15 € Link (für Pullover, Shirts, Trackpants)
-const link15 = "https://buy.stripe.com/6oU3cp2AEfcb4WK8VK2oE0i";
-// 20 € Link (für Jeans)
-const link20 = "https://buy.stripe.com/fZu14hb7abZZ88Wgoc2oE0h";
-// 35 € Link (für Winterjacken)
-const link35 = "https://buy.stripe.com/00w4gtfnq3ttdtg3Bq2oE0g";
+// Neue Stripe Zahlungslinks nach Kategorien:
+const link15 = "https://buy.stripe.com/6oU3cp2AEfcb4WK8VK2oE0i"; // 15 € (Pullover, Shirts, Trackpants)
+const link20 = "https://buy.stripe.com/fZu14hb7abZZ88Wgoc2oE0h"; // 20 € (Jeans)
+const link35 = "https://buy.stripe.com/00w4gtfnq3ttdtg3Bq2oE0g"; // 35 € (Winterjacken)
 
-// Deine 35 Artikel verknüpft mit den Ordnern Art1 bis Art35
 const items = [
   {id: 1, folder: "Art1", cat: "Trackpants", price: "15,00 €", b: "Adidas Originals", n: "Trackpants Navy mit Trefoil-Tape", size: "M", desc: "Klassische Adidas Originals Trainingshose in Navy. Perfekter Fit.", stripe: link15},
   {id: 2, folder: "Art2", cat: "Trackpants", price: "15,00 €", b: "Adidas", n: "Trackpants Blau mit 3-Streifen", size: "M", desc: "Echtes Retro-Feeling in kräftigem Blau.", stripe: link15},

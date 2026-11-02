@@ -110,13 +110,13 @@
   "sold": false
  },
  {
-  "id": 17,
-  "folder": "Art17",
+  "id": 18,
+  "folder": "Art18",
   "cat": "Jeans",
-  "brand": "Vintage",
-  "name": "Retro Baggy Jeans Blau",
-  "size": "32/32",
-  "desc": "Echte Y2K Baggy Jeans.",
+  "brand": "Levi's",
+  "name": "Straight Fit Schwarz",
+  "size": "33/32",
+  "desc": "Robuste Denim-Qualität.",
   "price": 20,
   "sold": false
  },

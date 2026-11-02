@@ -126,7 +126,7 @@ section.products{max-width:1100px;margin:0 auto;padding:10px 24px 70px;}
 .blog-card summary{cursor:pointer;font-size:13.5px;font-weight:600;color:var(--olive);list-style:none;display:inline-block;border-bottom:1px solid var(--olive);padding-bottom:2px;}
 .blog-card summary::-webkit-details-marker{display:none;}
 .blog-card details[open] summary{margin-bottom:14px;}
-.blog-card summary .more{display:none;}
+.blog-card details[open] summary .more{display:none;}
 .blog-card summary .less{display:none;}
 .blog-card details[open] summary .less{display:inline;}
 .blog-card details p{font-size:14.5px;line-height:1.75;color:var(--muted);margin:0 0 12px;}
@@ -243,6 +243,15 @@ section.products{max-width:1100px;margin:0 auto;padding:10px 24px 70px;}
 .about-fact strong{display:block;font-family:'Fraunces',serif;font-weight:500;font-size:18px;}
 .about-fact span{display:block;margin-top:4px;font-size:13px;opacity:.85;}
 
+/* Rechtstexte */
+.legal{display:none;max-width:800px;margin:0 auto;padding:10px 24px 60px;scroll-margin-top:90px;}
+.legal:target{display:block;}
+.legal-box{background:var(--cream-card);border:1px solid var(--line);border-radius:8px;padding:32px 30px;}
+.legal h2{font-size:26px;margin-bottom:18px;}
+.legal h3{font-family:'Fraunces',serif;font-weight:500;font-size:17px;margin:22px 0 6px;color:var(--ink);}
+.legal p{font-size:14.5px;line-height:1.7;color:var(--muted);margin:0 0 10px;}
+.legal-close{display:inline-block;margin-top:16px;font-size:13.5px;font-weight:600;color:var(--olive);}
+
 footer{padding:44px 24px 60px;border-top:1px solid var(--line);background:var(--cream-card);}
 .foot-inner{max-width:1100px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;font-size:13px;color:var(--muted);}
 .foot-col a{display:block;text-decoration:none;margin-bottom:8px;transition:color .2s;}
@@ -299,7 +308,7 @@ footer{padding:44px 24px 60px;border-top:1px solid var(--line);background:var(--
 <section class="products" id="produkte">
   <div class="section-head">
     <h2>Ausgewählte Stücke</h2>
-    <span id="itemCount">0 Artikel</span>
+    <span id="itemCount">35 Artikel</span>
   </div>
   <div class="grid" id="grid"></div>
 </section>
@@ -458,7 +467,7 @@ footer{padding:44px 24px 60px;border-top:1px solid var(--line);background:var(--
         <div><strong>Versand:</strong> 7,69 € (DHL, mit Sendungsverfolgung) – kostenlos ab 75 € Bestellwert</div>
       </div>
       <div class="modal-good">🌱 Secondhand gekauft: Für dieses Teil muss nichts Neues produziert werden.</div>
-      <button class="modal-buy" id="modalBuyBtn">In den Warenkorb</button>
+      <a class="modal-buy" id="modalBuyBtn" href="#" target="_blank">In den Warenkorb</a>
     </div>
   </div>
 </div>
@@ -475,6 +484,92 @@ footer{padding:44px 24px 60px;border-top:1px solid var(--line);background:var(--
   </div>
 </section>
 
+<!-- Rechtstexte (werden per Klick auf die Footer-Links eingeblendet) -->
+<section class="legal" id="agb">
+  <div class="legal-box">
+    <h2>Allgemeine Geschäftsbedingungen (AGB)</h2>
+    <p>für den gewerblichen Verkauf von Second-Hand-Kleidung</p>
+
+    <h3>1. Geltungsbereich</h3>
+    <p>Diese Allgemeinen Geschäftsbedingungen (nachfolgend „AGB“) gelten für alle Verträge über den Kauf von Waren (insbesondere Second-Hand-Bekleidung und Accessoires), die ein Verbraucher (nachfolgend „Kunde“) mit mir, Marvin Osterkamp, shopvintage.de, Erlenstraße 24, 26670 Uplengen, E-Mail: <a href="mailto:shopvintagede@web.de">shopvintagede@web.de</a> (nachfolgend „shopvintagede“), über den Onlineshop shopvintage.de, die Live-Shopping-Plattform Whatnot oder sonstige Fernkommunikationsmittel abschließt.</p>
+
+    <h3>2. Kleinunternehmerstatus</h3>
+    <p>Da ich Kleinunternehmer im Sinne von § 19 Abs. 1 UStG bin, wird auf meinen Rechnungen keine Umsatzsteuer ausgewiesen.</p>
+
+    <h3>3. Vertragsschluss</h3>
+    <p>3.1. Im Onlineshop shopvintage.de stellt die Darstellung der Artikel kein verbindliches Angebot dar, sondern eine Aufforderung an den Kunden, selbst ein Angebot abzugeben. Mit dem Klick auf „Sicher bezahlen“ und dem Abschluss des Bezahlvorgangs gibt der Kunde ein verbindliches Angebot zum Kauf der Artikel im Warenkorb ab. Der Vertrag kommt zustande, wenn ich die Bestellung per E-Mail bestätige oder die Ware versende.</p>
+    <p>3.2. Da es sich um Einzelstücke handelt, kann ein Artikel bereits anderweitig verkauft worden sein. In diesem Fall informiere ich den Kunden unverzüglich und erstatte bereits geleistete Zahlungen.</p>
+    <p>3.3. Auf Plattformen wie Whatnot kommen Verträge im Wege von Live-Auktionen (Gebote im Live-Stream) oder über Sofortkauf-Optionen zustande. Mit dem Abgeben eines Gebots oder dem Auslösen des Sofortkaufs gibt der Kunde ein verbindliches Angebot zum Kauf des jeweiligen Artikels ab. Der Vertrag kommt mit dem Zuschlag im Livestream bzw. der Bestätigung des Sofortkaufs zustande.</p>
+
+    <h3>4. Beschaffenheit von Second-Hand-Ware (Gewährleistung)</h3>
+    <p>4.1. Bei den angebotenen Artikeln handelt es sich ausschließlich um gebrauchte Waren (Second-Hand / Vintage).</p>
+    <p>4.2. Altersbedingte Gebrauchsspuren, kleinerer Pilling-Status oder leichte, in der Artikelbeschreibung bzw. im Live-Stream explizit erwähnte Mängel (z. B. „leicht verwaschen“, „kleiner gezogener Faden“) stellen keinen Sachmangel dar. Der optische Zustand wird nach bestem Wissen und Gewissen in Wort, Bild und im Live-Video dokumentiert.</p>
+    <p>4.3. Für gebrauchte Waren beträgt die gesetzliche Gewährleistungsfrist für Mängel 1 Jahr ab Ablieferung der Ware (verkürzt gemäß § 476 Abs. 2 BGB), sofern es sich nicht um Schadensersatzansprüche handelt.</p>
+
+    <h3>5. Preise, Versandkosten und Zahlungsbedingungen</h3>
+    <p>5.1. Alle genannten Preise sind Endpreise im Sinne der Preisangabenverordnung (PAngV). Aufgrund der Kleinunternehmerregelung nach § 19 UStG enthält der Preis keine Umsatzsteuer.</p>
+    <p>5.2. Hinzu kommen die jeweiligen Versandkosten. Im Onlineshop beträgt die Versandkostenpauschale innerhalb Deutschlands 7,69 € (Versand mit DHL inklusive Sendungsverfolgung). Ab einem Bestellwert von 75 € erfolgt der Versand kostenlos. Die Versandkosten werden vor Abschluss der Bestellung im Warenkorb bzw. im Checkout ausgewiesen.</p>
+    <p>5.3. Die Zahlung erfolgt über den Zahlungsdienstleister Stripe (je nach Verfügbarkeit z. B. Kreditkarte, Apple Pay, Google Pay, Klarna oder SEPA).</p>
+
+    <h3>6. Eigentumsvorbehalt</h3>
+    <p>Die gelieferte Ware bleibt bis zur vollständigen Bezahlung Eigentum des Verkäufers.</p>
+
+    <h3>7. Widerrufsrecht für Verbraucher</h3>
+    <p>Verbrauchern steht ein gesetzliches Widerrufsrecht von 14 Tagen zu. Die genauen Bedingungen sowie das Muster-Widerrufsformular sind in der <a href="#widerruf">Widerrufsbelehrung</a> aufgeführt.</p>
+
+    <h3>8. Rücksendekosten beim Widerruf</h3>
+    <p>Macht der Kunde von seinem gesetzlichen Widerrufsrecht Gebrauch, trägt der Kunde die unmittelbaren Kosten der Rücksendung der Ware.</p>
+
+    <h3>9. Streitbeilegung</h3>
+    <p>Ich bin weder bereit noch verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+
+    <a class="legal-close" href="#">Schließen ✕</a>
+  </div>
+</section>
+
+<section class="legal" id="widerruf">
+  <div class="legal-box">
+    <h2>Widerrufsbelehrung</h2>
+
+    <h3>Widerrufsrecht</h3>
+    <p>Sie haben das Recht, binnen vierzehn Tagen ohne Angabe von Gründen diesen Vertrag zu widerrufen.</p>
+    <p>Die Widerrufsfrist beträgt vierzehn Tage ab dem Tag, an dem Sie oder ein von Ihnen benannter Dritter, der nicht der Beförderer ist, die Waren in Besitz genommen haben bzw. hat.</p>
+    <p>Um Ihr Widerrufsrecht auszuüben, müssen Sie uns (Marvin Osterkamp, Erlenstraße 24, 26670 Uplengen, E-Mail: <a href="mailto:shopvintagede@web.de">shopvintagede@web.de</a>) mittels einer eindeutigen Erklärung (z. B. ein mit der Post versandter Brief oder eine E-Mail) über Ihren Entschluss, diesen Vertrag zu widerrufen, informieren. Sie können dafür das beigefügte Muster-Widerrufsformular verwenden, das jedoch nicht vorgeschrieben ist.</p>
+    <p>Zur Wahrung der Widerrufsfrist reicht es aus, dass Sie die Mitteilung über die Ausübung des Widerrufsrechts vor Ablauf der Widerrufsfrist absenden.</p>
+
+    <h3>Folgen des Widerrufs</h3>
+    <p>Wenn Sie diesen Vertrag widerrufen, haben wir Ihnen alle Zahlungen, die wir von Ihnen erhalten haben, einschließlich der Lieferkosten (mit Ausnahme der zusätzlichen Kosten, die sich daraus ergeben, dass Sie eine andere Art der Lieferung als die von uns angebotene, günstigste Standardlieferung gewählt haben), unverzüglich und spätestens binnen vierzehn Tagen ab dem Tag zurückzuzahlen, an dem die Mitteilung über Ihren Widerruf dieses Vertrags bei uns eingegangen ist. Für diese Rückzahlung verwenden wir dasselbe Zahlungsmittel, das Sie bei der ursprünglichen Transaktion eingesetzt haben, es sei denn, mit Ihnen wurde ausdrücklich etwas anderes vereinbart; in keinem Fall werden Ihnen wegen dieser Rückzahlung Entgelte berechnet.</p>
+    <p>Wir können die Rückzahlung verweigern, bis wir die Waren wieder zurückerhalten haben oder bis Sie den Nachweis erbracht haben, dass Sie die Waren zurückgesandt haben, je nachdem, welches der frühere Zeitpunkt ist.</p>
+    <p>Sie haben die Waren unverzüglich und in jedem Fall spätestens binnen vierzehn Tagen ab dem Tag, an dem Sie uns über den Widerruf dieses Vertrags unterrichten, an uns zurückzusenden oder zu übergeben. Die Frist ist gewahrt, wenn Sie die Waren vor Ablauf der Frist von vierzehn Tagen absenden. Sie tragen die unmittelbaren Kosten der Rücksendung der Waren.</p>
+
+    <h3>Muster-Widerrufsformular</h3>
+    <p>(Wenn Sie den Vertrag widerrufen wollen, dann füllen Sie bitte dieses Formular aus und senden Sie es zurück.)</p>
+    <p>An: Marvin Osterkamp, shopvintage.de, Erlenstraße 24, 26670 Uplengen, E-Mail: <a href="mailto:shopvintagede@web.de">shopvintagede@web.de</a></p>
+    <p>Hiermit widerrufe(n) ich/wir (*) den von mir/uns (*) abgeschlossenen Vertrag über den Kauf der folgenden Waren (*)</p>
+    <p>Bestellt am (*) / erhalten am (*)</p>
+    <p>Name des/der Verbraucher(s)</p>
+    <p>Anschrift des/der Verbraucher(s)</p>
+    <p>Unterschrift des/der Verbraucher(s) (nur bei Mitteilung auf Papier)</p>
+    <p>Datum</p>
+    <p>(*) Unzutreffendes streichen.</p>
+
+    <a class="legal-close" href="#">Schließen ✕</a>
+  </div>
+</section>
+
+<section class="legal" id="impressum">
+  <div class="legal-box">
+    <h2>Impressum</h2>
+    <h3>Angaben gemäß § 5 DDG</h3>
+    <p>Marvin Osterkamp<br>Erlenstraße 24<br>26670 Uplengen<br>Deutschland</p>
+    <h3>Kontakt</h3>
+    <p>E-Mail: <a href="mailto:shopvintagede@web.de">shopvintagede@web.de</a></p>
+    <h3>Umsatzsteuer</h3>
+    <p>Kleinunternehmer gemäß § 19 UStG (keine Ausweisung der Umsatzsteuer).</p>
+    <a class="legal-close" href="#">Schließen ✕</a>
+  </div>
+</section>
+
 <footer>
   <div class="foot-inner">
     <div class="foot-col">
@@ -483,16 +578,65 @@ footer{padding:44px 24px 60px;border-top:1px solid var(--line);background:var(--
       <a href="#blog">Blog</a>
     </div>
     <div class="foot-col">
+      <h4>Rechtliches</h4>
+      <a href="#agb">AGB</a>
+      <a href="#widerruf">Widerrufsbelehrung &amp; Widerrufsformular</a>
+      <a href="#impressum">Impressum</a>
+    </div>
+    <div class="foot-col">
       <h4>Social Media</h4>
       <a href="https://www.instagram.com/shopvintagede/" target="_blank">Instagram</a>
       <a href="https://www.vinted.de/member/3125265489" target="_blank">Vinted</a>
     </div>
   </div>
-  <div class="foot-bottom">© 2026 shopvintage.de · Secondhand & Vintage Mode aus Uplengen</div>
+  <div class="foot-bottom">© 2026 shopvintage.de · Secondhand &amp; Vintage Mode aus Uplengen</div>
 </footer>
 
 <script>
-let items = [];
+// Stripe-Links (nur noch als Fallback, falls cart.js nicht lädt):
+const link15 = "https://buy.stripe.com/6oU3cp2AEfcb4WK8VK2oE0i"; // 15 € (Pullover, Shirts, Trackpants)
+const link20 = "https://buy.stripe.com/fZu14hb7abZZ88Wgoc2oE0h"; // 20 € (Jeans)
+const link35 = "https://buy.stripe.com/00w4gtfnq3ttdtg3Bq2oE0g"; // 35 € (Winterjacken)
+
+// Die 35 Artikel (Art1 bis Art35):
+const items = [
+  {id: 1, folder: "Art1", cat: "Trackpants", price: "15,00 €", b: "Adidas", n: "Trackpants Navy", size: "M", desc: "Klassische Trainingshose in Navy.", stripe: link15},
+  {id: 2, folder: "Art2", cat: "Trackpants", price: "15,00 €", b: "Adidas", n: "Trackpants Blau", size: "M", desc: "Retro-Feeling in Blau.", stripe: link15},
+  {id: 3, folder: "Art3", cat: "Trackpants", price: "15,00 €", b: "Nike", n: "Fleece Jogginghose Navy", size: "S", desc: "Gemütliche Nike Fleece-Hose.", stripe: link15},
+  {id: 4, folder: "Art4", cat: "Trackpants", price: "15,00 €", b: "Nike", n: "Shell Trackpants", size: "L", desc: "Leichte Shell-Trainingshose.", stripe: link15},
+  {id: 5, folder: "Art5", cat: "Trackpants", price: "15,00 €", b: "Nike", n: "Ripstop Jogginghose Schwarz", size: "2XL", desc: "Robuste Ripstop-Hose.", stripe: link15},
+  {id: 6, folder: "Art6", cat: "Trackpants", price: "15,00 €", b: "Nike", n: "Fleece Jogginghose Petrol", size: "L", desc: "Schicke Farbe in Petrol.", stripe: link15},
+  {id: 7, folder: "Art7", cat: "Trackpants", price: "15,00 €", b: "Nike", n: "Tech Fleece Creme", size: "L", desc: "High-End Look in Creme.", stripe: link15},
+  {id: 8, folder: "Art8", cat: "Trackpants", price: "15,00 €", b: "Nike", n: "Jogginghose Hellblau", size: "M", desc: "Lässige Jogginghose.", stripe: link15},
+  {id: 9, folder: "Art9", cat: "Trackpants", price: "15,00 €", b: "Adidas", n: "Trackpants Hellblau", size: "M", desc: "Einzigartiges Modell.", stripe: link15},
+  {id: 10, folder: "Art10", cat: "Trackpants", price: "15,00 €", b: "Nike", n: "Therma-Fit Schwarz", size: "L", desc: "Hält warm und sitzt top.", stripe: link15},
+  {id: 11, folder: "Art11", cat: "Trackpants", price: "15,00 €", b: "Adidas", n: "Trackpants Vintage Navy", size: "M", desc: "Echter Vintage-Klassiker.", stripe: link15},
+  {id: 12, folder: "Art12", cat: "Trackpants", price: "15,00 €", b: "Adidas", n: "Jogginghose Neongelb", size: "XS", desc: "Statement-Piece.", stripe: link15},
+  {id: 13, folder: "Art13", cat: "Pullover", price: "15,00 €", b: "Vintage", n: "Retro Logo Pullover", size: "L", desc: "Klassischer Vintage Pullover.", stripe: link15},
+  {id: 14, folder: "Art14", cat: "Pullover", price: "15,00 €", b: "Adidas", n: "Vintage Sweatshirt Grau", size: "M", desc: "Bequemer Allrounder.", stripe: link15},
+  {id: 15, folder: "Art15", cat: "Shirts", price: "15,00 €", b: "Nike", n: "Vintage T-Shirt Weiß", size: "L", desc: "Schlichtes Alltags-Shirt.", stripe: link15},
+  {id: 16, folder: "Art16", cat: "Shirts", price: "15,00 €", b: "Adidas", n: "Logo T-Shirt Schwarz", size: "M", desc: "Klassisches Shirt mit Logo.", stripe: link15},
+  {id: 17, folder: "Art17", cat: "Jeans", price: "20,00 €", b: "Vintage", n: "Retro Baggy Jeans Blau", size: "32/32", desc: "Echte Y2K Baggy Jeans.", stripe: link20},
+  {id: 18, folder: "Art18", cat: "Jeans", price: "20,00 €", b: "Levi's", n: "Straight Fit Schwarz", size: "33/32", desc: "Robuste Denim-Qualität.", stripe: link20},
+  {id: 19, folder: "Art19", cat: "Winterjacken", price: "35,00 €", b: "Nike", n: "Puffer Winterjacke Schwarz", size: "L", desc: "Wichtig für kalte Tage.", stripe: link35},
+  {id: 20, folder: "Art20", cat: "Winterjacken", price: "35,00 €", b: "Adidas", n: "Vintage Winterparka Oliv", size: "XL", desc: "Stilvoller Parka mit Kapuze.", stripe: link35},
+  {id: 21, folder: "Art21", cat: "Pullover", price: "15,00 €", b: "Nike", n: "Crewneck Pullover Grau", size: "M", desc: "Klassischer Nike Crewneck.", stripe: link15},
+  {id: 22, folder: "Art22", cat: "Pullover", price: "15,00 €", b: "Adidas", n: "Hoodie Navy", size: "L", desc: "Gemütlicher Hoodie.", stripe: link15},
+  {id: 23, folder: "Art23", cat: "Shirts", price: "15,00 €", b: "Nike", n: "Sport T-Shirt Blau", size: "M", desc: "Atmungsaktives Shirt.", stripe: link15},
+  {id: 24, folder: "Art24", cat: "Shirts", price: "15,00 €", b: "Adidas", n: "Vintage T-Shirt Rot", size: "S", desc: "Retro-Look Shirt.", stripe: link15},
+  {id: 25, folder: "Art25", cat: "Trackpants", price: "15,00 €", b: "Nike", n: "Jogginghose Dunkelgrau", size: "M", desc: "Angenehmer Fleece-Stoff.", stripe: link15},
+  {id: 26, folder: "Art26", cat: "Trackpants", price: "15,00 €", b: "Adidas", n: "Trainingshose Schwarz", size: "L", desc: "Klassiker mit Streifen.", stripe: link15},
+  {id: 27, folder: "Art27", cat: "Jeans", price: "20,00 €", b: "Vintage", n: "Denim Jeans Washed Blue", size: "31/32", desc: "Lässige Passform.", stripe: link20},
+  {id: 28, folder: "Art28", cat: "Jeans", price: "20,00 €", b: "Levi's", n: "Vintage Jeans Relaxed", size: "34/32", desc: "Echtes Vintage Denim.", stripe: link20},
+  {id: 29, folder: "Art29", cat: "Winterjacken", price: "35,00 €", b: "Vintage", n: "Retro Fleecejacke Beige", size: "M", desc: "Kuschelige Teddyjacke.", stripe: link35},
+  {id: 30, folder: "Art30", cat: "Winterjacken", price: "35,00 €", b: "Nike", n: "Windbreaker Navy", size: "L", desc: "Leichte Übergangsjacke.", stripe: link35},
+  {id: 31, folder: "Art31", cat: "Pullover", price: "15,00 €", b: "Vintage", n: "Knit Pullover Muster", size: "M", desc: "Großstrick Pullover.", stripe: link15},
+  {id: 32, folder: "Art32", cat: "Shirts", price: "15,00 €", b: "Vintage", n: "Graphic Tee Schwarz", size: "L", desc: "Cooles Print-Shirt.", stripe: link15},
+  {id: 33, folder: "Art33", cat: "Trackpants", price: "15,00 €", b: "Nike", n: "Sport Pants Schwarz", size: "S", desc: "Leistungsstarke Pants.", stripe: link15},
+  {id: 34, folder: "Art34", cat: "Jeans", price: "20,00 €", b: "Vintage", n: "Dark Denim Jeans", size: "32/34", desc: "Dunkle Jeans.", stripe: link20},
+  {id: 35, folder: "Art35", cat: "Winterjacken", price: "35,00 €", b: "Vintage", n: "Winterjacke Vintage Braun", size: "L", desc: "Robuste Jacke.", stripe: link35}
+];
+
 const grid = document.getElementById('grid');
 const overlay = document.getElementById('modalOverlay');
 const closeBtn = document.getElementById('modalClose');
@@ -505,17 +649,6 @@ const modalDesc = document.getElementById('modalDesc');
 const modalBuyBtn = document.getElementById('modalBuyBtn');
 const itemCount = document.getElementById('itemCount');
 
-// Produkte aus JSON laden (CMS Kompatibilität)
-fetch('products.json')
-  .then(res => res.json())
-  .then(data => {
-    items = data;
-    renderProducts('all');
-  })
-  .catch(err => {
-    console.log('Lade Fallback-Daten oder warte auf products.json');
-  });
-
 function renderProducts(filterCat = 'all') {
   grid.innerHTML = '';
   const filtered = filterCat === 'all' ? items : items.filter(it => it.cat === filterCat);
@@ -524,7 +657,7 @@ function renderProducts(filterCat = 'all') {
   filtered.forEach(it => {
     const el = document.createElement('div');
     el.className = 'card';
-    const imgSrc = it.image || `images/${it.folder}/A1.jpeg`;
+    const imgSrc = `images/${it.folder}/A1.jpeg`;
     
     el.innerHTML = `
       <div class="thumb">
@@ -545,13 +678,7 @@ function renderProducts(filterCat = 'all') {
       modalTitle.textContent = it.n;
       modalPrice.textContent = it.price;
       modalDesc.textContent = it.desc;
-      
-      modalBuyBtn.onclick = () => {
-        if(typeof addToCart === 'function') {
-          addToCart(it);
-          overlay.classList.remove('open');
-        }
-      };
+      modalBuyBtn.href = it.stripe || '#';
       
       mainImg.src = imgSrc;
       
@@ -586,10 +713,12 @@ function filterCategory(cat, btn) {
 closeBtn.addEventListener('click', () => overlay.classList.remove('open'));
 overlay.addEventListener('click', (e) => { if(e.target === overlay) overlay.classList.remove('open'); });
 document.addEventListener('keydown', (e) => { if(e.key === 'Escape') overlay.classList.remove('open'); });
+
+renderProducts('all');
 </script>
 <script async src="//www.instagram.com/embed.js"></script>
 
-<!-- Warenkorb + Stripe Integration -->
+<!-- Warenkorb + Produkte aus products.json -->
 <script src="cart.js"></script>
 
 </body>

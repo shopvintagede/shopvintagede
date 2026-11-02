@@ -11,13 +11,13 @@
   "sold": false
  },
  {
-  "id": 7,
-  "folder": "Art7",
+  "id": 9,
+  "folder": "Art9",
   "cat": "Trackpants",
-  "brand": "Nike",
-  "name": "Tech Fleece Creme",
-  "size": "L",
-  "desc": "High-End Look in Creme.",
+  "brand": "Adidas",
+  "name": "Trackpants Hellblau",
+  "size": "M",
+  "desc": "Einzigartiges Modell.",
   "price": 15,
   "sold": false
  },

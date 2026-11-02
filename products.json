@@ -1,12 +1,12 @@
 [
  {
-  "id": 3,
-  "folder": "Art3",
+  "id": 4,
+  "folder": "Art4",
   "cat": "Trackpants",
   "brand": "Nike",
-  "name": "Fleece Jogginghose Navy",
-  "size": "S",
-  "desc": "Gemütliche Nike Fleece-Hose.",
+  "name": "Shell Trackpants",
+  "size": "L",
+  "desc": "Leichte Shell-Trainingshose.",
   "price": 15,
   "sold": false
  },
@@ -29,17 +29,6 @@
   "name": "Fleece Jogginghose Petrol",
   "size": "L",
   "desc": "Schicke Farbe in Petrol.",
-  "price": 15,
-  "sold": false
- },
- {
-  "id": 7,
-  "folder": "Art7",
-  "cat": "Trackpants",
-  "brand": "Nike",
-  "name": "Tech Fleece Creme",
-  "size": "L",
-  "desc": "High-End Look in Creme.",
   "price": 15,
   "sold": false
  },

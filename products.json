@@ -99,13 +99,13 @@
   "sold": false
  },
  {
-  "id": 21,
-  "folder": "Art21",
-  "cat": "Pullover",
+  "id": 23,
+  "folder": "Art23",
+  "cat": "Shirts",
   "brand": "Nike",
-  "name": "Crewneck Pullover Grau",
+  "name": "Sport T-Shirt Blau",
   "size": "M",
-  "desc": "Klassischer Nike Crewneck.",
+  "desc": "Atmungsaktives Shirt.",
   "price": 15,
   "sold": false
  },
@@ -121,25 +121,14 @@
   "sold": false
  },
  {
-  "id": 28,
-  "folder": "Art28",
-  "cat": "Jeans",
-  "brand": "Levi's",
-  "name": "Vintage Jeans Relaxed",
-  "size": "34/32",
-  "desc": "Echtes Vintage Denim.",
-  "price": 20,
-  "sold": false
- },
- {
-  "id": 35,
-  "folder": "Art35",
-  "cat": "Winterjacken",
+  "id": 32,
+  "folder": "Art32",
+  "cat": "Shirts",
   "brand": "Vintage",
-  "name": "Winterjacke Vintage Braun",
+  "name": "Graphic Tee Schwarz",
   "size": "L",
-  "desc": "Robuste Jacke.",
-  "price": 35,
+  "desc": "Cooles Print-Shirt.",
+  "price": 15,
   "sold": false
  },
  {

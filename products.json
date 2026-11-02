@@ -33,13 +33,13 @@
   "sold": false
  },
  {
-  "id": 8,
-  "folder": "Art8",
+  "id": 7,
+  "folder": "Art7",
   "cat": "Trackpants",
   "brand": "Nike",
-  "name": "Jogginghose Hellblau",
-  "size": "M",
-  "desc": "Lässige Jogginghose.",
+  "name": "Tech Fleece Creme",
+  "size": "L",
+  "desc": "High-End Look in Creme.",
   "price": 15,
   "sold": false
  },

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vertrag widerrufen — shopvintage.de</title>
+<meta name="description" content="Widerruf online erklären: Vertrag widerrufen bei shopvintage.de.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#f7f5ef;--card:#fff;--ink:#1a1916;--olive:#3b4233;--olive-light:#eaf0e6;--line:#e4dec9;--muted:#635d51;--danger:#9b2c2c;}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:'Work Sans',Arial,sans-serif;-webkit-font-smoothing:antialiased;}
+h1,h2{font-family:'Fraunces',Georgia,serif;font-weight:500;margin:0;}
+a{color:var(--olive);}
+header{background:rgba(247,245,239,.95);border-bottom:1px solid var(--line);}
+.nav{max-width:1100px;margin:0 auto;padding:18px 24px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;}
+.logo-text{font-family:'Fraunces',serif;font-size:22px;text-decoration:none;color:var(--ink);}
+.logo-text em{font-style:normal;color:var(--olive);}
+.back{font-size:14px;text-decoration:none;}
+main{max-width:720px;margin:0 auto;padding:40px 24px 70px;}
+.box{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:32px 30px;}
+h1{font-size:clamp(28px,5vw,38px);line-height:1.1;}
+p{line-height:1.7;color:var(--muted);font-size:15px;}
+.info{background:var(--olive-light);border:1px solid var(--line);border-radius:6px;padding:14px 16px;font-size:14px;line-height:1.6;color:var(--muted);margin:18px 0;}
+label{display:block;font-size:13px;font-weight:600;margin:0 0 6px;}
+.field{margin-bottom:18px;}
+input,textarea{width:100%;background:#fff;border:1px solid var(--line);border-radius:4px;padding:12px 14px;font-family:inherit;font-size:16px;color:var(--ink);outline:none;}
+input:focus,textarea:focus{border-color:var(--olive);}
+textarea{min-height:90px;resize:vertical;}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+@media(max-width:560px){.row{grid-template-columns:1fr;gap:0;}}
+.btn{display:block;width:100%;border:0;border-radius:4px;padding:15px 24px;font-size:16px;font-weight:600;font-family:inherit;cursor:pointer;background:var(--olive);color:#fff;}
+.btn:hover{background:var(--ink);}
+.btn:disabled{opacity:.55;cursor:wait;}
+.btn.danger{background:var(--danger);}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line);margin-top:10px;}
+.hidden{display:none;}
+.err{background:#fdecec;border:1px solid #f1b9b9;color:#7a1f1f;border-radius:6px;padding:12px 14px;font-size:14px;margin-bottom:16px;line-height:1.5;}
+.ok h2{font-size:26px;margin-bottom:10px;color:var(--olive);}
+.ok .stamp{font-weight:600;color:var(--ink);}
+footer{border-top:1px solid var(--line);background:var(--card);padding:30px 24px;font-size:13px;color:var(--muted);}
+.foot-inner{max-width:1100px;margin:0 auto;display:flex;flex-wrap:wrap;gap:18px;}
+.foot-inner a{text-decoration:none;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a href="index.html" class="logo-text">shop<em>vintage</em>.de</a>
+    <a href="index.html" class="back">&larr; Zurück zum Shop</a>
+  </div>
+</header>
+
+<main>
+  <div class="box">
+
+    <!-- Schritt 1: Button "Vertrag widerrufen" -->
+    <div id="step1">
+      <h1>Vertrag widerrufen</h1>
+      <p>Du kannst deinen Kaufvertrag innerhalb von 14 Tagen nach Erhalt der Ware ohne Angabe von Gründen widerrufen. Hier kannst du deinen Widerruf direkt online erklären. Alle Einzelheiten stehen in der <a href="index.html#widerruf">Widerrufsbelehrung</a>.</p>
+      <button type="button" class="btn" id="startBtn">Vertrag widerrufen</button>
+    </div>
+
+    <!-- Schritt 2: Angaben + Bestätigung -->
+    <form id="step2" class="hidden" novalidate>
+      <h1>Widerruf erklären</h1>
+      <p>Bitte gib uns die Angaben, damit wir deinen Vertrag finden und dir eine Bestätigung schicken können.</p>
+
+      <div id="errBox" class="err hidden" role="alert"></div>
+
+      <div class="row">
+        <div class="field"><label for="vorname">Vorname *</label><input id="vorname" name="Vorname" autocomplete="given-name" required></div>
+        <div class="field"><label for="nachname">Nachname *</label><input id="nachname" name="Nachname" autocomplete="family-name" required></div>
+      </div>
+      <div class="field"><label for="email">E-Mail-Adresse * (dorthin senden wir die Bestätigung)</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+      <div class="field"><label for="bestellung">Bestellnummer oder Bestelldatum *</label><input id="bestellung" name="Bestellnummer / Bestelldatum" required placeholder="z. B. Bestelldatum oder Nummer aus der Bestätigungsmail"></div>
+      <div class="field"><label for="artikel">Welche Artikel widerrufst du? (optional)</label><textarea id="artikel" name="Betroffene Artikel" placeholder="Leer lassen, wenn du die ganze Bestellung widerrufst"></textarea></div>
+
+      <div class="info">Mit einem Klick auf „Widerruf jetzt bestätigen“ erklärst du verbindlich den Widerruf deines Vertrags. Danach bekommst du eine Eingangsbestätigung per E-Mail. Die unmittelbaren Kosten der Rücksendung trägst du.</div>
+
+      <button type="submit" class="btn danger" id="confirmBtn">Widerruf jetzt bestätigen</button>
+      <button type="button" class="btn ghost" id="cancelBtn">Abbrechen</button>
+    </form>
+
+    <!-- Erfolg -->
+    <div id="done" class="ok hidden" aria-live="polite">
+      <h2>Dein Widerruf ist bei uns eingegangen.</h2>
+      <p class="stamp" id="stamp"></p>
+      <p>Wir haben dir eine Eingangsbestätigung an <strong id="mailOut"></strong> geschickt. Schau bitte auch im Spam-Ordner nach. Wir melden uns danach mit allen Details zur Rücksendung.</p>
+      <p>Tipp: Mach einen Screenshot von dieser Seite als Nachweis.</p>
+      <a href="index.html">Zurück zum Shop</a>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div class="foot-inner">
+    <span>© 2026 shopvintage.de</span>
+    <a href="index.html#agb">AGB</a>
+    <a href="index.html#widerruf">Widerrufsbelehrung</a>
+    <a href="index.html#impressum">Impressum</a>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var TO = 'shopvintagede@web.de';
+  var $ = function (id) { return document.getElementById(id); };
+  var step1 = $('step1'), step2 = $('step2'), done = $('done'), errBox = $('errBox');
+
+  $('startBtn').addEventListener('click', function () {
+    step1.classList.add('hidden'); step2.classList.remove('hidden');
+    $('vorname').focus(); window.scrollTo(0, 0);
+  });
+  $('cancelBtn').addEventListener('click', function () {
+    step2.classList.add('hidden'); step1.classList.remove('hidden'); errBox.classList.add('hidden');
+  });
+
+  function showErr(t) { errBox.textContent = t; errBox.classList.remove('hidden'); errBox.scrollIntoView({ block: 'center' }); }
+
+  step2.addEventListener('submit', function (e) {
+    e.preventDefault();
+    errBox.classList.add('hidden');
+    var f = { v: $('vorname').value.trim(), n: $('nachname').value.trim(), m: $('email').value.trim(), b: $('bestellung').value.trim(), a: $('artikel').value.trim() };
+    if (!f.v || !f.n || !f.b) return showErr('Bitte fülle Vorname, Nachname und Bestellnummer/Bestelldatum aus.');
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f.m)) return showErr('Bitte gib eine gültige E-Mail-Adresse an.');
+
+    var now = new Date();
+    var stampText = now.toLocaleDateString('de-DE') + ' um ' + now.toLocaleTimeString('de-DE', { hour: '2-digit', minute: '2-digit' }) + ' Uhr';
+
+    var fd = new FormData();
+    fd.append('Vorname', f.v);
+    fd.append('Nachname', f.n);
+    fd.append('email', f.m);
+    fd.append('Bestellnummer / Bestelldatum', f.b);
+    fd.append('Betroffene Artikel', f.a || 'Gesamte Bestellung');
+    fd.append('Widerruf erklärt am', stampText);
+    fd.append('_subject', 'WIDERRUF eingegangen – shopvintage.de');
+    fd.append('_template', 'table');
+    fd.append('_captcha', 'false');
+    fd.append('_autoresponse',
+      'Eingangsbestätigung Ihres Widerrufs\n\n' +
+      'Guten Tag ' + f.v + ' ' + f.n + ',\n\n' +
+      'wir bestätigen den Eingang Ihrer Widerrufserklärung vom ' + stampText + ' zu Ihrer Bestellung bei shopvintage.de (Bestellnummer/-datum: ' + f.b + ').\n\n' +
+      'Wir melden uns in Kürze mit den Einzelheiten zur Rücksendung. Die unmittelbaren Kosten der Rücksendung tragen Sie. Die Erstattung erfolgt nach den Regeln unserer Widerrufsbelehrung.\n\n' +
+      'Marvin Osterkamp\nshopvintage.de\nErlenstraße 24, 26670 Uplengen\n' + TO);
+
+    var btn = $('confirmBtn'); btn.disabled = true; btn.textContent = 'Wird gesendet …';
+
+    fetch('https://formsubmit.co/ajax/' + TO, { method: 'POST', headers: { 'Accept': 'application/json' }, body: fd })
+      .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { if (!r.ok || j.success === 'false' || j.success === false) throw new Error('send'); }); })
+      .then(function () {
+        $('stamp').textContent = 'Widerruf erklärt am ' + stampText + '.';
+        $('mailOut').textContent = f.m;
+        step2.classList.add('hidden'); done.classList.remove('hidden'); window.scrollTo(0, 0);
+      })
+      .catch(function () {
+        btn.disabled = false; btn.textContent = 'Widerruf jetzt bestätigen';
+        showErr('Das Senden hat leider nicht geklappt. Bitte versuche es erneut oder schreibe uns direkt an ' + TO + ' mit dem Betreff „Widerruf“.');
+      });
+  });
+})();
+</script>
+</body>
+</html>

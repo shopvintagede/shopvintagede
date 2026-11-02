@@ -253,14 +253,14 @@
   "sold": false
  },
  {
-  "id": 28,
-  "folder": "Art28",
-  "cat": "Jeans",
-  "brand": "Levi's",
-  "name": "Vintage Jeans Relaxed",
-  "size": "34/32",
-  "desc": "Echtes Vintage Denim.",
-  "price": 20,
+  "id": 29,
+  "folder": "Art29",
+  "cat": "Winterjacken",
+  "brand": "Vintage",
+  "name": "Retro Fleecejacke Beige",
+  "size": "M",
+  "desc": "Kuschelige Teddyjacke.",
+  "price": 35,
   "sold": false
  },
  {

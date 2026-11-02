@@ -176,13 +176,13 @@
   "sold": false
  },
  {
-  "id": 21,
-  "folder": "Art21",
+  "id": 22,
+  "folder": "Art22",
   "cat": "Pullover",
-  "brand": "Nike",
-  "name": "Crewneck Pullover Grau",
-  "size": "M",
-  "desc": "Klassischer Nike Crewneck.",
+  "brand": "Adidas",
+  "name": "Hoodie Navy",
+  "size": "L",
+  "desc": "Gemütlicher Hoodie.",
   "price": 15,
   "sold": false
  },

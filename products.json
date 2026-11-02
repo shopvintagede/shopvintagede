@@ -1,12 +1,12 @@
 [
  {
-  "id": 2,
-  "folder": "Art2",
+  "id": 3,
+  "folder": "Art3",
   "cat": "Trackpants",
-  "brand": "Adidas",
-  "name": "Trackpants Blau",
-  "size": "M",
-  "desc": "Retro-Feeling in Blau.",
+  "brand": "Nike",
+  "name": "Fleece Jogginghose Navy",
+  "size": "S",
+  "desc": "Gemütliche Nike Fleece-Hose.",
   "price": 15,
   "sold": false
  },

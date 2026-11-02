@@ -297,13 +297,13 @@
   "sold": false
  },
  {
-  "id": 32,
-  "folder": "Art32",
-  "cat": "Shirts",
-  "brand": "Vintage",
-  "name": "Graphic Tee Schwarz",
-  "size": "L",
-  "desc": "Cooles Print-Shirt.",
+  "id": 33,
+  "folder": "Art33",
+  "cat": "Trackpants",
+  "brand": "Nike",
+  "name": "Sport Pants Schwarz",
+  "size": "S",
+  "desc": "Leistungsstarke Pants.",
   "price": 15,
   "sold": false
  },

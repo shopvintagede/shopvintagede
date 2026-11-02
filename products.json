@@ -154,17 +154,6 @@
   "sold": false
  },
  {
-  "id": 35,
-  "folder": "Art35",
-  "cat": "Winterjacken",
-  "brand": "Vintage",
-  "name": "Winterjacke Vintage Braun",
-  "size": "L",
-  "desc": "Robuste Jacke.",
-  "price": 35,
-  "sold": false
- },
- {
   "id": 36,
   "folder": "Art36",
   "cat": "Pullover",

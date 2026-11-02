@@ -220,13 +220,13 @@
   "sold": false
  },
  {
-  "id": 25,
-  "folder": "Art25",
+  "id": 26,
+  "folder": "Art26",
   "cat": "Trackpants",
-  "brand": "Nike",
-  "name": "Jogginghose Dunkelgrau",
-  "size": "M",
-  "desc": "Angenehmer Fleece-Stoff.",
+  "brand": "Adidas",
+  "name": "Trainingshose Schwarz",
+  "size": "L",
+  "desc": "Klassiker mit Streifen.",
   "price": 15,
   "sold": false
  },

@@ -1,16 +1,5 @@
 [
  {
-  "id": 16,
-  "folder": "Art16",
-  "cat": "Shirts",
-  "brand": "Adidas",
-  "name": "Logo T-Shirt Schwarz",
-  "size": "M",
-  "desc": "Klassisches Shirt mit Logo.",
-  "price": 15,
-  "sold": false
- },
- {
   "id": 36,
   "folder": "Art36",
   "cat": "Pullover",

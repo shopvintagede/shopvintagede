@@ -44,13 +44,13 @@
   "sold": false
  },
  {
-  "id": 11,
-  "folder": "Art11",
+  "id": 12,
+  "folder": "Art12",
   "cat": "Trackpants",
   "brand": "Adidas",
-  "name": "Trackpants Vintage Navy",
-  "size": "M",
-  "desc": "Echter Vintage-Klassiker.",
+  "name": "Jogginghose Neongelb",
+  "size": "XS",
+  "desc": "Statement-Piece.",
   "price": 15,
   "sold": false
  },

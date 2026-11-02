@@ -33,14 +33,14 @@
   "sold": false
  },
  {
-  "id": 27,
-  "folder": "Art27",
-  "cat": "Jeans",
-  "brand": "Vintage",
-  "name": "Denim Jeans Washed Blue",
-  "size": "31/32",
-  "desc": "Lässige Passform.",
-  "price": 20,
+  "id": 19,
+  "folder": "Art19",
+  "cat": "Winterjacken",
+  "brand": "Nike",
+  "name": "Puffer Winterjacke Schwarz",
+  "size": "L",
+  "desc": "Wichtig für kalte Tage.",
+  "price": 35,
   "sold": false
  },
  {

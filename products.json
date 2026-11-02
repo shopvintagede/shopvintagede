@@ -22,17 +22,6 @@
   "sold": false
  },
  {
-  "id": 9,
-  "folder": "Art9",
-  "cat": "Trackpants",
-  "brand": "Adidas",
-  "name": "Trackpants Hellblau",
-  "size": "M",
-  "desc": "Einzigartiges Modell.",
-  "price": 15,
-  "sold": false
- },
- {
   "id": 10,
   "folder": "Art10",
   "cat": "Trackpants",
@@ -44,13 +33,13 @@
   "sold": false
  },
  {
-  "id": 12,
-  "folder": "Art12",
+  "id": 11,
+  "folder": "Art11",
   "cat": "Trackpants",
   "brand": "Adidas",
-  "name": "Jogginghose Neongelb",
-  "size": "XS",
-  "desc": "Statement-Piece.",
+  "name": "Trackpants Vintage Navy",
+  "size": "M",
+  "desc": "Echter Vintage-Klassiker.",
   "price": 15,
   "sold": false
  },

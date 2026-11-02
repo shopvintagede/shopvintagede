@@ -209,17 +209,6 @@
   "sold": false
  },
  {
-  "id": 30,
-  "folder": "Art30",
-  "cat": "Winterjacken",
-  "brand": "Nike",
-  "name": "Windbreaker Navy",
-  "size": "L",
-  "desc": "Leichte Übergangsjacke.",
-  "price": 35,
-  "sold": false
- },
- {
   "id": 32,
   "folder": "Art32",
   "cat": "Shirts",
@@ -228,6 +217,17 @@
   "size": "L",
   "desc": "Cooles Print-Shirt.",
   "price": 15,
+  "sold": false
+ },
+ {
+  "id": 34,
+  "folder": "Art34",
+  "cat": "Jeans",
+  "brand": "Vintage",
+  "name": "Dark Denim Jeans",
+  "size": "32/34",
+  "desc": "Dunkle Jeans.",
+  "price": 20,
   "sold": false
  },
  {

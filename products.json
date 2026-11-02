@@ -394,5 +394,16 @@
   "desc": "Test nicht kaufen",
   "price": 35,
   "sold": false
+ },
+ {
+  "id": 37,
+  "folder": "Art37",
+  "cat": "Trackpants",
+  "brand": "Gap",
+  "name": "GAP Strickjacke",
+  "size": "L",
+  "desc": "Test",
+  "price": 25,
+  "sold": false
  }
 ]

@@ -1,6 +1,6 @@
 const API = 'https://api.github.com';
 
-exports.handler = async (event) => {
+export const handler = async (event) => {
   const out = (c, b) => ({ statusCode: c, headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(b) });
   if (event.httpMethod !== 'POST') return out(405, { error: 'Nur POST erlaubt' });
   try {

@@ -1,146 +1,137 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="de">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2487.7">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; -webkit-text-stroke: #000000}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; -webkit-text-stroke: #000000; min-height: 14.0px}
-    span.s1 {font-kerning: none}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>shopvintage – Admin</title>
+  <style>
+    :root{--bg:#f7f5ef;--card:#fff;--ink:#1a1916;--ol:#3b4233;--line:#e4dec9;--mu:#635d51}
+    @media(prefers-color-scheme:dark){:root{--bg:#1a1916;--card:#25231f;--ink:#f1eee4;--ol:#8fa17b;--line:#37342c;--mu:#b0aa9b}}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px system-ui,sans-serif}
+    [hidden]{display:none!important}
+    button,input,select,textarea{font:inherit;color:var(--ink)}
+    button{padding:9px 14px;border-radius:6px;border:1px solid var(--line);background:transparent;cursor:pointer}
+    button.p{background:var(--ol);color:#fff;border-color:var(--ol)}button:disabled{opacity:.5}
+    input,select,textarea{padding:9px;border:1px solid var(--line);border-radius:6px;background:var(--card);width:100%}
+    #login{max-width:340px;margin:20vh auto;padding:20px;display:grid;gap:12px}
+    header{position:sticky;top:0;background:var(--bg);border-bottom:1px solid var(--line);padding:12px 20px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;z-index:5}
+    header h1{font-size:18px;margin:0 auto 0 0}#state{font-size:13px;color:var(--mu)}
+    main{max-width:900px;margin:0 auto;padding:20px;display:grid;gap:12px}
+    .row{display:flex;gap:12px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px}
+    .row img{width:48px;height:60px;object-fit:cover;border-radius:4px;background:var(--line)}
+    .row .t{flex:1;min-width:0}.row small{display:block;color:var(--mu)}.sold{opacity:.5}
+    dialog{border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);width:min(640px,94vw);padding:20px}
+    dialog::backdrop{background:rgba(0,0,0,.5)}
+    form{display:grid;gap:12px}.g{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
+    label{display:grid;gap:4px;font-size:13px;color:var(--mu)}
+    .pics{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+    .pic{border:1px dashed var(--line);border-radius:8px;padding:8px;font-size:12px;color:var(--mu);text-align:center}
+    .pic img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:6px;background:var(--line);margin-bottom:6px}
+    .pic input{padding:4px;font-size:12px}.btns{display:flex;gap:10px}
   </style>
 </head>
 <body>
-<p class="p1"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
-<p class="p1"><span class="s1">&lt;html lang="de"&gt;&lt;head&gt;&lt;meta charset="UTF-8"&gt;&lt;meta name="viewport" content="width=device-width,initial-scale=1"&gt;</span></p>
-<p class="p1"><span class="s1">&lt;meta name="robots" content="noindex"&gt;&lt;title&gt;shopvintage – Admin&lt;/title&gt;</span></p>
-<p class="p1"><span class="s1">&lt;style&gt;</span></p>
-<p class="p1"><span class="s1">:root{--bg:#f7f5ef;--card:#fff;--ink:#1a1916;--ol:#3b4233;--line:#e4dec9;--mu:#635d51}</span></p>
-<p class="p1"><span class="s1">@media(prefers-color-scheme:dark){:root{--bg:#1a1916;--card:#25231f;--ink:#f1eee4;--ol:#8fa17b;--line:#37342c;--mu:#b0aa9b}}</span></p>
-<p class="p1"><span class="s1">*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px system-ui,sans-serif}</span></p>
-<p class="p1"><span class="s1">[hidden]{display:none!important}</span></p>
-<p class="p1"><span class="s1">button,input,select,textarea{font:inherit;color:var(--ink)}</span></p>
-<p class="p1"><span class="s1">button{padding:9px 14px;border-radius:6px;border:1px solid var(--line);background:transparent;cursor:pointer}</span></p>
-<p class="p1"><span class="s1">button.p{background:var(--ol);color:#fff;border-color:var(--ol)}button:disabled{opacity:.5}</span></p>
-<p class="p1"><span class="s1">input,select,textarea{padding:9px;border:1px solid var(--line);border-radius:6px;background:var(--card);width:100%}</span></p>
-<p class="p1"><span class="s1">#login{max-width:340px;margin:20vh auto;padding:20px;display:grid;gap:12px}</span></p>
-<p class="p1"><span class="s1">header{position:sticky;top:0;background:var(--bg);border-bottom:1px solid var(--line);padding:12px 20px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;z-index:5}</span></p>
-<p class="p1"><span class="s1">header h1{font-size:18px;margin:0 auto 0 0}#state{font-size:13px;color:var(--mu)}</span></p>
-<p class="p1"><span class="s1">main{max-width:900px;margin:0 auto;padding:20px;display:grid;gap:12px}</span></p>
-<p class="p1"><span class="s1">.row{display:flex;gap:12px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px}</span></p>
-<p class="p1"><span class="s1">.row img{width:48px;height:60px;object-fit:cover;border-radius:4px;background:var(--line)}</span></p>
-<p class="p1"><span class="s1">.row .t{flex:1;min-width:0}.row small{display:block;color:var(--mu)}.sold{opacity:.5}</span></p>
-<p class="p1"><span class="s1">dialog{border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);width:min(640px,94vw);padding:20px}</span></p>
-<p class="p1"><span class="s1">dialog::backdrop{background:rgba(0,0,0,.5)}</span></p>
-<p class="p1"><span class="s1">form{display:grid;gap:12px}.g{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}</span></p>
-<p class="p1"><span class="s1">label{display:grid;gap:4px;font-size:13px;color:var(--mu)}</span></p>
-<p class="p1"><span class="s1">.pics{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}</span></p>
-<p class="p1"><span class="s1">.pic{border:1px dashed var(--line);border-radius:8px;padding:8px;font-size:12px;color:var(--mu);text-align:center}</span></p>
-<p class="p1"><span class="s1">.pic img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:6px;background:var(--line);margin-bottom:6px}</span></p>
-<p class="p1"><span class="s1">.pic input{padding:4px;font-size:12px}.btns{display:flex;gap:10px}</span></p>
-<p class="p1"><span class="s1">&lt;/style&gt;&lt;/head&gt;&lt;body&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">&lt;div id="login"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;h1&gt;shopvintage – Admin&lt;/h1&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;input id="pw" type="password" placeholder="Passwort" autocomplete="current-password"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;button id="go" class="p"&gt;Anmelden&lt;/button&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;p id="lerr" style="color:#c0392b;margin:0"&gt;&lt;/p&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">&lt;div id="app" hidden&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;header&gt;&lt;h1&gt;Artikel verwalten&lt;/h1&gt;&lt;span id="state"&gt;&lt;/span&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;button id="new"&gt;+ Neuer Artikel&lt;/button&gt;&lt;button id="pub" class="p" disabled&gt;Veröffentlichen&lt;/button&gt;&lt;/header&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;main&gt;&lt;input id="q" placeholder="Suchen (Name, Marke, Kategorie) …"&gt;&lt;div id="list"&gt;&lt;/div&gt;&lt;/main&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">&lt;dialog id="dlg"&gt;&lt;form id="f"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div class="g"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;label&gt;Marke&lt;input id="brand" required&gt;&lt;/label&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;label&gt;Name / Titel&lt;input id="name" required&gt;&lt;/label&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;label&gt;Kategorie&lt;select id="cat"&gt;&lt;option&gt;Pullover&lt;/option&gt;&lt;option&gt;Shirts&lt;/option&gt;&lt;option&gt;Trackpants&lt;/option&gt;&lt;option&gt;Jeans&lt;/option&gt;&lt;option&gt;Winterjacken&lt;/option&gt;&lt;/select&gt;&lt;/label&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;label&gt;Größe&lt;input id="size" required&gt;&lt;/label&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;label&gt;Preis in €&lt;input id="price" type="number" step="0.01" min="0.5" required&gt;&lt;/label&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;label&gt;Status&lt;select id="sold"&gt;&lt;option value="0"&gt;Verfügbar&lt;/option&gt;&lt;option value="1"&gt;Verkauft (ausgeblendet)&lt;/option&gt;&lt;/select&gt;&lt;/label&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;label&gt;Beschreibung&lt;textarea id="desc" rows="3"&gt;&lt;/textarea&gt;&lt;/label&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div class="pics" id="pics"&gt;&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div class="btns"&gt;&lt;button class="p" type="submit"&gt;Übernehmen&lt;/button&gt;&lt;button type="button" id="cancel"&gt;Abbrechen&lt;/button&gt;&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/form&gt;&lt;/dialog&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">&lt;script&gt;</span></p>
-<p class="p1"><span class="s1">const $=id=&gt;document.getElementById(id);</span></p>
-<p class="p1"><span class="s1">const esc=s=&gt;String(s??'').replace(/[&amp;&lt;&gt;"']/g,c=&gt;({'&amp;':'&amp;amp;','&lt;':'&amp;lt;','&gt;':'&amp;gt;','"':'&amp;quot;',"'":'&amp;#39;'}[c]));</span></p>
-<p class="p1"><span class="s1">const eur=n=&gt;Number(n).toLocaleString('de-DE',{style:'currency',currency:'EUR'});</span></p>
-<p class="p1"><span class="s1">let pw='',items=[],cur=null,isNew=false,dirty=false,newPics={};</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">async function api(body){</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const r=await fetch('/.netlify/functions/admin-save',{method:'POST',body:JSON.stringify({password:pw,...body})});</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const d=await r.json().catch(()=&gt;({error:'Serverfehler'}));</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(!r.ok) throw new Error(d.error||'Fehler');</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>return d;</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p1"><span class="s1">async function login(){</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>pw=$('pw').value||pw; $('lerr').textContent='';</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>try{items=(await api({action:'load'})).products;sessionStorage.setItem('pw',pw);$('login').hidden=true;$('app').hidden=false;render()}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>catch(e){$('lerr').textContent=e.message;sessionStorage.removeItem('pw')}</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p1"><span class="s1">$('go').onclick=login;$('pw').onkeydown=e=&gt;{if(e.key==='Enter')login()};</span></p>
-<p class="p1"><span class="s1">if(sessionStorage.getItem('pw')){pw=sessionStorage.getItem('pw');login()}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">function setDirty(v){dirty=v;$('pub').disabled=!v;$('state').textContent=v?'Ungespeicherte Änderungen':''}</span></p>
-<p class="p1"><span class="s1">window.onbeforeunload=()=&gt;dirty?'Es gibt nicht veröffentlichte Änderungen.':undefined;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">function render(){</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const q=$('q').value.toLowerCase();</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>$('list').innerHTML=items.map((i,k)=&gt;({i,k})).filter(({i})=&gt;(i.brand+' '+i.name+' '+i.cat).toLowerCase().includes(q)).map(({i,k})=&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>`&lt;div class="row ${i.sold?'sold':''}"&gt;&lt;img src="${newPics[i.folder]?.[0]||`images/${esc(i.folder)}/A1.jpeg`}" alt=""&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div class="t"&gt;&lt;b&gt;${esc(i.brand)} – ${esc(i.name)}&lt;/b&gt;&lt;small&gt;${esc(i.cat)} · Gr. ${esc(i.size)} · ${eur(i.price)}${i.sold?' · VERKAUFT':''}&lt;/small&gt;&lt;/div&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;button data-e="${k}"&gt;Bearbeiten&lt;/button&gt;&lt;button data-d="${k}"&gt;Löschen&lt;/button&gt;&lt;/div&gt;`).join('')||'&lt;p&gt;Keine Artikel gefunden.&lt;/p&gt;';</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p1"><span class="s1">$('q').oninput=render;</span></p>
-<p class="p1"><span class="s1">$('list').onclick=e=&gt;{</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(e.target.dataset.e!==undefined) edit(items[e.target.dataset.e],false);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(e.target.dataset.d!==undefined&amp;&amp;confirm('Artikel wirklich löschen?')){items.splice(e.target.dataset.d,1);setDirty(true);render()}</span></p>
-<p class="p1"><span class="s1">};</span></p>
-<p class="p1"><span class="s1">$('new').onclick=()=&gt;{const id=Math.max(0,...items.map(i=&gt;i.id))+1;edit({id,folder:'Art'+id,cat:'Pullover',brand:'',name:'',size:'',desc:'',price:15,sold:false},true)};</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">function edit(it,n){</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>cur=it;isNew=n;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>['brand','name','cat','size','desc','price'].forEach(k=&gt;$(k).value=it[k]);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>$('sold').value=it.sold?'1':'0';</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>newPics[it.folder]=newPics[it.folder]||[];</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>$('pics').innerHTML=[0,1,2].map(i=&gt;`&lt;div class="pic"&gt;&lt;img id="p${i}" src="${newPics[it.folder][i]||`images/${esc(it.folder)}/A${i+1}.jpeg`}" alt="" onerror="this.removeAttribute('src')"&gt;Foto ${i+1}${i?'':' (Titelbild)'}&lt;input type="file" accept="image/*" data-n="${i}"&gt;&lt;/div&gt;`).join('');</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>$('dlg').showModal();</span></p>
-<p class="p1"><span class="s1">}</span></p>
-<p class="p1"><span class="s1">$('pics').onchange=e=&gt;{</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const n=+e.target.dataset.n,file=e.target.files[0];if(!file)return;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const im=new Image();</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>im.onload=()=&gt;{</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const s=Math.min(1,1200/Math.max(im.width,im.height)),c=document.createElement('canvas');</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>c.width=im.width*s;c.height=im.height*s;c.getContext('2d').drawImage(im,0,0,c.width,c.height);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>const d=c.toDataURL('image/jpeg',.82);newPics[cur.folder][n]=d;$('p'+n).src=d;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>};</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>im.src=URL.createObjectURL(file);</span></p>
-<p class="p1"><span class="s1">};</span></p>
-<p class="p1"><span class="s1">$('f').onsubmit=e=&gt;{</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>e.preventDefault();</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>Object.assign(cur,{brand:$('brand').value.trim(),name:$('name').value.trim(),cat:$('cat').value,size:$('size').value.trim(),desc:$('desc').value.trim(),price:parseFloat($('price').value),sold:$('sold').value==='1'});</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>if(isNew) items.push(cur);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>$('dlg').close();setDirty(true);render();</span></p>
-<p class="p1"><span class="s1">};</span></p>
-<p class="p1"><span class="s1">$('cancel').onclick=()=&gt;$('dlg').close();</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1">$('pub').onclick=async()=&gt;{</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const images=[];</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>Object.entries(newPics).forEach(([f,a])=&gt;a.forEach((d,i)=&gt;d&amp;&amp;images.push({folder:f,n:i+1,data:d.split(',')[1]})));</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>$('pub').disabled=true;$('state').textContent='Wird gespeichert …';</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>try{</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>await api({action:'save',products:items,images});</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>newPics={};dirty=false;$('state').textContent='✓ Gespeichert. In ca. 1–2 Minuten live.';</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>}catch(e){$('state').textContent='Fehler: '+e.message;$('pub').disabled=false}</span></p>
-<p class="p1"><span class="s1">};</span></p>
-<p class="p1"><span class="s1">&lt;/script&gt;&lt;/body&gt;&lt;/html&gt;</span></p>
+
+<div id="login">
+  <h1>shopvintage – Admin</h1>
+  <input id="pw" type="password" placeholder="Passwort" autocomplete="current-password">
+  <button id="go" class="p">Anmelden</button>
+  <p id="lerr" style="color:#c0392b;margin:0"></p>
+</div>
+
+<div id="app" hidden>
+  <header><h1>Artikel verwalten</h1><span id="state"></span>
+    <button id="new">+ Neuer Artikel</button><button id="pub" class="p" disabled>Veröffentlichen</button></header>
+  <main><input id="q" placeholder="Suchen (Name, Marke, Kategorie) …"><div id="list"></div></main>
+</div>
+
+<dialog id="dlg"><form id="f">
+  <div class="g">
+    <label>Marke<input id="brand" required></label>
+    <label>Name / Titel<input id="name" required></label>
+    <label>Kategorie<select id="cat"><option>Pullover</option><option>Shirts</option><option>Trackpants</option><option>Jeans</option><option>Winterjacken</option></select></label>
+    <label>Größe<input id="size" required></label>
+    <label>Preis in €<input id="price" type="number" step="0.01" min="0.5" required></label>
+    <label>Status<select id="sold"><option value="0">Verfügbar</option><option value="1">Verkauft (ausgeblendet)</option></select></label>
+  </div>
+  <label>Beschreibung<textarea id="desc" rows="3"></textarea></label>
+  <div class="pics" id="pics"></div>
+  <div class="btns"><button class="p" type="submit">Übernehmen</button><button type="button" id="cancel">Abbrechen</button></div>
+</form></dialog>
+
+<script>
+const $=id=>document.getElementById(id);
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const eur=n=>Number(n).toLocaleString('de-DE',{style:'currency',currency:'EUR'});
+let pw='',items=[],cur=null,isNew=false,dirty=false,newPics={};
+
+async function api(body){
+  const r=await fetch('/.netlify/functions/admin-save',{method:'POST',body:JSON.stringify({password:pw,...body})});
+  const d=await r.json().catch(()=>({error:'Serverfehler'}));
+  if(!r.ok) throw new Error(d.error||'Fehler');
+  return d;
+}
+async function login(){
+  pw=$('pw').value||pw; $('lerr').textContent='';
+  try{items=(await api({action:'load'})).products;sessionStorage.setItem('pw',pw);$('login').hidden=true;$('app').hidden=false;render()}
+  catch(e){$('lerr').textContent=e.message;sessionStorage.removeItem('pw')}
+}
+$('go').onclick=login;$('pw').onkeydown=e=>{if(e.key==='Enter')login()};
+if(sessionStorage.getItem('pw')){pw=sessionStorage.getItem('pw');login()}
+
+function setDirty(v){dirty=v;$('pub').disabled=!v;$('state').textContent=v?'Ungespeicherte Änderungen':''}
+window.onbeforeunload=()=>dirty?'Es gibt nicht veröffentlichte Änderungen.':undefined;
+
+function render(){
+  const q=$('q').value.toLowerCase();
+  $('list').innerHTML=items.map((i,k)=>({i,k})).filter(({i})=>(i.brand+' '+i.name+' '+i.cat).toLowerCase().includes(q)).map(({i,k})=>
+    `<div class="row ${i.sold?'sold':''}"'><img src="${newPics[i.folder]?.[0]||`images/${esc(i.folder)}/A1.jpeg`}" alt="">
+    <div class="t"><b>${esc(i.brand)} – ${esc(i.name)}</b><small>${esc(i.cat)} · Gr. ${esc(i.size)} · ${eur(i.price)}${i.sold?' · VERKAUFT':''}</small></div>
+    <button data-e="${k}">Bearbeiten</button><button data-d="${k}">Löschen</button></div>`).join('')||'<p>Keine Artikel gefunden.</p>';
+}
+$('q').oninput=render;
+$('list').onclick=e=>{
+  if(e.target.dataset.e!==undefined) edit(items[e.target.dataset.e],false);
+  if(e.target.dataset.d!==undefined&&confirm('Artikel wirklich löschen?')){items.splice(e.target.dataset.d,1);setDirty(true);render()}
+};
+$('new').onclick=()=>{const id=Math.max(0,...items.map(i=>i.id))+1;edit({id,folder:'Art'+id,cat:'Pullover',brand:'',name:'',size:'',desc:'',price:15,sold:false},true)};
+
+function edit(it,n){
+  cur=it;isNew=n;
+  ['brand','name','cat','size','desc','price'].forEach(k=>$(k).value=it[k]);
+  $('sold').value=it.sold?'1':'0';
+  newPics[it.folder]=newPics[it.folder]||[];
+  $('pics').innerHTML=[0,1,2].map(i=>`<div class="pic"><img id="p${i}" src="${newPics[it.folder][i]||`images/${esc(it.folder)}/A${i+1}.jpeg`}" alt="" onerror="this.removeAttribute('src')">Foto ${i+1}${i?'':' (Titelbild)'}<input type="file" accept="image/*" data-n="${i}"></div>`).join('');
+  $('dlg').showModal();
+}
+$('pics').onchange=e=>{
+  const n=+e.target.dataset.n,file=e.target.files[0];if(!file)return;
+  const im=new Image();
+  im.onload=()=>{
+    const s=Math.min(1,1200/Math.max(im.width,im.height)),c=document.createElement('canvas');
+    c.width=im.width*s;c.height=im.height*s;c.getContext('2d').drawImage(im,0,0,c.width,c.height);
+    const d=c.toDataURL('image/jpeg',.82);newPics[cur.folder][n]=d;$('p'+n).src=d;
+  };
+  im.src=URL.createObjectURL(file);
+};
+$('f').onsubmit=e=>{
+  e.preventDefault();
+  Object.assign(cur,{brand:$('brand').value.trim(),name:$('name').value.trim(),cat:$('cat').value,size:$('size').value.trim(),desc:$('desc').value.trim(),price:parseFloat($('price').value),sold:$('sold').value==='1'});
+  if(isNew) items.push(cur);
+  $('dlg').close();setDirty(true);render();
+};
+$('cancel').onclick=()=>$('dlg').close();
+
+$('pub').onclick=async()=>{
+  const images=[];
+  Object.entries(newPics).forEach(([f,a])=>a.forEach((d,i)=>d&&images.push({folder:f,n:i+1,data:d.split(',')[1]})));
+  $('pub').disabled=true;$('state').textContent='Wird gespeichert …';
+  try{
+    await api({action:'save',products:items,images});
+    newPics={};dirty=false;$('state').textContent='✓ Gespeichert. In ca. 1–2 Minuten live.';
+  }catch(e){$('state').textContent='Fehler: '+e.message;$('pub').disabled=false}
+};
+</script>
 </body>
 </html>

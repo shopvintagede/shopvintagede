@@ -231,14 +231,14 @@
   "sold": false
  },
  {
-  "id": 34,
-  "folder": "Art34",
-  "cat": "Jeans",
+  "id": 35,
+  "folder": "Art35",
+  "cat": "Winterjacken",
   "brand": "Vintage",
-  "name": "Dark Denim Jeans",
-  "size": "32/34",
-  "desc": "Dunkle Jeans.",
-  "price": 20,
+  "name": "Winterjacke Vintage Braun",
+  "size": "L",
+  "desc": "Robuste Jacke.",
+  "price": 35,
   "sold": false
  },
  {

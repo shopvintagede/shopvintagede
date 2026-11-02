@@ -165,14 +165,14 @@
   "sold": false
  },
  {
-  "id": 20,
-  "folder": "Art20",
-  "cat": "Winterjacken",
-  "brand": "Adidas",
-  "name": "Vintage Winterparka Oliv",
-  "size": "XL",
-  "desc": "Stilvoller Parka mit Kapuze.",
-  "price": 35,
+  "id": 21,
+  "folder": "Art21",
+  "cat": "Pullover",
+  "brand": "Nike",
+  "name": "Crewneck Pullover Grau",
+  "size": "M",
+  "desc": "Klassischer Nike Crewneck.",
+  "price": 15,
   "sold": false
  },
  {
@@ -198,24 +198,13 @@
   "sold": false
  },
  {
-  "id": 24,
-  "folder": "Art24",
-  "cat": "Shirts",
-  "brand": "Adidas",
-  "name": "Vintage T-Shirt Rot",
-  "size": "S",
-  "desc": "Retro-Look Shirt.",
-  "price": 15,
-  "sold": false
- },
- {
-  "id": 26,
-  "folder": "Art26",
+  "id": 25,
+  "folder": "Art25",
   "cat": "Trackpants",
-  "brand": "Adidas",
-  "name": "Trainingshose Schwarz",
-  "size": "L",
-  "desc": "Klassiker mit Streifen.",
+  "brand": "Nike",
+  "name": "Jogginghose Dunkelgrau",
+  "size": "M",
+  "desc": "Angenehmer Fleece-Stoff.",
   "price": 15,
   "sold": false
  },

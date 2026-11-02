@@ -1,170 +1,188 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop-Admin</title>
-    <style>
-        body { font-family: sans-serif; max-width: 800px; margin: 40px auto; padding: 20px; background: #f9f9f9; color: #333; }
-        .card { background: white; padding: 20px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-        input, textarea, button { width: 100%; padding: 10px; margin-top: 8px; margin-bottom: 16px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px; }
-        button { background: #000; color: #fff; border: none; cursor: pointer; font-weight: bold; }
-        button:hover { background: #333; }
-        .hidden { display: none; }
-        .product-item { border-bottom: 1px solid #eee; padding-bottom: 15px; margin-bottom: 15px; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Shop-Admin</title>
+<style>
+  *{box-sizing:border-box}
+  body{font-family:-apple-system,Helvetica,Arial,sans-serif;background:#f4f1ea;color:#222;margin:0;padding:16px}
+  .card{max-width:640px;margin:0 auto 16px;background:#fff;border-radius:12px;padding:20px;box-shadow:0 1px 4px rgba(0,0,0,.08)}
+  h2,h3{margin-top:0}
+  label{display:block;margin:12px 0 4px;font-weight:600;font-size:14px}
+  input,select,textarea{width:100%;padding:12px;font-size:16px;border:1px solid #ccc;border-radius:8px;background:#fff}
+  textarea{min-height:80px}
+  button{width:100%;padding:14px;font-size:16px;font-weight:600;border:0;border-radius:8px;background:#222;color:#fff;margin-top:16px;cursor:pointer}
+  button:disabled{opacity:.5}
+  .small{width:auto;padding:8px 12px;font-size:14px;margin:8px 8px 0 0}
+  .red{background:#c0392b}.grey{background:#777}
+  .item{padding:12px 0;border-bottom:1px solid #eee}
+  .item small{color:#777}
+  .hidden{display:none}
+  .sold{opacity:.55}
+  #status{position:fixed;left:16px;right:16px;bottom:16px;max-width:640px;margin:auto;background:#222;color:#fff;padding:14px;border-radius:10px;display:none;text-align:center}
+</style>
 </head>
 <body>
 
-    <!-- Login Bereich -->
-    <div id="login-section" class="card">
-        <h2>Admin Login</h2>
-        <p>Bitte gib dein Admin-Passwort ein:</p>
-        <input type="password" id="password-input" placeholder="Passwort">
-        <button onclick="checkLogin()">Einloggen</button>
-    </div>
+<div id="login" class="card">
+  <h2>Admin Login</h2>
+  <label for="pw">Passwort</label>
+  <input type="password" id="pw" autocomplete="current-password">
+  <button id="loginBtn">Einloggen</button>
+</div>
 
-    <!-- Admin Dashboard (Anfangs versteckt) -->
-    <div id="admin-section" class="card hidden">
-        <h2>Shop-Verwaltung</h2>
-        <button onclick="loadProducts()" style="background: #0070f3; margin-bottom: 20px;">Daten von GitHub laden</button>
-        
-        <div id="products-container"></div>
+<div id="app" class="hidden">
+  <div class="card">
+    <h3>Neuen Artikel hinzufügen</h3>
+    <label for="n-name">Name</label>
+    <input id="n-name" placeholder="z. B. Pullover Nike Grau">
+    <label for="n-cat">Kategorie</label>
+    <select id="n-cat"></select>
+    <label for="n-brand">Marke</label>
+    <input id="n-brand" placeholder="z. B. Nike">
+    <label for="n-size">Größe</label>
+    <input id="n-size" placeholder="z. B. M oder 32/34">
+    <label for="n-price">Preis in Euro</label>
+    <input id="n-price" inputmode="decimal" placeholder="z. B. 25">
+    <label for="n-desc">Beschreibung</label>
+    <textarea id="n-desc" placeholder="Kurze Beschreibung"></textarea>
+    <label for="n-imgs">Fotos (bis zu 3, das erste ist das Titelbild)</label>
+    <input type="file" id="n-imgs" accept="image/*" multiple>
+    <button id="addBtn">Artikel speichern</button>
+  </div>
 
-        <h3 style="margin-top: 30px;">Neuen Artikel hinzufügen</h3>
-        <div class="product-item">
-            <label>Titel:</label>
-            <input type="text" id="new-title" placeholder="z.B. Vintage Pullover">
-            
-            <label>Preis (EUR):</label>
-            <input type="text" id="new-price" placeholder="z.B. 25.00">
-            
-            <label>Ordner (z.B. pullovernavy):</label>
-            <input type="text" id="new-folder" placeholder="name-des-ordners">
-            
-            <label>Bilder (mehrere auswählen möglich):</label>
-            <input type="file" id="new-images" multiple accept="image/*">
-            
-            <button onclick="addProduct()">Artikel speichern & hochladen</button>
-        </div>
-    </div>
+  <div class="card">
+    <h3>Vorhandene Artikel (<span id="count">0</span>)</h3>
+    <div id="list"></div>
+  </div>
+</div>
 
-    <script>
-        let password = '';
-        let products = [];
+<div id="status"></div>
 
-        function checkLogin() {
-            password = document.getElementById('password-input').value;
-            if(!password) {
-                alert('Bitte Passwort eingeben!');
-                return;
-            }
-            // Kurzer Test durch Laden
-            loadProducts(true);
-        }
+<script>
+let password = '';
+let products = [];
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
-        async function loadProducts(isLogin = false) {
-            try {
-                const res = await fetch('/.netlify/functions/admin-save', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ password, action: 'load' })
-                });
-                const data = await res.json();
-                if (!res.ok) throw new Error(data.error || 'Fehler beim Laden');
+function msg(t, ms = 4000) {
+  const s = $('status'); s.textContent = t; s.style.display = 'block';
+  clearTimeout(msg.t); if (ms) msg.t = setTimeout(() => s.style.display = 'none', ms);
+}
 
-                products = data.products || [];
-                
-                if(isLogin) {
-                    document.getElementById('login-section').classList.add('hidden');
-                    document.getElementById('admin-section').classList.remove('hidden');
-                }
-                renderProducts();
-                if(isLogin) alert('Erfolgreich eingeloggt!');
-            } catch (err) {
-                alert('Fehler: ' + err.message);
-            }
-        }
+async function api(body) {
+  const res = await fetch('/.netlify/functions/admin-save', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ password, ...body })
+  });
+  let data;
+  try { data = await res.json(); } catch { throw new Error('Der Server hat nicht richtig geantwortet (Status ' + res.status + ').'); }
+  if (!res.ok) throw new Error(data.error || 'Fehler ' + res.status);
+  return data;
+}
 
-        function renderProducts() {
-            const container = document.getElementById('products-container');
-            container.innerHTML = '<h3>Vorhandene Artikel (' + products.length + ')</h3>';
-            
-            products.forEach((p, index) => {
-                container.innerHTML += `
-                    <div class="product-item">
-                        <strong>${p.title}</strong> - ${p.price} € (Ordner: ${p.folder})<br>
-                        <button onclick="deleteProduct(${index})" style="background: #d9534f; width: auto; padding: 5px 10px; margin-top: 5px;">Löschen</button>
-                    </div>
-                `;
-            });
-        }
+async function load(isLogin) {
+  try {
+    const data = await api({ action: 'load' });
+    products = Array.isArray(data.products) ? data.products : [];
+    fillCategories();
+    render();
+    if (isLogin) { $('login').classList.add('hidden'); $('app').classList.remove('hidden'); }
+  } catch (e) { alert('Fehler: ' + e.message); }
+}
 
-        async function addProduct() {
-            const title = document.getElementById('new-title').value;
-            const price = document.getElementById('new-price').value;
-            const folder = document.getElementById('new-folder').value;
-            const fileInput = document.getElementById('new-images');
+function fillCategories() {
+  const cats = [...new Set(products.map(p => p.cat).filter(Boolean))];
+  ['Trackpants','Pullover','Shirts','Jeans','Winterjacken'].forEach(c => { if (!cats.includes(c)) cats.push(c); });
+  $('n-cat').innerHTML = cats.map(c => `<option>${esc(c)}</option>`).join('');
+}
 
-            if (!title || !price || !folder) {
-                alert('Bitte Titel, Preis und Ordner ausfüllen!');
-                return;
-            }
+function render() {
+  $('count').textContent = products.length;
+  $('list').innerHTML = products.map((p, i) => `
+    <div class="item ${p.sold ? 'sold' : ''}">
+      <strong>${esc(p.name)}</strong> ${p.sold ? '(verkauft)' : ''}<br>
+      <small>${esc(p.cat)} · ${esc(p.brand)} · Gr. ${esc(p.size)} · ${esc(p.price)} € · Ordner ${esc(p.folder)}</small><br>
+      <button class="small grey" data-sold="${i}">${p.sold ? 'Wieder verfügbar' : 'Als verkauft markieren'}</button>
+      <button class="small red" data-del="${i}">Löschen</button>
+    </div>`).join('');
+}
 
-            const images = [];
-            for (let file of fileInput.files) {
-                const base64 = await toBase64(file);
-                images.push({ name: file.name, data: base64 });
-            }
+// Foto verkleinern und als JPEG umwandeln (damit der Upload klein und schnell bleibt)
+function toJpegBase64(file) {
+  return new Promise((resolve, reject) => {
+    const url = URL.createObjectURL(file);
+    const img = new Image();
+    img.onload = () => {
+      const max = 1400, k = Math.min(1, max / Math.max(img.width, img.height));
+      const c = document.createElement('canvas');
+      c.width = Math.round(img.width * k); c.height = Math.round(img.height * k);
+      c.getContext('2d').drawImage(img, 0, 0, c.width, c.height);
+      URL.revokeObjectURL(url);
+      resolve(c.toDataURL('image/jpeg', 0.82).split(',')[1]);
+    };
+    img.onerror = () => { URL.revokeObjectURL(url); reject(new Error('Foto konnte nicht gelesen werden: ' + file.name)); };
+    img.src = url;
+  });
+}
 
-            const newProduct = { title, price, folder, images: images.map(i => i.name) };
-            products.unshift(newProduct);
+function nextNumber() {
+  return products.reduce((m, p) => {
+    const a = /^Art(\d+)$/.exec(p.folder || ''); return Math.max(m, a ? +a[1] : 0, +p.id || 0);
+  }, 0) + 1;
+}
 
-            try {
-                const res = await fetch('/.netlify/functions/admin-save', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ password, action: 'save', products, images })
-                });
-                const data = await res.json();
-                if (!res.ok) throw new Error(data.error || 'Fehler beim Speichern');
+async function save(newList, images, okText) {
+  msg('Speichere … bitte kurz warten', 0);
+  try {
+    await api({ action: 'save', products: newList, images: images || [] });
+    products = newList; render();
+    msg(okText + ' Die Seite aktualisiert sich nach ca. 1 Minute.', 6000);
+    return true;
+  } catch (e) { msg('', 1); alert('Fehler: ' + e.message); return false; }
+}
 
-                alert('Erfolgreich gespeichert und hochgeladen!');
-                document.getElementById('new-title').value = '';
-                document.getElementById('new-price').value = '';
-                document.getElementById('new-folder').value = '';
-                document.getElementById('new-images').value = '';
-                renderProducts();
-            } catch (err) {
-                alert('Fehler: ' + err.message);
-            }
-        }
+$('loginBtn').onclick = () => {
+  password = $('pw').value;
+  if (!password) return alert('Bitte Passwort eingeben.');
+  load(true);
+};
+$('pw').addEventListener('keydown', e => { if (e.key === 'Enter') $('loginBtn').click(); });
 
-        async function deleteProduct(index) {
-            if(!confirm('Artikel wirklich löschen?')) return;
-            products.splice(index, 1);
-            try {
-                const res = await fetch('/.netlify/functions/admin-save', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ password, action: 'save', products, images: [] })
-                });
-                if (!res.ok) throw new Error('Fehler beim Löschen');
-                renderProducts();
-                alert('Artikel gelöscht!');
-            } catch (err) {
-                alert('Fehler: ' + err.message);
-            }
-        }
+$('addBtn').onclick = async () => {
+  const name = $('n-name').value.trim(), brand = $('n-brand').value.trim(),
+        size = $('n-size').value.trim(), desc = $('n-desc').value.trim(),
+        cat = $('n-cat').value, price = parseFloat($('n-price').value.replace(',', '.'));
+  const files = [...$('n-imgs').files].slice(0, 3);
+  if (!name || !size || !(price >= 0) || isNaN(price)) return alert('Bitte Name, Größe und Preis ausfüllen.');
+  if (!files.length) return alert('Bitte mindestens ein Foto auswählen.');
 
-        function toBase64(file) {
-            return new Promise((resolve, reject) => {
-                const reader = new FileReader();
-                reader.readAsDataURL(file);
-                reader.onload = () => resolve(reader.result.split(',')[1]);
-                reader.onerror = error => reject(error);
-            });
-        }
-    </script>
+  $('addBtn').disabled = true;
+  try {
+    msg('Fotos werden vorbereitet …', 0);
+    const n = nextNumber(), folder = 'Art' + n;
+    const images = [];
+    for (let i = 0; i < files.length; i++) images.push({ folder, n: i + 1, data: await toJpegBase64(files[i]) });
+    const item = { id: n, folder, cat, brand: brand || 'Vintage', name, size, desc, price, sold: false };
+    const ok = await save([...products, item], images, 'Artikel gespeichert.');
+    if (ok) ['n-name','n-brand','n-size','n-price','n-desc','n-imgs'].forEach(id => $(id).value = '');
+  } catch (e) { msg('', 1); alert('Fehler: ' + e.message); }
+  $('addBtn').disabled = false;
+};
+
+$('list').addEventListener('click', async e => {
+  const s = e.target.dataset.sold, d = e.target.dataset.del;
+  if (s !== undefined) {
+    const list = products.map((p, i) => i == s ? { ...p, sold: !p.sold } : p);
+    await save(list, [], 'Geändert.');
+  } else if (d !== undefined) {
+    if (!confirm('Artikel „' + products[d].name + '“ wirklich löschen?')) return;
+    await save(products.filter((_, i) => i != d), [], 'Gelöscht.');
+  }
+});
+</script>
 </body>
 </html>

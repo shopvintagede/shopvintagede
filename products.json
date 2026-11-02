@@ -1,16 +1,5 @@
 [
  {
-  "id": 1,
-  "folder": "Art1",
-  "cat": "Trackpants",
-  "brand": "Adidas",
-  "name": "Trackpants Navy",
-  "size": "M",
-  "desc": "Klassische Trainingshose in Navy.",
-  "price": 15,
-  "sold": false
- },
- {
   "id": 2,
   "folder": "Art2",
   "cat": "Trackpants",

@@ -308,17 +308,6 @@
   "sold": false
  },
  {
-  "id": 33,
-  "folder": "Art33",
-  "cat": "Trackpants",
-  "brand": "Nike",
-  "name": "Sport Pants Schwarz",
-  "size": "S",
-  "desc": "Leistungsstarke Pants.",
-  "price": 15,
-  "sold": false
- },
- {
   "id": 34,
   "folder": "Art34",
   "cat": "Jeans",
@@ -327,6 +316,17 @@
   "size": "32/34",
   "desc": "Dunkle Jeans.",
   "price": 20,
+  "sold": false
+ },
+ {
+  "id": 35,
+  "folder": "Art35",
+  "cat": "Winterjacken",
+  "brand": "Vintage",
+  "name": "Winterjacke Vintage Braun",
+  "size": "L",
+  "desc": "Robuste Jacke.",
+  "price": 35,
   "sold": false
  },
  {

@@ -154,24 +154,13 @@
   "sold": false
  },
  {
-  "id": 22,
-  "folder": "Art22",
-  "cat": "Pullover",
-  "brand": "Adidas",
-  "name": "Hoodie Navy",
-  "size": "L",
-  "desc": "Gemütlicher Hoodie.",
-  "price": 15,
-  "sold": false
- },
- {
-  "id": 25,
-  "folder": "Art25",
-  "cat": "Trackpants",
+  "id": 23,
+  "folder": "Art23",
+  "cat": "Shirts",
   "brand": "Nike",
-  "name": "Jogginghose Dunkelgrau",
+  "name": "Sport T-Shirt Blau",
   "size": "M",
-  "desc": "Angenehmer Fleece-Stoff.",
+  "desc": "Atmungsaktives Shirt.",
   "price": 15,
   "sold": false
  },
@@ -187,14 +176,14 @@
   "sold": false
  },
  {
-  "id": 30,
-  "folder": "Art30",
-  "cat": "Winterjacken",
-  "brand": "Nike",
-  "name": "Windbreaker Navy",
-  "size": "L",
-  "desc": "Leichte Übergangsjacke.",
-  "price": 35,
+  "id": 28,
+  "folder": "Art28",
+  "cat": "Jeans",
+  "brand": "Levi's",
+  "name": "Vintage Jeans Relaxed",
+  "size": "34/32",
+  "desc": "Echtes Vintage Denim.",
+  "price": 20,
   "sold": false
  },
  {
@@ -206,6 +195,17 @@
   "size": "L",
   "desc": "Cooles Print-Shirt.",
   "price": 15,
+  "sold": false
+ },
+ {
+  "id": 35,
+  "folder": "Art35",
+  "cat": "Winterjacken",
+  "brand": "Vintage",
+  "name": "Winterjacke Vintage Braun",
+  "size": "L",
+  "desc": "Robuste Jacke.",
+  "price": 35,
   "sold": false
  },
  {

@@ -1,12 +1,12 @@
 [
  {
-  "id": 13,
-  "folder": "Art13",
-  "cat": "Pullover",
-  "brand": "Vintage",
-  "name": "Retro Logo Pullover",
-  "size": "L",
-  "desc": "Klassischer Vintage Pullover.",
+  "id": 11,
+  "folder": "Art11",
+  "cat": "Trackpants",
+  "brand": "Adidas",
+  "name": "Trackpants Vintage Navy",
+  "size": "M",
+  "desc": "Echter Vintage-Klassiker.",
   "price": 15,
   "sold": false
  },
@@ -33,36 +33,25 @@
   "sold": false
  },
  {
-  "id": 18,
-  "folder": "Art18",
-  "cat": "Jeans",
-  "brand": "Levi's",
-  "name": "Straight Fit Schwarz",
-  "size": "33/32",
-  "desc": "Robuste Denim-Qualität.",
-  "price": 20,
-  "sold": false
- },
- {
-  "id": 28,
-  "folder": "Art28",
-  "cat": "Jeans",
-  "brand": "Levi's",
-  "name": "Vintage Jeans Relaxed",
-  "size": "34/32",
-  "desc": "Echtes Vintage Denim.",
-  "price": 20,
-  "sold": false
- },
- {
-  "id": 35,
-  "folder": "Art35",
+  "id": 19,
+  "folder": "Art19",
   "cat": "Winterjacken",
-  "brand": "Vintage",
-  "name": "Winterjacke Vintage Braun",
+  "brand": "Nike",
+  "name": "Puffer Winterjacke Schwarz",
   "size": "L",
-  "desc": "Robuste Jacke.",
+  "desc": "Wichtig für kalte Tage.",
   "price": 35,
+  "sold": false
+ },
+ {
+  "id": 27,
+  "folder": "Art27",
+  "cat": "Jeans",
+  "brand": "Vintage",
+  "name": "Denim Jeans Washed Blue",
+  "size": "31/32",
+  "desc": "Lässige Passform.",
+  "price": 20,
   "sold": false
  },
  {

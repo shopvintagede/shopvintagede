@@ -1,23 +1,12 @@
 [
  {
-  "id": 5,
-  "folder": "Art5",
+  "id": 4,
+  "folder": "Art4",
   "cat": "Trackpants",
   "brand": "Nike",
-  "name": "Ripstop Jogginghose Schwarz",
-  "size": "2XL",
-  "desc": "Robuste Ripstop-Hose.",
-  "price": 15,
-  "sold": false
- },
- {
-  "id": 6,
-  "folder": "Art6",
-  "cat": "Trackpants",
-  "brand": "Nike",
-  "name": "Fleece Jogginghose Petrol",
+  "name": "Shell Trackpants",
   "size": "L",
-  "desc": "Schicke Farbe in Petrol.",
+  "desc": "Leichte Shell-Trainingshose.",
   "price": 15,
   "sold": false
  },
@@ -29,6 +18,17 @@
   "name": "Tech Fleece Creme",
   "size": "L",
   "desc": "High-End Look in Creme.",
+  "price": 15,
+  "sold": false
+ },
+ {
+  "id": 9,
+  "folder": "Art9",
+  "cat": "Trackpants",
+  "brand": "Adidas",
+  "name": "Trackpants Hellblau",
+  "size": "M",
+  "desc": "Einzigartiges Modell.",
   "price": 15,
   "sold": false
  },

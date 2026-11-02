@@ -1,12 +1,12 @@
 [
  {
-  "id": 4,
-  "folder": "Art4",
+  "id": 3,
+  "folder": "Art3",
   "cat": "Trackpants",
   "brand": "Nike",
-  "name": "Shell Trackpants",
-  "size": "L",
-  "desc": "Leichte Shell-Trainingshose.",
+  "name": "Fleece Jogginghose Navy",
+  "size": "S",
+  "desc": "Gemütliche Nike Fleece-Hose.",
   "price": 15,
   "sold": false
  },

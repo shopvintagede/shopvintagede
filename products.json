@@ -231,17 +231,6 @@
   "sold": false
  },
  {
-  "id": 26,
-  "folder": "Art26",
-  "cat": "Trackpants",
-  "brand": "Adidas",
-  "name": "Trainingshose Schwarz",
-  "size": "L",
-  "desc": "Klassiker mit Streifen.",
-  "price": 15,
-  "sold": false
- },
- {
   "id": 27,
   "folder": "Art27",
   "cat": "Jeans",
@@ -253,14 +242,14 @@
   "sold": false
  },
  {
-  "id": 29,
-  "folder": "Art29",
-  "cat": "Winterjacken",
-  "brand": "Vintage",
-  "name": "Retro Fleecejacke Beige",
-  "size": "M",
-  "desc": "Kuschelige Teddyjacke.",
-  "price": 35,
+  "id": 28,
+  "folder": "Art28",
+  "cat": "Jeans",
+  "brand": "Levi's",
+  "name": "Vintage Jeans Relaxed",
+  "size": "34/32",
+  "desc": "Echtes Vintage Denim.",
+  "price": 20,
   "sold": false
  },
  {

@@ -1,3 +1,4 @@
-[build]
-  publish = "."
-  functions = "functions"
+[[redirects]]
+  from = "/admin"
+  to = "/.netlify/functions/admin"
+  status = 200

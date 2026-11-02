@@ -1,12 +1,12 @@
 [
  {
-  "id": 15,
-  "folder": "Art15",
-  "cat": "Shirts",
-  "brand": "Nike",
-  "name": "Vintage T-Shirt Weiß",
-  "size": "L",
-  "desc": "Schlichtes Alltags-Shirt.",
+  "id": 11,
+  "folder": "Art11",
+  "cat": "Trackpants",
+  "brand": "Adidas",
+  "name": "Trackpants Vintage Navy",
+  "size": "M",
+  "desc": "Echter Vintage-Klassiker.",
   "price": 15,
   "sold": false
  },

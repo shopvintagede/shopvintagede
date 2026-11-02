@@ -20,5 +20,16 @@
   "desc": "Test",
   "price": 25,
   "sold": false
+ },
+ {
+  "id": 38,
+  "folder": "Art38",
+  "cat": "Pullover",
+  "brand": "Ralph Lauren",
+  "name": "Ralph Lauren Strickjacke",
+  "size": "M",
+  "desc": "",
+  "price": 30,
+  "sold": false
  }
 ]

@@ -69,24 +69,23 @@ background: radial-gradient(circle at 10% 20%, rgba(234, 240, 230, 0.7) 0%, tran
 padding:13px 26px;text-decoration:none;font-size:14px;border-radius:4px;transition:background .2s;}
 .hero-cta:hover{background:var(--ink);}
 
-/* 3D-Rotation Animation um die eigene Achse (Y-Achse) */
 @keyframes spin3D {
-from { transform: rotateY(0deg); }
-to { transform: rotateY(360deg); }
+0% { transform: rotateY(0deg); }
+100% { transform: rotateY(360deg); }
 }
 
 .hero-logo-box{
 display:flex;
 justify-content:center;
 align-items:center;
-perspective: 1000px; /* 3D Tiefenwirkung */
+perspective:1000px;
 }
 .hero-logo-box img{
 max-width:200px;
 width:100%;
 height:auto;
 filter:drop-shadow(0 12px 24px rgba(59,66,51,0.15));
-animation: spin3D 8s linear infinite;
+animation: spin3D 10s linear infinite;
 transform-style: preserve-3d;
 }
 .hero-logo-box img:hover {
@@ -149,7 +148,7 @@ section.products{max-width:1100px;margin:0 auto;padding:10px 24px 70px;}
 100% { transform: translateX(-50%); }
 }
 .marquee-wrapper{display:flex;width:100%;overflow:hidden;position:relative;padding:10px 0;}
-.marquee-track{display:flex;gap:20px;width:max-content;animation:marquee 45s linear infinite;}
+.marquee-track{display:flex;gap:20px;width:max-content;animation:marquee 40s linear infinite;}
 .marquee-track:hover{animation-play-state:paused;}
 .reviews-section{max-width:100%;margin:0 auto;padding:0 0 70px;overflow:hidden;}
 .reviews-container-inner{max-width:1100px;margin:0 auto;padding:0 24px 24px;}
@@ -362,7 +361,7 @@ footer{padding:44px 24px 60px;border-top:1px solid var(--line);background:var(--
 </div>
 </section>
 
-<!-- Vinted Bewertungen Sektion -->
+<!-- Vinted Bewertungen Sektion (Echte Käuferrezensionen) -->
 <section class="reviews-section" id="bewertungen">
 <div class="reviews-container-inner">
 <div class="reviews-head">
@@ -373,109 +372,41 @@ footer{padding:44px 24px 60px;border-top:1px solid var(--line);background:var(--
 
 <div class="marquee-wrapper">
 <div class="marquee-track">
-<!-- Set 1 von 10 Bewertungen -->
-<div class="review-card">
-<div class="review-stars">★★★★★</div>
-<div class="review-text">"Super schneller Versand, Artikel war exakt wie beschrieben und in top Zustand. Gerne wieder!"</div>
-<div class="review-author">— Vinted Käuferin (marvin8710)</div>
-</div>
-<div class="review-card">
-<div class="review-stars">★★★★★</div>
-<div class="review-text">"Sehr netter Kontakt, blitzschneller Versand und absolut faire Preise. 10/10!"</div>
-<div class="review-author">— Vinted Käufer (marvin8710)</div>
-</div>
-<div class="review-card">
-<div class="review-stars">★★★★★</div>
-<div class="review-text">"Alles bestens geklappt! Passt perfekt und sieht super aus. Danke dir!"</div>
-<div class="review-author">— Vinted Käuferin (marvin8710)</div>
-</div>
-<div class="review-card">
-<div class="review-stars">★★★★★</div>
-<div class="review-text">"Absolut ehrlich beschrieben, mega freundlich und extrem schneller Versand. Danke für die tolle Jacke!"</div>
-<div class="review-author">— Vinted Käufer (max87109)</div>
-</div>
-<div class="review-card">
-<div class="review-stars">★★★★★</div>
-<div class="review-text">"Wunderschöner Vintage Sweater! Passt genau wie angegeben und war am übernächsten Tag schon da."</div>
-<div class="review-author">— Vinted Käuferin (marvin8710)</div>
-</div>
-<div class="review-card">
-<div class="review-stars">★★★★★</div>
-<div class="review-text">"Top Verkäufer! Kleidung riecht frisch, super verpackt und ein echter Hingucker."</div>
-<div class="review-author">— Vinted Käufer (max87109)</div>
-</div>
-<div class="review-card">
-<div class="review-stars">★★★★★</div>
-<div class="review-text">"Die Trackpants sind in genialem Zustand, blitzschnelle Antwort auf Fragen. Empfehle ich jedem!"</div>
-<div class="review-author">— Vinted Käuferin (marvin8710)</div>
-</div>
-<div class="review-card">
-<div class="review-stars">★★★★★</div>
-<div class="review-text">"Sehr zuverlässig und faire Preise für echte Vintage-Klassiker. Werde definitiv wieder bestellen!"</div>
-<div class="review-author">— Vinted Käufer (max87109)</div>
-</div>
-<div class="review-card">
-<div class="review-stars">★★★★★</div>
-<div class="review-text">"Schneller geht's nicht! Qualität der Baggy Jeans ist 1A. Einwandfreier Deal!"</div>
-<div class="review-author">— Vinted Käuferin (marvin8710)</div>
-</div>
-<div class="review-card">
-<div class="review-stars">★★★★★</div>
-<div class="review-text">"Sehr netter Verkäufer aus Ostfriesland, unkompliziert und top Ware. Immer wieder gerne!"</div>
-<div class="review-author">— Vinted Käufer (max87109)</div>
-</div>
+<!-- Set 1: Echte Vinted-Bewertungen -->
+<div class="review-card"><div class="review-stars">★★★★★</div><div class="review-text">"alles super :)"</div><div class="review-author">— gero0396 (Vinted)</div></div>
+<div class="review-card"><div class="review-stars">★★★★★</div><div class="review-text">"schneller Versand!:)"</div><div class="review-author">— opelastragcc (Vinted)</div></div>
+<div class="review-card"><div class="review-stars">★★★★★</div><div class="review-text">"Alles bestens! 👍"</div><div class="review-author">— anjam882 (Vinted)</div></div>
+<div class="review-card"><div class="review-stars">★★★★★</div><div class="review-text">"Top"</div><div class="review-author">— sebaseb1 (Vinted)</div></div>
+<div class="review-card"><div class="review-stars">★★★★★</div><div class="review-text">"Top, schneller Versand"</div><div class="review-author">— vt13mio (Vinted)</div></div>
+<div class="review-card"><div class="review-stars">★★★★★</div><div class="review-text">"Sehr netter Kontakt. Die Sachen sind top. Dankeschön"</div><div class="review-author">— sindyopitz30684 (Vinted)</div></div>
+<div class="review-card"><div class="review-stars">★★★★★</div><div class="review-text">"Alles bestens!"</div><div class="review-author">— elektrofrank (Vinted)</div></div>
+<div class="review-card"><div class="review-stars">★★★★★</div><div class="review-text">"parfait"</div><div class="review-author">— lucasfrvr (Vinted)</div></div>
+<div class="review-card"><div class="review-stars">★★★★★</div><div class="review-text">"Alles super und schneller Versand."</div><div class="review-author">— giommi8 (Vinted)</div></div>
+<div class="review-card"><div class="review-stars">★★★★★</div><div class="review-text">"Vielen Dank!"</div><div class="review-author">— dana-aurelia (Vinted)</div></div>
+<div class="review-card"><div class="review-stars">★★★★★</div><div class="review-text">"Alles super! Vielen lieben Dank!😊"</div><div class="review-author">— carmenk10 (Vinted)</div></div>
+<div class="review-card"><div class="review-stars">★★★★★</div><div class="review-text">"Alles perfekt!"</div><div class="review-author">— spinthefcknbottle (Vinted)</div></div>
+<div class="review-card"><div class="review-stars">★★★★★</div><div class="review-text">"Alles Top 👍."</div><div class="review-author">— vintage_to (Vinted)</div></div>
+<div class="review-card"><div class="review-stars">★★★★★</div><div class="review-text">"top"</div><div class="review-author">— griffel123 (Vinted)</div></div>
+<div class="review-card"><div class="review-stars">★★★★★</div><div class="review-text">"Bon échange et bonne qualité."</div><div class="review-author">— clarymqt (Vinted)</div></div>
+<div class="review-card"><div class="review-stars">★★★★★</div><div class="review-text">"Personne arrangeante et serviable. Envoi rapide et produit conforme. Merci 🙏"</div><div class="review-author">— pou50 (Vinted)</div></div>
 
-<!-- Dupliziertes Set für nahtlosen Endlos-Loop -->
-<div class="review-card">
-<div class="review-stars">★★★★★</div>
-<div class="review-text">"Super schneller Versand, Artikel war exakt wie beschrieben und in top Zustand. Gerne wieder!"</div>
-<div class="review-author">— Vinted Käuferin (marvin8710)</div>
-</div>
-<div class="review-card">
-<div class="review-stars">★★★★★</div>
-<div class="review-text">"Sehr netter Kontakt, blitzschneller Versand und absolut faire Preise. 10/10!"</div>
-<div class="review-author">— Vinted Käufer (marvin8710)</div>
-</div>
-<div class="review-card">
-<div class="review-stars">★★★★★</div>
-<div class="review-text">"Alles bestens geklappt! Passt perfekt und sieht super aus. Danke dir!"</div>
-<div class="review-author">— Vinted Käuferin (marvin8710)</div>
-</div>
-<div class="review-card">
-<div class="review-stars">★★★★★</div>
-<div class="review-text">"Absolut ehrlich beschrieben, mega freundlich und extrem schneller Versand. Danke für die tolle Jacke!"</div>
-<div class="review-author">— Vinted Käufer (max87109)</div>
-</div>
-<div class="review-card">
-<div class="review-stars">★★★★★</div>
-<div class="review-text">"Wunderschöner Vintage Sweater! Passt genau wie angegeben und war am übernächsten Tag schon da."</div>
-<div class="review-author">— Vinted Käuferin (marvin8710)</div>
-</div>
-<div class="review-card">
-<div class="review-stars">★★★★★</div>
-<div class="review-text">"Top Verkäufer! Kleidung riecht frisch, super verpackt und ein echter Hingucker."</div>
-<div class="review-author">— Vinted Käufer (max87109)</div>
-</div>
-<div class="review-card">
-<div class="review-stars">★★★★★</div>
-<div class="review-text">"Die Trackpants sind in genialem Zustand, blitzschnelle Antwort auf Fragen. Empfehle ich jedem!"</div>
-<div class="review-author">— Vinted Käuferin (marvin8710)</div>
-</div>
-<div class="review-card">
-<div class="review-stars">★★★★★</div>
-<div class="review-text">"Sehr zuverlässig und faire Preise für echte Vintage-Klassiker. Werde definitiv wieder bestellen!"</div>
-<div class="review-author">— Vinted Käufer (max87109)</div>
-</div>
-<div class="review-card">
-<div class="review-stars">★★★★★</div>
-<div class="review-text">"Schneller geht's nicht! Qualität der Baggy Jeans ist 1A. Einwandfreier Deal!"</div>
-<div class="review-author">— Vinted Käuferin (marvin8710)</div>
-</div>
-<div class="review-card">
-<div class="review-stars">★★★★★</div>
-<div class="review-text">"Sehr netter Verkäufer aus Ostfriesland, unkompliziert und top Ware. Immer wieder gerne!"</div>
-<div class="review-author">— Vinted Käufer (max87109)</div>
-</div>
+<!-- Set 2: Dupliziert für nahtlose Endlos-Animation -->
+<div class="review-card"><div class="review-stars">★★★★★</div><div class="review-text">"alles super :)"</div><div class="review-author">— gero0396 (Vinted)</div></div>
+<div class="review-card"><div class="review-stars">★★★★★</div><div class="review-text">"schneller Versand!:)"</div><div class="review-author">— opelastragcc (Vinted)</div></div>
+<div class="review-card"><div class="review-stars">★★★★★</div><div class="review-text">"Alles bestens! 👍"</div><div class="review-author">— anjam882 (Vinted)</div></div>
+<div class="review-card"><div class="review-stars">★★★★★</div><div class="review-text">"Top"</div><div class="review-author">— sebaseb1 (Vinted)</div></div>
+<div class="review-card"><div class="review-stars">★★★★★</div><div class="review-text">"Top, schneller Versand"</div><div class="review-author">— vt13mio (Vinted)</div></div>
+<div class="review-card"><div class="review-stars">★★★★★</div><div class="review-text">"Sehr netter Kontakt. Die Sachen sind top. Dankeschön"</div><div class="review-author">— sindyopitz30684 (Vinted)</div></div>
+<div class="review-card"><div class="review-stars">★★★★★</div><div class="review-text">"Alles bestens!"</div><div class="review-author">— elektrofrank (Vinted)</div></div>
+<div class="review-card"><div class="review-stars">★★★★★</div><div class="review-text">"parfait"</div><div class="review-author">— lucasfrvr (Vinted)</div></div>
+<div class="review-card"><div class="review-stars">★★★★★</div><div class="review-text">"Alles super und schneller Versand."</div><div class="review-author">— giommi8 (Vinted)</div></div>
+<div class="review-card"><div class="review-stars">★★★★★</div><div class="review-text">"Vielen Dank!"</div><div class="review-author">— dana-aurelia (Vinted)</div></div>
+<div class="review-card"><div class="review-stars">★★★★★</div><div class="review-text">"Alles super! Vielen lieben Dank!😊"</div><div class="review-author">— carmenk10 (Vinted)</div></div>
+<div class="review-card"><div class="review-stars">★★★★★</div><div class="review-text">"Alles perfekt!"</div><div class="review-author">— spinthefcknbottle (Vinted)</div></div>
+<div class="review-card"><div class="review-stars">★★★★★</div><div class="review-text">"Alles Top 👍."</div><div class="review-author">— vintage_to (Vinted)</div></div>
+<div class="review-card"><div class="review-stars">★★★★★</div><div class="review-text">"top"</div><div class="review-author">— griffel123 (Vinted)</div></div>
+<div class="review-card"><div class="review-stars">★★★★★</div><div class="review-text">"Bon échange et bonne qualité."</div><div class="review-author">— clarymqt (Vinted)</div></div>
+<div class="review-card"><div class="review-stars">★★★★★</div><div class="review-text">"Personne arrangeante et serviable. Envoi rapide et produit conforme. Merci 🙏"</div><div class="review-author">— pou50 (Vinted)</div></div>
 </div>
 </div>
 
@@ -631,7 +562,7 @@ footer{padding:44px 24px 60px;border-top:1px solid var(--line);background:var(--
 <p>Die Widerrufsfrist beträgt vierzehn Tage ab dem Tag, an dem Sie oder ein von Ihnen benannter Dritter, der nicht der Beförderer ist, die Waren in Besitz genommen haben bzw. hat.</p>
 <p>Um Ihr Widerrufsrecht auszuüben, müssen Sie uns (Marvin Osterkamp, Erlenstraße 24, 26670 Uplengen, E-Mail: <a href="mailto:shopvintagede@web.de">shopvintagede@web.de</a>) mittels einer eindeutigen Erklärung (z. B. ein mit der Post versandter Brief oder eine E-Mail) über Ihren Entschluss, diesen Vertrag zu widerrufen, informieren. Sie können dafür das beigefügte Muster-Widerrufsformular verwenden, das jedoch nicht vorgeschrieben ist.</p>
 <p>Zur Wahrung der Widerrufsfrist reicht es aus, dass Sie die Mitteilung über die Ausübung des Widerrufsrechts vor Ablauf der Widerrufsfrist absenden.</p>
-  <p>Sie können Ihren Widerruf auch direkt online erklären: <a href="widerruf.html"><strong>Vertrag widerrufen</strong></a>.</p>
+<p>Sie können Ihren Widerruf auch direkt online erklären: <a href="widerruf.html"><strong>Vertrag widerrufen</strong></a>.</p>
 
 <h3>Folgen des Widerrufs</h3>
 <p>Wenn Sie diesen Vertrag widerrufen, haben wir Ihnen alle Zahlungen, die wir von Ihnen erhalten haben, einschließlich der Lieferkosten (mit Ausnahme der zusätzlichen Kosten, die sich daraus ergeben, dass Sie eine andere Art der Lieferung als die von uns angebotene, günstigste Standardlieferung gewählt haben), unverzüglich und spätestens binnen vierzehn Tagen ab dem Tag zurückzuzahlen, an dem die Mitteilung über Ihren Widerruf dieses Vertrags bei uns eingegangen ist. Für diese Rückzahlung verwenden wir dasselbe Zahlungsmittel, das Sie bei der ursprünglichen Transaktion eingesetzt haben, es sei denn, mit Ihnen wurde ausdrücklich etwas anderes vereinbart; in keinem Fall werden Ihnen wegen dieser Rückzahlung Entgelte berechnet.</p>
@@ -677,7 +608,7 @@ footer{padding:44px 24px 60px;border-top:1px solid var(--line);background:var(--
 <h4>Rechtliches</h4>
 <a href="#agb">AGB</a>
 <a href="#widerruf">Widerrufsbelehrung &amp; Widerrufsformular</a>
-  <a href="widerruf.html">Vertrag widerrufen</a>
+<a href="widerruf.html">Vertrag widerrufen</a>
 <a href="#impressum">Impressum</a>
 </div>
 <div class="foot-col">

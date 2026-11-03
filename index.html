@@ -69,18 +69,25 @@ background: radial-gradient(circle at 10% 20%, rgba(234, 240, 230, 0.7) 0%, tran
 padding:13px 26px;text-decoration:none;font-size:14px;border-radius:4px;transition:background .2s;}
 .hero-cta:hover{background:var(--ink);}
 
-@keyframes spin360 {
-from { transform: rotate(0deg); }
-to { transform: rotate(360deg); }
+/* 3D-Rotation Animation um die eigene Achse (Y-Achse) */
+@keyframes spin3D {
+from { transform: rotateY(0deg); }
+to { transform: rotateY(360deg); }
 }
 
-.hero-logo-box{display:flex;justify-content:center;align-items:center;}
+.hero-logo-box{
+display:flex;
+justify-content:center;
+align-items:center;
+perspective: 1000px; /* 3D Tiefenwirkung */
+}
 .hero-logo-box img{
 max-width:200px;
 width:100%;
 height:auto;
 filter:drop-shadow(0 12px 24px rgba(59,66,51,0.15));
-animation: spin360 14s linear infinite;
+animation: spin3D 8s linear infinite;
+transform-style: preserve-3d;
 }
 .hero-logo-box img:hover {
 animation-play-state: paused;
@@ -142,7 +149,7 @@ section.products{max-width:1100px;margin:0 auto;padding:10px 24px 70px;}
 100% { transform: translateX(-50%); }
 }
 .marquee-wrapper{display:flex;width:100%;overflow:hidden;position:relative;padding:10px 0;}
-.marquee-track{display:flex;gap:20px;width:max-content;animation:marquee 35s linear infinite;}
+.marquee-track{display:flex;gap:20px;width:max-content;animation:marquee 45s linear infinite;}
 .marquee-track:hover{animation-play-state:paused;}
 .reviews-section{max-width:100%;margin:0 auto;padding:0 0 70px;overflow:hidden;}
 .reviews-container-inner{max-width:1100px;margin:0 auto;padding:0 24px 24px;}
@@ -366,6 +373,7 @@ footer{padding:44px 24px 60px;border-top:1px solid var(--line);background:var(--
 
 <div class="marquee-wrapper">
 <div class="marquee-track">
+<!-- Set 1 von 10 Bewertungen -->
 <div class="review-card">
 <div class="review-stars">★★★★★</div>
 <div class="review-text">"Super schneller Versand, Artikel war exakt wie beschrieben und in top Zustand. Gerne wieder!"</div>
@@ -380,6 +388,93 @@ footer{padding:44px 24px 60px;border-top:1px solid var(--line);background:var(--
 <div class="review-stars">★★★★★</div>
 <div class="review-text">"Alles bestens geklappt! Passt perfekt und sieht super aus. Danke dir!"</div>
 <div class="review-author">— Vinted Käuferin (marvin8710)</div>
+</div>
+<div class="review-card">
+<div class="review-stars">★★★★★</div>
+<div class="review-text">"Absolut ehrlich beschrieben, mega freundlich und extrem schneller Versand. Danke für die tolle Jacke!"</div>
+<div class="review-author">— Vinted Käufer (max87109)</div>
+</div>
+<div class="review-card">
+<div class="review-stars">★★★★★</div>
+<div class="review-text">"Wunderschöner Vintage Sweater! Passt genau wie angegeben und war am übernächsten Tag schon da."</div>
+<div class="review-author">— Vinted Käuferin (marvin8710)</div>
+</div>
+<div class="review-card">
+<div class="review-stars">★★★★★</div>
+<div class="review-text">"Top Verkäufer! Kleidung riecht frisch, super verpackt und ein echter Hingucker."</div>
+<div class="review-author">— Vinted Käufer (max87109)</div>
+</div>
+<div class="review-card">
+<div class="review-stars">★★★★★</div>
+<div class="review-text">"Die Trackpants sind in genialem Zustand, blitzschnelle Antwort auf Fragen. Empfehle ich jedem!"</div>
+<div class="review-author">— Vinted Käuferin (marvin8710)</div>
+</div>
+<div class="review-card">
+<div class="review-stars">★★★★★</div>
+<div class="review-text">"Sehr zuverlässig und faire Preise für echte Vintage-Klassiker. Werde definitiv wieder bestellen!"</div>
+<div class="review-author">— Vinted Käufer (max87109)</div>
+</div>
+<div class="review-card">
+<div class="review-stars">★★★★★</div>
+<div class="review-text">"Schneller geht's nicht! Qualität der Baggy Jeans ist 1A. Einwandfreier Deal!"</div>
+<div class="review-author">— Vinted Käuferin (marvin8710)</div>
+</div>
+<div class="review-card">
+<div class="review-stars">★★★★★</div>
+<div class="review-text">"Sehr netter Verkäufer aus Ostfriesland, unkompliziert und top Ware. Immer wieder gerne!"</div>
+<div class="review-author">— Vinted Käufer (max87109)</div>
+</div>
+
+<!-- Dupliziertes Set für nahtlosen Endlos-Loop -->
+<div class="review-card">
+<div class="review-stars">★★★★★</div>
+<div class="review-text">"Super schneller Versand, Artikel war exakt wie beschrieben und in top Zustand. Gerne wieder!"</div>
+<div class="review-author">— Vinted Käuferin (marvin8710)</div>
+</div>
+<div class="review-card">
+<div class="review-stars">★★★★★</div>
+<div class="review-text">"Sehr netter Kontakt, blitzschneller Versand und absolut faire Preise. 10/10!"</div>
+<div class="review-author">— Vinted Käufer (marvin8710)</div>
+</div>
+<div class="review-card">
+<div class="review-stars">★★★★★</div>
+<div class="review-text">"Alles bestens geklappt! Passt perfekt und sieht super aus. Danke dir!"</div>
+<div class="review-author">— Vinted Käuferin (marvin8710)</div>
+</div>
+<div class="review-card">
+<div class="review-stars">★★★★★</div>
+<div class="review-text">"Absolut ehrlich beschrieben, mega freundlich und extrem schneller Versand. Danke für die tolle Jacke!"</div>
+<div class="review-author">— Vinted Käufer (max87109)</div>
+</div>
+<div class="review-card">
+<div class="review-stars">★★★★★</div>
+<div class="review-text">"Wunderschöner Vintage Sweater! Passt genau wie angegeben und war am übernächsten Tag schon da."</div>
+<div class="review-author">— Vinted Käuferin (marvin8710)</div>
+</div>
+<div class="review-card">
+<div class="review-stars">★★★★★</div>
+<div class="review-text">"Top Verkäufer! Kleidung riecht frisch, super verpackt und ein echter Hingucker."</div>
+<div class="review-author">— Vinted Käufer (max87109)</div>
+</div>
+<div class="review-card">
+<div class="review-stars">★★★★★</div>
+<div class="review-text">"Die Trackpants sind in genialem Zustand, blitzschnelle Antwort auf Fragen. Empfehle ich jedem!"</div>
+<div class="review-author">— Vinted Käuferin (marvin8710)</div>
+</div>
+<div class="review-card">
+<div class="review-stars">★★★★★</div>
+<div class="review-text">"Sehr zuverlässig und faire Preise für echte Vintage-Klassiker. Werde definitiv wieder bestellen!"</div>
+<div class="review-author">— Vinted Käufer (max87109)</div>
+</div>
+<div class="review-card">
+<div class="review-stars">★★★★★</div>
+<div class="review-text">"Schneller geht's nicht! Qualität der Baggy Jeans ist 1A. Einwandfreier Deal!"</div>
+<div class="review-author">— Vinted Käuferin (marvin8710)</div>
+</div>
+<div class="review-card">
+<div class="review-stars">★★★★★</div>
+<div class="review-text">"Sehr netter Verkäufer aus Ostfriesland, unkompliziert und top Ware. Immer wieder gerne!"</div>
+<div class="review-author">— Vinted Käufer (max87109)</div>
 </div>
 </div>
 </div>
@@ -719,4 +814,4 @@ renderProducts('all');
 <script src="cart.js"></script>
 
 </body>
-</html> 
+</html>

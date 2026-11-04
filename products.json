@@ -42,5 +42,16 @@
   "desc": "",
   "price": 20,
   "sold": false
+ },
+ {
+  "id": 40,
+  "folder": "Art40",
+  "cat": "Winterjacken",
+  "brand": "Hugo Boss",
+  "name": "Hugo Boss Jacke",
+  "size": "L",
+  "desc": "schone jacke von boss orange in einem warmen rot bzw. bordeaux. harrington stil mit kragen, durchgehendem reißverschluss mit boss zipper, zwei schrägen eingrifftaschen mit druckknopf und bündchen am saum. leichtes, gewaschenes material mit schönem used look, innen gefüttert.\nkleines boss label am armel und im kragen. pertekt für herbst und frühling, passt zu jeans genauso wie zu chino.\ngröße: bitte ergänzen (etikett auf den fotos nicht lesbar)\nmaße: lange ca. 60 cm (bitte brustbreite zusätzlich messen)\nzustand: gepflegt, siehe fotos #hugoboss #boss #bossorange #harrington #übergangsjacke #jacke #rot #bordeaux #herren #vintage #casual",
+  "price": 45,
+  "sold": false
  }
 ]

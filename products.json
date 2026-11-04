@@ -328,5 +328,16 @@
   "desc": "Schickes und klassisches T-Shirt von Tommy Hilfiger in Weiß mit auffälligem Logoprint und Streifendetail auf der Vorderseite.\nMarke: Tommy Hilfiger\nGröße: S\nMaterial: Bio-Baumwolle (Organic Cotton) Farbe: Weiß (mit rotem und dunkelblauem Print / Streifen)\nZustand: Sehr gut / Gepflegt\nDetails: Angenehmer Stoff aus biologischer Baumwolle, gerippter Kragen mit den typischen Hilfiger-Farben, dezentes Logo-Flag-Emblem am Ärmel.\nEin tolles Basic für den Alltag, das sich super kombinieren lässt!",
   "price": 5,
   "sold": false
+ },
+ {
+  "id": 66,
+  "folder": "Art66",
+  "cat": "Pullover",
+  "brand": "Adidas",
+  "name": "Adidas ZNE Zip Hoodie Jacke Weiß / Schwarz Gr. 140 (9-10Y) Kinder / XS",
+  "size": "KIDS XS",
+  "desc": "Adidas ZNE Zip Hoodie Jacke Weiß / Schwarz\nGr. 140 (9-10Y) Kinder / XS\nVerkaufe eine sportliche und stylische Adidas\nZNE Zipper-Jacke / Sweatshirt-Jacke mit Kapuze in Weiß mit schwarzem Logo-Print am\nÄrmel.\nGröße laut Tag:\n• 140 (9-10 Jahre) - eignet sich auch super für sehr kleine/zierliche Größen.",
+  "price": 10,
+  "sold": false
  }
 ]

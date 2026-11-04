@@ -152,5 +152,16 @@
   "desc": "Tussardi Jeans \n\nW34L30",
   "price": 15,
   "sold": false
+ },
+ {
+  "id": 50,
+  "folder": "Art50",
+  "cat": "Pullover",
+  "brand": "Holister",
+  "name": "hollister hemdjacke overshirt beige khaki herren gr. xl",
+  "size": "XL",
+  "desc": "hollister california overshirt in beige bzw. Khaki mit druckknopten, zwei brusttaschen mit klappe und zwei seitentaschen. fester baumwollstoff, perfekt als übergangsjacke oder über einem hoodie. lassiger look.\nzustand: gebraucht, guter zustand. keine löcher oder flecken, nur ein paar knitter vom hängen.\ngröße: xl (laut etikett) hergestellt in vietnam\nhollister, hollister california, overshirt, hemdjacke, shacket, übergangsjacke, jacke, beige, khaki, druckknöpfe, herren, gr. xl, workwear, casual, herbst, frühling",
+  "price": 16,
+  "sold": false
  }
 ]

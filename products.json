@@ -251,5 +251,16 @@
   "desc": "Auffällige Nike Jogginghose in seltener Petrol/ Turkis-Farbe, weiches Fleece-Material, gesticktes Nike Logo, elastischer Bund mit Kordelzug, seitliche Taschen.\nGröße: L\nZustand: gut getragen, keine Löcher oder Flecken, siehe Fotos.\nToller Hingucker für jeden Street",
   "price": 12.5,
   "sold": false
+ },
+ {
+  "id": 59,
+  "folder": "Art59",
+  "cat": "Winterjacken",
+  "brand": "G-Star",
+  "name": "G-Star RAW Herren Jacke schwarz Größe L, Biker-Style",
+  "size": "L",
+  "desc": "",
+  "price": 35,
+  "sold": false
  }
 ]
